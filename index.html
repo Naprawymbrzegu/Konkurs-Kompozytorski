@@ -11,7 +11,15 @@
 <body>
   <header style="text-align: center;">
     <img src="logo.png" alt="Logo Konkursu" class="logo" style="max-width: 200px; display: block; margin: 0 auto;">
-    <h1 style="text-transform: lowercase; text-align: center;">na prawym brzegu Wisły…</h1>
+    <h1 style="text-transform: lowercase;">na prawym brzegu Wisły…</h1>
+    <nav>
+      <ul style="list-style: none; padding: 0; display: flex; justify-content: center; gap: 2em;">
+        <li><a href="#jury">Jury</a></li>
+        <li><a href="#regulations">Regulamin</a></li>
+        <li><a href="#documents">Dokumenty</a></li>
+        <li><a href="#organizers">Organizatorzy</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
@@ -23,14 +31,13 @@
     </section>
 
     <section class="video" style="text-align: center; padding: 2em 0;">
-      <h2>Film o Konkursie</h2>
       <video width="640" controls>
         <source src="NAPRAWYMBRZEGUWISLY.PL.mp4" type="video/mp4">
         Twoja przeglądarka nie obsługuje elementu wideo.
       </video>
     </section>
 
-    <section class="jury">
+    <section class="jury" id="jury">
       <h2>Jury</h2>
       <ul>
         <li>prof. Marcin Bortnowski</li>
@@ -42,24 +49,35 @@
       </ul>
     </section>
 
-    <section class="documents">
+    <section class="documents" id="documents">
       <h2>Dokumenty do pobrania</h2>
       <ul>
         <li><a href="Regulamin_Konkursu.pdf" download>Regulamin Konkursu (PDF)</a></li>
-        <li><a href="Formularz_zgłoszeniowy.pdf" download>Formularz zgłoszeniowy (PDF)</a></li>
+        <li><a href="Formularz_zgłoszeniowy.docx" download>Formularz zgłoszeniowy (DOCX)</a></li>
       </ul>
     </section>
 
-    <section class="regulations">
-      <h2>Wyciąg z regulaminu</h2>
-      <p><strong>Termin nadsyłania prac:</strong> do 1 października 2025 r.</p>
-      <p><strong>Wyniki:</strong> ogłoszenie wyników do 10 listopada 2025 r.</p>
-      <p><strong>Uczestnicy:</strong> osoby do 40. roku życia (urodzone nie wcześniej niż 1 października 1985 r.).</p>
-      <p><strong>Forma nadsyłania:</strong> partytura w formacie PDF + nagranie/realizacja MIDI.</p>
+    <section class="regulations" id="regulations">
+      <h2>Regulamin Konkursu</h2>
+      <p><strong>1. Organizatorzy:</strong></p>
+      <ul>
+        <li>Fundacja im. Andrzeja Krzanowskiego</li>
+        <li>Mała Akademia Muzyki w Czechowicach-Dziedzicach</li>
+        <li>Miejski Dom Kultury w Czechowicach-Dziedzicach</li>
+      </ul>
+      <p><strong>2. Cele Konkursu:</strong> promocja twórczości młodych kompozytorów oraz uczczenie pamięci Andrzeja Krzanowskiego.</p>
+      <p><strong>3. Uczestnicy:</strong> osoby do 40. roku życia (urodzone nie wcześniej niż 1 października 1985 r.).</p>
+      <p><strong>4. Zasady:</strong> uczestnicy zgłaszają 1 utwór na dowolny skład instrumentalny lub wokalno-instrumentalny.</p>
+      <p><strong>5. Forma nadsyłania:</strong> partytura w formacie PDF oraz nagranie (lub realizacja MIDI).</p>
+      <p><strong>6. Termin nadsyłania prac:</strong> do 1 października 2025 r.</p>
+      <p><strong>7. Ogłoszenie wyników:</strong> do 10 listopada 2025 r.</p>
+      <p><strong>8. Jury:</strong> skład podany powyżej. Decyzje Jury są ostateczne.</p>
+      <p><strong>9. Nagrody:</strong> finansowe i rzeczowe, przyznawane przez organizatorów i partnerów.</p>
+      <p><strong>10. Prawa autorskie:</strong> uczestnik zgłaszając utwór oświadcza, że posiada pełnię praw autorskich.</p>
     </section>
   </main>
 
-  <footer>
+  <footer id="organizers">
     <h2>Organizatorzy</h2>
     <ul>
       <li>Fundacja im. Andrzeja Krzanowskiego</li>
