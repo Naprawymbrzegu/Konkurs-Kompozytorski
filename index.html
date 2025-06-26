@@ -16,21 +16,22 @@
       background-color: #405580;
       color: #eee;
       padding: 1rem;
-      text-align: left;
+      text-align: center;
       display: flex;
+      flex-direction: column;
       align-items: center;
     }
     header img {
       max-height: 160px;
       height: auto;
       width: auto;
-      float: left;
-      margin-right: 1rem;
+      margin-bottom: 0.5rem;
     }
     header h1 {
       color: #F5F1E9;
       margin: 0;
       font-size: 1.8rem;
+      text-transform: lowercase;
     }
     nav {
       margin-top: 1rem;
@@ -72,12 +73,19 @@
       padding: 1rem;
       text-align: center;
     }
+    .documents ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    .documents li {
+      margin-bottom: 0.5rem;
+    }
   </style>
 </head>
 <body>
   <header>
     <img src="logo.png" alt="Logo konkursu" />
-    <h1>Konkurs Kompozytorski „Na prawym brzegu Wisły…”</h1>
+    <h1>konkurs kompozytorski „na prawym brzegu wisły…”</h1>
   </header>
 
   <nav>
@@ -87,6 +95,7 @@
     <a href="#kontakt">Kontakt</a>
     <a href="#regulamin">Regulamin</a>
     <a href="#partnerzy">Partnerzy</a>
+    <a href="#dokumenty">Dokumenty</a>
   </nav>
 
   <section id="aktualnosci">
@@ -94,95 +103,4 @@
     <p>
       Rusza pierwsza edycja Konkursu Kompozytorskiego „Na prawym brzegu Wisły…”.
       Na zgłoszenia czekamy do <strong>1 października 2025</strong>. Konkurs odbywa się
-      w Czechowicach-Dziedzicach — mieście Andrzeja Krzanowskiego. Zapraszamy do udziału!
-    </p>
-  </section>
-
-  <section id="jury">
-    <h2>Jury</h2>
-    <ul>
-      <li>prof. Marcin Bortnowski</li>
-      <li>prof. Stanisław Krupowicz</li>
-      <li>Grażyna Krzanowska</li>
-      <li>dr Eneasz Kubit</li>
-      <li>Piotr Zembroń – sekretarz</li>
-      <li>Jagna Krzanowska – dyrektor Konkursu</li>
-    </ul>
-  </section>
-
-  <section id="laureaci">
-    <h2>Laureaci</h2>
-    <p>Lista laureatów pojawi się po zakończeniu konkursu.</p>
-  </section>
-
-  <section id="kontakt">
-    <h2>Kontakt</h2>
-    <p>Email: <a href="mailto:kontakt@konkurs.com">kontakt@konkurs.com</a></p>
-  </section>
-
-  <section id="regulamin">
-    <h2>Regulamin Konkursu Kompozytorskiego „Na prawym brzegu Wisły…”</h2>
-    <ol>
-      <li><strong>Cel konkursu</strong><br>
-        Promocja twórczości młodych kompozytorek i kompozytorów oraz wzbogacenie współczesnego repertuaru na akordeon.
-      </li>
-      <li><strong>Uczestniczki i uczestnicy</strong><br>
-        Konkurs skierowany do osób do 35. roku życia (urodzonych po 1 października 1990), niezależnie od narodowości.
-      </li>
-      <li><strong>Zasady uczestnictwa</strong><br>
-        Jedna oryginalna kompozycja:<br>
-        <ul>
-          <li>niepublikowana, niewykonywana, nienagradzana,</li>
-          <li>czas trwania: 6–8 minut,</li>
-          <li>na akordeon solo z opcjonalną elektroniką.</li>
-        </ul>
-        Organizator nie zapewnia realizacji warstwy elektronicznej.
-      </li>
-      <li><strong>Termin i sposób zgłoszeń</strong><br>
-        Do 1 października 2025, drogą elektroniczną.<br>
-        Wymagane:<br>
-        <ul>
-          <li>PDF partytury (z godłem),</li>
-          <li>nagranie/rendering audio (jeśli dostępne),</li>
-          <li>formularz z danymi (imię, nazwisko, data urodzenia, kontakt, biografia),</li>
-          <li>oświadczenie o oryginalności utworu.</li>
-        </ul>
-        Opłata wpisowa: 200 zł.
-      </li>
-      <li><strong>Jury</strong><br>
-        Ogłoszone powyżej. Decyzje jury są ostateczne.
-      </li>
-      <li><strong>Nagrody</strong><br>
-        Pula: 10 000 zł. Prawykonanie na Festiwalu Alkagran 2026. Jury może zmienić podział nagród.
-      </li>
-      <li><strong>Prawa autorskie</strong><br>
-        Pełne prawa pozostają przy uczestnikach. Organizatorzy mogą:<br>
-        <ul>
-          <li>wykonać i zarejestrować utwory,</li>
-          <li>udostępniać nagrania promocyjnie i archiwalnie.</li>
-        </ul>
-      </li>
-      <li><strong>Postanowienia końcowe</strong><br>
-        Zgłoszenie oznacza akceptację regulaminu. Organizatorzy mogą zmienić regulamin lub odwołać konkurs.
-      </li>
-      <li><strong>Ochrona danych osobowych (RODO)</strong><br>
-        Dane przetwarzane przez Fundację im. Andrzeja Krzanowskiego. Uczestnicy mają prawa wynikające z RODO. Kontakt: [adres e-mail].
-      </li>
-    </ol>
-  </section>
-
-  <section id="partnerzy">
-    <h2>Partnerzy</h2>
-    <p>Tu wpisz partnerów i sponsorów konkursu.</p>
-  </section>
-
-  <footer>
-    <p><strong>Organizatorzy:</strong><br>
-      Fundacja im. Andrzeja Krzanowskiego, <br>
-      Mała Akademia Muzyki w Czechowicach-Dziedzicach, <br>
-      Miejski Dom Kultury w Czechowicach-Dziedzicach
-    </p>
-    <p>© 2025 Konkurs Kompozytorski „Na prawym brzegu Wisły…”</p>
-  </footer>
-</body>
-</html>
+      w Czechowicach-Dziedzicach — mieście Andrzeja Krzanowskiego. Zapraszamy do udziału
