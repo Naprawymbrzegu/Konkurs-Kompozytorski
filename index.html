@@ -1,67 +1,188 @@
 <!DOCTYPE html>
 <html lang="pl">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>na prawym brzegu Wisły</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Konkurs Kompozytorski „Na prawym brzegu Wisły…”</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #e0e6f0, #a0b0cc);
+      color: #1B2A49;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #405580;
+      color: #eee;
+      padding: 1rem;
+      text-align: left;
+      display: flex;
+      align-items: center;
+    }
+    header img {
+      max-height: 160px;
+      height: auto;
+      width: auto;
+      float: left;
+      margin-right: 1rem;
+    }
+    header h1 {
+      color: #F5F1E9;
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    nav {
+      margin-top: 1rem;
+      text-align: center;
+    }
+    nav a {
+      color: #cfd8f7;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem 2rem;
+      background-color: #f7f9fc;
+      border-radius: 6px;
+      box-shadow: 0 0 10px rgba(50, 70, 120, 0.2);
+    }
+    h2, h3, h4, h5, h6 {
+      color: #1B2A49;
+    }
+    ol {
+      padding-left: 1.5rem;
+    }
+    ol li {
+      margin-bottom: 1rem;
+    }
+    ul {
+      margin-top: 0.3rem;
+      margin-left: 1.5rem;
+    }
+    footer {
+      background-color: #405580;
+      color: #eee;
+      padding: 1rem;
+      text-align: center;
+    }
+  </style>
 </head>
-
 <body>
   <header>
-    <img src="logo.png" alt="Logo Konkursu" class="logo">
-    <h1 style="text-align: center; text-transform: lowercase;">na prawym brzegu Wisły…</h1>
+    <img src="logo.png" alt="Logo konkursu" />
+    <h1>Konkurs Kompozytorski „Na prawym brzegu Wisły…”</h1>
   </header>
 
-  <main>
-    <section class="intro">
-      <p>
-        Konkurs kompozytorski „na prawym brzegu Wisły…” odbędzie się w Czechowicach-Dziedzicach – mieście Andrzeja Krzanowskiego.
-        Czekamy na Wasze kompozycje do 1 października 2025 roku!
-      </p>
-    </section>
+  <nav>
+    <a href="#aktualnosci">Aktualności</a>
+    <a href="#jury">Jury</a>
+    <a href="#laureaci">Laureaci</a>
+    <a href="#kontakt">Kontakt</a>
+    <a href="#regulamin">Regulamin</a>
+    <a href="#partnerzy">Partnerzy</a>
+  </nav>
 
-    <section class="jury">
-      <h2>Jury</h2>
-      <ul>
-        <li>prof. Marcin Bortnowski</li>
-        <li>prof. Stanisław Krupowicz</li>
-        <li>Grażyna Krzanowska</li>
-        <li>dr Eneasz Kubit</li>
-        <li>Piotr Zembroń – sekretarz</li>
-        <li>Jagna Krzanowska – dyrektorka Konkursu</li>
-      </ul>
-    </section>
+  <section id="aktualnosci">
+    <h2>Aktualności</h2>
+    <p>
+      Rusza pierwsza edycja Konkursu Kompozytorskiego „Na prawym brzegu Wisły…”.
+      Na zgłoszenia czekamy do <strong>1 października 2025</strong>. Konkurs odbywa się
+      w Czechowicach-Dziedzicach — mieście Andrzeja Krzanowskiego. Zapraszamy do udziału!
+    </p>
+  </section>
 
-    <section class="documents">
-      <h2>Dokumenty do pobrania</h2>
-      <ul>
-        <li><a href="Regulamin_Konkursu.pdf" download>Regulamin Konkursu (PDF)</a></li>
-        <li><a href="Formularz_zgłoszeniowy.pdf" download>Formularz zgłoszeniowy (PDF)</a></li>
-      </ul>
-    </section>
+  <section id="jury">
+    <h2>Jury</h2>
+    <ul>
+      <li>prof. Marcin Bortnowski</li>
+      <li>prof. Stanisław Krupowicz</li>
+      <li>Grażyna Krzanowska</li>
+      <li>dr Eneasz Kubit</li>
+      <li>Piotr Zembroń – sekretarz</li>
+      <li>Jagna Krzanowska – dyrektor Konkursu</li>
+    </ul>
+  </section>
 
-    <section class="regulations">
-      <h2>Wyciąg z regulaminu</h2>
-      <p><strong>Termin nadsyłania prac:</strong> do 1 października 2025 r.</p>
-      <p><strong>Wyniki:</strong> ogłoszenie wyników do 10 listopada 2025 r.</p>
-      <p><strong>Uczestnicy:</strong> osoby do 40. roku życia (urodzone nie wcześniej niż 1 października 1985 r.).</p>
-      <p><strong>Forma nadsyłania:</strong> partytura w formacie PDF + nagranie/realizacja MIDI.</p>
-      <p><strong>Nagrody:</strong> I – 6000 zł, II – 4000 zł, III – 2000 zł.</p>
-      <p><strong>Utwory:</strong> na dowolny skład do 5 wykonawców; czas trwania: 6–12 minut.</p>
-      <p><strong>Zgłoszenie:</strong> poprzez formularz i adres e-mail wskazany w regulaminie.</p>
-    </section>
-  </main>
+  <section id="laureaci">
+    <h2>Laureaci</h2>
+    <p>Lista laureatów pojawi się po zakończeniu konkursu.</p>
+  </section>
+
+  <section id="kontakt">
+    <h2>Kontakt</h2>
+    <p>Email: <a href="mailto:kontakt@konkurs.com">kontakt@konkurs.com</a></p>
+  </section>
+
+  <section id="regulamin">
+    <h2>Regulamin Konkursu Kompozytorskiego „Na prawym brzegu Wisły…”</h2>
+    <ol>
+      <li><strong>Cel konkursu</strong><br>
+        Promocja twórczości młodych kompozytorek i kompozytorów oraz wzbogacenie współczesnego repertuaru na akordeon.
+      </li>
+      <li><strong>Uczestniczki i uczestnicy</strong><br>
+        Konkurs skierowany do osób do 35. roku życia (urodzonych po 1 października 1990), niezależnie od narodowości.
+      </li>
+      <li><strong>Zasady uczestnictwa</strong><br>
+        Jedna oryginalna kompozycja:<br>
+        <ul>
+          <li>niepublikowana, niewykonywana, nienagradzana,</li>
+          <li>czas trwania: 6–8 minut,</li>
+          <li>na akordeon solo z opcjonalną elektroniką.</li>
+        </ul>
+        Organizator nie zapewnia realizacji warstwy elektronicznej.
+      </li>
+      <li><strong>Termin i sposób zgłoszeń</strong><br>
+        Do 1 października 2025, drogą elektroniczną.<br>
+        Wymagane:<br>
+        <ul>
+          <li>PDF partytury (z godłem),</li>
+          <li>nagranie/rendering audio (jeśli dostępne),</li>
+          <li>formularz z danymi (imię, nazwisko, data urodzenia, kontakt, biografia),</li>
+          <li>oświadczenie o oryginalności utworu.</li>
+        </ul>
+        Opłata wpisowa: 200 zł.
+      </li>
+      <li><strong>Jury</strong><br>
+        Ogłoszone powyżej. Decyzje jury są ostateczne.
+      </li>
+      <li><strong>Nagrody</strong><br>
+        Pula: 10 000 zł. Prawykonanie na Festiwalu Alkagran 2026. Jury może zmienić podział nagród.
+      </li>
+      <li><strong>Prawa autorskie</strong><br>
+        Pełne prawa pozostają przy uczestnikach. Organizatorzy mogą:<br>
+        <ul>
+          <li>wykonać i zarejestrować utwory,</li>
+          <li>udostępniać nagrania promocyjnie i archiwalnie.</li>
+        </ul>
+      </li>
+      <li><strong>Postanowienia końcowe</strong><br>
+        Zgłoszenie oznacza akceptację regulaminu. Organizatorzy mogą zmienić regulamin lub odwołać konkurs.
+      </li>
+      <li><strong>Ochrona danych osobowych (RODO)</strong><br>
+        Dane przetwarzane przez Fundację im. Andrzeja Krzanowskiego. Uczestnicy mają prawa wynikające z RODO. Kontakt: [adres e-mail].
+      </li>
+    </ol>
+  </section>
+
+  <section id="partnerzy">
+    <h2>Partnerzy</h2>
+    <p>Tu wpisz partnerów i sponsorów konkursu.</p>
+  </section>
 
   <footer>
-    <h2>Organizatorzy</h2>
-    <ul>
-      <li>Fundacja im. Andrzeja Krzanowskiego</li>
-      <li>Mała Akademia Muzyki w Czechowicach-Dziedzicach</li>
-      <li>Miejski Dom Kultury w Czechowicach-Dziedzicach</li>
-    </ul>
+    <p><strong>Organizatorzy:</strong><br>
+      Fundacja im. Andrzeja Krzanowskiego, <br>
+      Mała Akademia Muzyki w Czechowicach-Dziedzicach, <br>
+      Miejski Dom Kultury w Czechowicach-Dziedzicach
+    </p>
+    <p>© 2025 Konkurs Kompozytorski „Na prawym brzegu Wisły…”</p>
   </footer>
 </body>
-
 </html>
