@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Konkurs Kompozytorski „Na prawym brzegu Wisły…”</title>
+  <title>Konkurs Kompozytorski „na prawym brzegu Wisły…”</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -23,15 +23,18 @@
     }
     header img {
       max-height: 160px;
+      margin-bottom: 0.5rem;
       height: auto;
       width: auto;
-      margin-bottom: 0.5rem;
     }
     header h1 {
       color: #F5F1E9;
       margin: 0;
       font-size: 1.8rem;
-      text-transform: none;
+      font-weight: normal;
+    }
+    .lowercase {
+      text-transform: lowercase;
     }
     nav {
       margin-top: 1rem;
@@ -73,19 +76,16 @@
       padding: 1rem;
       text-align: center;
     }
-    .documents ul {
-      list-style-type: none;
-      padding-left: 0;
-    }
-    .documents li {
-      margin-bottom: 0.5rem;
+    a.download-link {
+      color: #1B2A49;
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
   <header>
     <img src="logo.png" alt="Logo konkursu" />
-    <h1>KONKURS KOMPOZYTORSKI „Na prawym brzegu WISŁY…”</h1>
+    <h1>Konkurs Kompozytorski „<span class="lowercase">na prawym brzegu Wisły…</span>”</h1>
   </header>
 
   <nav>
@@ -94,14 +94,13 @@
     <a href="#laureaci">Laureaci</a>
     <a href="#kontakt">Kontakt</a>
     <a href="#regulamin">Regulamin</a>
-    <a href="#dokumenty">Dokumenty</a>
     <a href="#organizatorzy">Organizatorzy</a>
   </nav>
 
   <section id="aktualnosci">
     <h2>Aktualności</h2>
     <p>
-      Rusza pierwsza edycja Konkursu Kompozytorskiego „Na prawym brzegu Wisły…”.
+      Rusza pierwsza edycja Konkursu Kompozytorskiego „na prawym brzegu Wisły…”.
       Na zgłoszenia czekamy do <strong>1 października 2025</strong>. Konkurs odbywa się
       w Czechowicach-Dziedzicach — mieście Andrzeja Krzanowskiego. Zapraszamy do udziału!
     </p>
@@ -115,7 +114,7 @@
       <li>Grażyna Krzanowska</li>
       <li>dr Eneasz Kubit</li>
       <li>Piotr Zembroń – sekretarz</li>
-      <li>Jagna Krzanowska – dyrektorka Konkursu</li>
+      <li>Jagna Krzanowska – dyrektor Konkursu</li>
     </ul>
   </section>
 
@@ -130,7 +129,7 @@
   </section>
 
   <section id="regulamin">
-    <h2>Regulamin Konkursu Kompozytorskiego „Na prawym brzegu Wisły…”</h2>
+    <h2>Regulamin Konkursu Kompozytorskiego „na prawym brzegu Wisły…”</h2>
     <ol>
       <li><strong>Cel konkursu</strong><br>
         Promocja twórczości młodych kompozytorek i kompozytorów oraz wzbogacenie współczesnego repertuaru na akordeon.
@@ -180,25 +179,17 @@
     </ol>
   </section>
 
-  <section id="dokumenty" class="documents">
-    <h2>Dokumenty do pobrania</h2>
-    <ul>
-      <li><a href="Regulamin_Konkursu.pdf" download>Regulamin Konkursu (PDF)</a></li>
-      <li><a href="Formularz_zgloszeniowy.pdf" download>Formularz zgłoszeniowy (PDF)</a></li>
-    </ul>
-  </section>
-
   <section id="organizatorzy">
     <h2>Organizatorzy</h2>
     <p>
-      Fundacja im. Andrzeja Krzanowskiego,<br>
-      Mała Akademia Muzyki w Czechowicach-Dziedzicach,<br>
+      Fundacja im. Andrzeja Krzanowskiego,<br />
+      Mała Akademia Muzyki w Czechowicach-Dziedzicach,<br />
       Miejski Dom Kultury w Czechowicach-Dziedzicach
     </p>
   </section>
 
   <footer>
-    <p>© 2025 Konkurs Kompozytorski „Na prawym brzegu Wisły…”</p>
+    <p>© 2025 Konkurs Kompozytorski „na prawym brzegu Wisły…”</p>
   </footer>
 </body>
 </html>
