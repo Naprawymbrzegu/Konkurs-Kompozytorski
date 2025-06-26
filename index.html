@@ -4,40 +4,110 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Na prawym brzegu Wisły</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Konkurs Kompozytorski – Na prawym brzegu Wisły</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f7fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #dde7f2;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid #ccc;
+    }
+
+    header img {
+      height: 80px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.6rem;
+      flex: 1;
+      text-align: center;
+      color: #003366;
+    }
+
+    main {
+      padding: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      color: #003366;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background-color: #dde7f2;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      border-top: 2px solid #ccc;
+    }
+
+    .downloads a {
+      display: inline-block;
+      margin-right: 15px;
+      margin-bottom: 10px;
+      color: #0066cc;
+      text-decoration: none;
+      border: 1px solid #0066cc;
+      padding: 8px 12px;
+      border-radius: 4px;
+    }
+
+    .downloads a:hover {
+      background-color: #0066cc;
+      color: white;
+    }
+  </style>
 </head>
 
-<body class="bg-gray-100 text-gray-900">
-  <header class="bg-white shadow-md">
-    <div class="max-w-7xl mx-auto px-4 py-6 flex items-center justify-center">
-      <img src="logo.png" alt="Logo Konkursu" class="h-20 mr-6">
-      <h1 class="text-3xl font-bold text-center">Konkurs Kompozytorski „Na prawym brzegu Wisły”</h1>
-    </div>
+<body>
+  <header>
+    <img src="logo.png" alt="Logo Konkursu" />
+    <h1>Konkurs Kompozytorski<br>„Na prawym brzegu Wisły”</h1>
   </header>
 
-  <main class="max-w-4xl mx-auto px-4 py-10">
-    <section class="mb-10">
-      <h2 class="text-2xl font-semibold mb-4">Aktualności</h2>
-      <p class="mb-4">
-        Ogłaszamy I edycję Konkursu Kompozytorskiego „Na prawym brzegu Wisły…”. Konkurs odbywa się w Czechowicach-Dziedzicach — mieście Andrzeja Krzanowskiego. Czekamy na Wasze utwory do 1 października 2025!
-      </p>
-      <div class="mt-6 text-center">
-        <a href="Regulamin.pdf" download class="inline-block bg-blue-700 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-800 transition">
-          Pobierz regulamin (PDF)
-        </a>
-      </div>
-      <div class="mt-4 text-center">
-        <a href="Formularz_zgłoszeniowy.pdf" download class="inline-block bg-blue-700 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-800 transition">
-          Pobierz formularz zgłoszeniowy (PDF)
-        </a>
-      </div>
+  <main>
+    <section>
+      <h2>Aktualności</h2>
+      <p>Ogłaszamy pierwszą edycję Konkursu Kompozytorskiego „Na prawym brzegu Wisły”, który odbędzie się w Czechowicach-Dziedzicach – rodzinnym mieście Andrzeja Krzanowskiego. Czekamy na Wasze kompozycje do 1 października 2025 roku!</p>
     </section>
 
-    <section class="mb-10">
-      <h2 class="text-2xl font-semibold mb-4">Jury</h2>
-      <ul class="space-y-2">
+    <section class="downloads">
+      <h2>Pliki do pobrania</h2>
+      <a href="Regulamin_Konkursu.pdf" download>Pobierz regulamin</a>
+      <a href="Formularz_zgłoszeniowy.pdf" download>Pobierz formularz zgłoszeniowy</a>
+    </section>
+
+    <section>
+      <h2>Jury</h2>
+      <ul>
         <li>prof. Marcin Bortnowski</li>
         <li>prof. Stanisław Krupowicz</li>
         <li>Grażyna Krzanowska</li>
@@ -46,19 +116,13 @@
         <li>Jagna Krzanowska – dyrektor Konkursu</li>
       </ul>
     </section>
-
-    <section>
-      <h2 class="text-2xl font-semibold mb-4">Organizatorzy</h2>
-      <ul class="list-disc list-inside">
-        <li>Fundacja im. Andrzeja Krzanowskiego</li>
-        <li>Mała Akademia Muzyki w Czechowicach-Dziedzicach</li>
-        <li>Miejski Dom Kultury w Czechowicach-Dziedzicach</li>
-      </ul>
-    </section>
   </main>
 
-  <footer class="bg-gray-200 text-center py-6 mt-10 text-sm">
-    &copy; 2025 Konkurs Kompozytorski „Na prawym brzegu Wisły”
+  <footer>
+    <h2>Organizatorzy</h2>
+    <p>Fundacja im. Andrzeja Krzanowskiego<br>
+    Mała Akademia Muzyki w Czechowicach-Dziedzicach<br>
+    Miejski Dom Kultury w Czechowicach-Dziedzicach</p>
   </footer>
 </body>
 
