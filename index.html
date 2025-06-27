@@ -1,87 +1,133 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Konkurs kompozytorski</title>
-  <style>
-    body { font-family: Arial, sans-serif; background-color: #f4f6f8; color: #333; margin: 0; padding: 0; }
-    header { background-color: #2e3b4e; color: white; padding: 1em; text-align: center; }
-    nav ul { list-style-type: none; display: flex; justify-content: center; padding: 0; background-color: #3e5066; margin: 0; }
-    nav ul li { margin: 0 1em; }
-    nav ul li a { color: white; text-decoration: none; }
-    section { padding: 2em; max-width: 800px; margin: auto; }
-    .lang-toggle { text-align: center; margin: 1em 0; }
-    .lang-toggle button { margin: 0 0.5em; padding: 0.5em 1em; }
-    .active { font-weight: bold; }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Konkurs kompozytorski – Na prawym brzegu Wisły…</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1 class="lang-pl">Konkurs kompozytorski „Na prawym brzegu Wisły...”</h1>
-    <h1 class="lang-en" style="display:none;">Composition Competition “On the Right Bank of the Vistula...”</h1>
+    <h1>Konkurs kompozytorski<br>Na prawym brzegu Wisły…</h1>
+    <div class="language-switch">
+      <a href="#" onclick="switchLanguage('pl')">PL</a> |
+      <a href="#" onclick="switchLanguage('en')">EN</a>
+    </div>
   </header>
 
-  <div class="lang-toggle">
-    <button id="plBtn" class="active">PL</button>
-    <button id="enBtn">EN</button>
-  </div>
+  <main>
+    <section id="downloads">
+      <h2 class="lang" data-pl="Pliki do pobrania" data-en="Downloadable Files">Pliki do pobrania</h2>
+      <ul>
+        <li><a href="Regulamin_Konkursu.pdf" target="_blank">Regulamin konkursu (PDF)</a></li>
+        <li><a href="Formularz_zgloszeniowy.docx" target="_blank">Formularz zgłoszeniowy (DOCX)</a></li>
+        <li><a href="film.mp4" target="_blank">Film promocyjny</a></li>
+      </ul>
+    </section>
 
-  <nav>
-    <ul>
-      <li><a href="#aktualnosci" class="lang-pl">Aktualności</a><a href="#news" class="lang-en" style="display:none;">News</a></li>
-      <li><a href="#jury" class="lang-pl">Jury</a><a href="#jury-en" class="lang-en" style="display:none;">Jury</a></li>
-      <li><a href="#dokumenty" class="lang-pl">Dokumenty</a><a href="#documents" class="lang-en" style="display:none;">Documents</a></li>
-      <li><a href="#regulamin" class="lang-pl">Regulamin</a><a href="#regulations" class="lang-en" style="display:none;">Regulations</a></li>
-      <li><a href="#organizatorzy" class="lang-pl">Organizatorzy</a><a href="#organizers" class="lang-en" style="display:none;">Organizers</a></li>
-      <li><a href="#kontakt" class="lang-pl">Kontakt</a><a href="#contact" class="lang-en" style="display:none;">Contact</a></li>
-    </ul>
-  </nav>
+    <section id="rules">
+      <h2 class="lang" data-pl="Pełny regulamin" data-en="Full Rules">Pełny regulamin</h2>
+      <article class="lang" data-pl="Regulamin Konkursu Kompozytorskiego
+„Na prawym brzegu Wisły…”
+1. Organizatorzy
+Organizatorami konkursu są:
+Fundacja im. Andrzeja Krzanowskiego,
+Mała Akademia Muzyki w Czechowicach-Dziedzicach,
+Miejski Dom Kultury w Czechowicach-Dziedzicach.
+2. Cel konkursu
+Celem konkursu jest promocja twórczości młodych kompozytorów i kompozytorek oraz wzbogacenie repertuaru współczesnego na akordeon solo, także z wykorzystaniem elektroniki.
+3. Uczestnicy
+Konkurs skierowany jest do kompozytorów i kompozytorek do 35. roku życia (urodzonych po 1 października 1990 roku), niezależnie od narodowości.
+4. Zasady uczestnictwa
+1. Każdy uczestnik może zgłosić jedną oryginalną kompozycję.
+2. Utwór:
+- musi być wcześniej niepublikowany, niewykonywany publicznie i nienagradzany,
+- powinien trwać od 6 do 8 minut,
+- musi być przeznaczony na akordeon solo, z opcjonalnym użyciem elektroniki (np. taśma stereo, live electronics).
+3. Organizator nie zapewnia realizacji warstwy elektronicznej podczas koncertu – powinna być ona samowystarczalna lub możliwa do wykonania przez akordeonistę.
+5. Termin i sposób zgłoszeń
+1. Termin nadsyłania zgłoszeń: do 1 października 2025 roku (decyduje data otrzymania wiadomości).
+2. Zgłoszenia należy przesyłać wyłącznie drogą elektroniczną na adres: [adres e-mail].
+3. Zgłoszenie powinno zawierać:
+- partyturę w formacie PDF (opatrzoną godłem – pseudonimem),
+- nagranie lub rendering audio (jeśli dostępne),
+- plik tekstowy z danymi autora (imię i nazwisko, data urodzenia, adres e-mail, numer telefonu, krótka biografia), również oznaczony godłem,
+- oświadczenie:
+„Oświadczam, że jestem autorem/kompozytorem zgłaszanego utworu, który nie był dotąd wykonywany, publikowany ani nagradzany. Akceptuję regulamin konkursu.”
+6. Jury
+Skład jury zostanie ogłoszony w terminie późniejszym.
+W jego skład wejdą uznani artyści reprezentujący środowisko muzyki współczesnej.
+Decyzje jury są ostateczne i niepodważalne.
+7. Nagrody
+1. Łączna pula nagród wynosi 10 000 zł.
+2. Nagrodzone kompozycje zostaną prawykonane podczas Jesiennego Festiwalu Muzycznego Alkagran w 2026 roku.
+3. Jury zastrzega sobie prawo innego podziału nagród lub ich nieprzyznania.
+8. Prawa autorskie
+1. Uczestnicy zachowują pełne prawa autorskie do zgłaszanych kompozycji.
+2. Organizatorzy uzyskują prawo do:
+- wykonania, rejestracji i dokumentacji nagrodzonych utworów,
+- nieodpłatnego udostępniania ich nagrań do celów promocyjnych i archiwalnych.
+9. Postanowienia końcowe
+1. Zgłoszenie utworu oznacza pełną akceptację niniejszego regulaminu.
+2. Organizatorzy zastrzegają sobie prawo do wprowadzenia zmian w regulaminie (nie wpływających na zasadę równego traktowania uczestników) lub do odwołania konkursu z ważnych przyczyn.
+3. W sprawach nieuregulowanych niniejszym regulaminem decydują organizatorzy." data-en="Composition Competition Rules
+\"On the Right Bank of the Vistula...\"
+1. Organizers
+The competition is organized by:
+The Andrzej Krzanowski Foundation,
+The Small Academy of Music in Czechowice-Dziedzice,
+The Municipal Cultural Center in Czechowice-Dziedzice.
+2. Purpose of the Competition
+The aim of the competition is to promote the work of young composers and enrich the contemporary accordion solo repertoire, including the use of electronics.
+3. Participants
+The competition is open to composers under the age of 35 (born after October 1, 1990), regardless of nationality.
+4. Rules of Participation
+1. Each participant may submit one original composition.
+2. The piece:
+- must be previously unpublished, not publicly performed, and not awarded,
+- should last between 6 and 8 minutes,
+- must be written for solo accordion, with optional use of electronics (e.g., stereo tape, live electronics).
+3. The organizer does not provide technical realization of the electronic part during the concert – it should be self-sufficient or performable by the accordionist.
+5. Submission Deadline and Procedure
+1. Deadline: October 1, 2025 (submission date is the date of receipt).
+2. Submissions must be sent electronically to: [email address].
+3. Submission should include:
+- a PDF score (marked with a motto – pseudonym),
+- audio recording or rendering (if available),
+- a text file with author information (full name, date of birth, email address, phone number, short biography), also marked with the motto,
+- a declaration:
+\"I declare that I am the author/composer of the submitted work, which has not been performed, published, or awarded before. I accept the rules of the competition.\"
+6. Jury
+The jury composition will be announced at a later date.
+It will consist of recognized artists representing the contemporary music community.
+Jury decisions are final and not subject to appeal.
+7. Prizes
+1. The total prize pool is 10,000 PLN.
+2. The winning works will be premiered at the 2026 Autumn Music Festival Alkagran.
+3. The jury reserves the right to divide the prizes differently or not to award any prizes.
+8. Copyright
+1. Participants retain full copyright to the submitted works.
+2. The organizers acquire the right to:
+- perform, record, and document the awarded works,
+- share the recordings free of charge for promotional and archival purposes.
+9. Final Provisions
+1. Submitting a piece means full acceptance of these rules.
+2. The organizers reserve the right to make changes to the rules (not affecting the principle of equal treatment of participants) or to cancel the competition for important reasons.
+3. In matters not covered by these rules, decisions will be made by the organizers.">
+      </article>
+    </section>
+  </main>
 
-  <section id="regulamin" class="regulations">
-    <h2 class="lang-pl">Regulamin</h2>
-    <h2 class="lang-en" style="display:none;">Regulations</h2>
-    <div class="lang-pl">
-      <p><strong>1. Organizatorzy</strong><br />Organizatorami konkursu są: Fundacja im. Andrzeja Krzanowskiego, Miejski Dom Kultury w Czechowicach-Dziedzicach, Szkoła Muzyczna I i II stopnia im. Ignacego Paderewskiego w Knurowie.</p>
-      <p><strong>2. Cel</strong><br />Celem konkursu jest promowanie młodych kompozytorów i twórczości na akordeon solo z wykorzystaniem elektroniki.</p>
-      <p><strong>3. Uczestnicy</strong><br />Konkurs jest otwarty dla kompozytorów do 35. roku życia (urodzonych po 1 października 1990 roku), bez względu na narodowość.</p>
-      <p><strong>4. Zasady uczestnictwa</strong><br />Każdy uczestnik może zgłosić jedną kompozycję:<br />- utwór musi być niepublikowany, niewykonywany publicznie i nie nagradzany,<br />- czas trwania: 6–8 minut,<br />- instrumentacja: akordeon solo, opcjonalnie z elektroniką (taśma stereo, live electronics). Organizator nie zapewnia realizacji warstwy elektronicznej podczas koncertu – powinna być samowystarczalna lub możliwa do wykonania przez akordeonistę.</p>
-      <p><strong>5. Termin i sposób zgłoszenia</strong><br />Termin nadsyłania zgłoszeń: 1 października 2025 (liczy się data otrzymania). Wyniki zostaną ogłoszone 28 października 2025 podczas koncertu „Tryptyk” w Czechowicach-Dziedzicach.<br />Zgłoszenia należy przesyłać mailowo na adres [email]. Muszą zawierać:<br />- partyturę w PDF (z oznaczeniem godła),<br />- nagranie lub rendering (opcjonalnie),<br />- plik tekstowy z danymi autora (imię, nazwisko, data urodzenia, e-mail, telefon, biogram), również z godłem,<br />- oświadczenie o autorstwie,<br />- dowód wpłaty wpisowego w wysokości 200 zł (konto: ...).</p>
-      <p><strong>6. Jury</strong><br />W skład jury wchodzą uznani twórcy muzyki współczesnej. Decyzje jury są ostateczne.</p>
-      <p><strong>7. Nagrody</strong><br />Pula nagród wynosi 10 000 zł. Nagrodzone utwory zostaną prawykonane podczas Festiwalu Muzycznego Jesień z Alkagranem w 2026 roku. Jury zastrzega sobie prawo innego podziału nagród lub niewyłonienia zwycięzcy.</p>
-      <p><strong>8. Prawa autorskie</strong><br />Uczestnicy zachowują pełne prawa autorskie. Organizatorzy nabywają prawo do wykonania, nagrania, dokumentacji i udostępnienia nagrań nieodpłatnie w celach promocyjnych i archiwalnych.</p>
-      <p><strong>9. Postanowienia końcowe</strong><br />Zgłoszenie oznacza pełną akceptację regulaminu. Organizatorzy zastrzegają sobie prawo do zmian lub odwołania konkursu z ważnych przyczyn.</p>
-      <p><strong>10. RODO</strong><br />Dane osobowe są przetwarzane przez Fundację im. Andrzeja Krzanowskiego. Uczestnikom przysługuje prawo dostępu, poprawiania, usuwania, ograniczenia, przenoszenia danych oraz wniesienia skargi do Prezesa UODO.</p>
-    </div>
-    <div class="lang-en" style="display:none;">
-      <p><strong>1. Organizers</strong><br />The competition is organized by: Andrzej Krzanowski Foundation, Municipal Cultural Centre in Czechowice-Dziedzice, Paderewski Music School in Knurów.</p>
-      <p><strong>2. Purpose</strong><br />The purpose is to promote young composers and accordion solo works including electronics.</p>
-      <p><strong>3. Participants</strong><br />Open to composers under 35 (born after October 1, 1990), regardless of nationality.</p>
-      <p><strong>4. Participation Rules</strong><br />Each participant may submit one piece:<br />- must be unpublished, not publicly performed or awarded,<br />- duration: 6–8 minutes,<br />- instrumentation: solo accordion, optionally with electronics (tape or live). The organizer will not provide technical support – electronics must be self-contained or performable by the accordionist.</p>
-      <p><strong>5. Submission Deadline and Method</strong><br />Deadline: October 1, 2025 (receipt date). Results: October 28, 2025 at “Triptych” concert in Czechowice-Dziedzice.<br />Submit by email to [email] with:<br />- PDF score (with pseudonym),<br />- audio or rendering (optional),<br />- text file with name, birthdate, contact, bio, also with pseudonym,<br />- authorship declaration,<br />- 200 PLN fee proof (bank account: ...).</p>
-      <p><strong>6. Jury</strong><br />Composed of respected contemporary music artists. Jury decisions are final.</p>
-      <p><strong>7. Prizes</strong><br />Total prize pool: 10,000 PLN. Winning works premiered at the Alkagran Autumn Festival in 2026. Jury may modify prize distribution or not award any.</p>
-      <p><strong>8. Copyright</strong><br />Participants retain full rights. Organizers may perform, record, document, and share for promotion and archive purposes.</p>
-      <p><strong>9. Final Provisions</strong><br />Submitting an entry means full acceptance. Organizers may cancel or modify the competition for valid reasons.</p>
-      <p><strong>10. GDPR</strong><br />Personal data processed by Andrzej Krzanowski Foundation. Participants have rights to access, correct, delete, restrict, transfer data, withdraw consent, and file complaints to the President of UODO.</p>
-    </div>
-  </section>
+  <footer>
+    <p>&copy; 2025 Organizatorzy konkursu</p>
+  </footer>
 
   <script>
-    const plBtn = document.getElementById('plBtn');
-    const enBtn = document.getElementById('enBtn');
-    plBtn.addEventListener('click', () => {
-      document.querySelectorAll('.lang-pl').forEach(el => el.style.display = '');
-      document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'none');
-      plBtn.classList.add('active');
-      enBtn.classList.remove('active');
-    });
-    enBtn.addEventListener('click', () => {
-      document.querySelectorAll('.lang-pl').forEach(el => el.style.display = 'none');
-      document.querySelectorAll('.lang-en').forEach(el => el.style.display = '');
-      enBtn.classList.add('active');
-      plBtn.classList.remove('active');
-    });
+    function switchLanguage(lang) {
+      document.querySelectorAll('.lang').forEach(function (el) {
+        el.innerHTML = el.dataset[lang];
+      });
+    }
   </script>
 </body>
 </html>
