@@ -1,349 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>On the Right Bank of the Vistula</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Na prawym brzegu Wisły - Konkurs Kompozytorski</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
       font-family: Arial, sans-serif;
-      line-height: 1.6;
+      background-color: #f5f7fa;
       color: #333;
-      background-color: #8090a8;
-      margin: 0;
-      padding: 0;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
     }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
+    .lang-en, .lang-pl {
+      display: none;
     }
-
-    header {
-      background: #fff;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .header-content {
-      text-align: center;
-      padding: 1.5rem 0;
-    }
-
-    .logo {
-      max-width: 150px;
-      height: auto;
-      margin-bottom: 0.8rem;
-    }
-
-    h1 {
-      font-size: 2rem;
-      color: #333;
-      margin-bottom: 0.8rem;
-    }
-
-    nav {
-      background: #f0f0f0;
-      padding: 1rem 0;
-      border-top: 1px solid #ddd;
-    }
-
-    .nav-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 2rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: #333;
-      text-decoration: none;
-      font-weight: 500;
+    .btn-lang {
+      cursor: pointer;
+      background-color: #3a6ea5;
+      color: white;
+      border: none;
       padding: 0.5rem 1rem;
+      margin: 0 0.5rem;
       border-radius: 4px;
-      transition: all 0.3s ease;
+      font-weight: bold;
     }
-
-    .nav-links a:hover {
-      background: #e0e0e0;
-      color: #000;
+    .btn-lang:hover {
+      background-color: #2a5280;
     }
-
-    main {
-      padding: 3rem 0;
-    }
-
-    section {
-      background: #fff;
-      margin: 2rem 0;
-      padding: 2rem;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    h2 {
-      color: #333;
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 2px solid #ddd;
-    }
-
-    .intro {
-      font-size: 1.1rem;
-      text-align: center;
-      background: #f9f9f9;
-      border: 1px solid #ddd;
-    }
-
-    .intro h2 {
-      color: #333;
-      border-bottom-color: #ddd;
-    }
-
-    .video-container {
-      text-align: center;
-      padding: 2rem 0;
-    }
-
-    video {
-      max-width: 100%;
-      height: auto;
-      border-radius: 5px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    li {
-      margin: 1rem 0;
-      padding: 1rem;
-      background: #f9f9f9;
-      border-radius: 4px;
-      border-left: 3px solid #ccc;
-    }
-
-    li:hover {
-      background: #f0f0f0;
-    }
-
-    a {
-      color: #0066cc;
-      text-decoration: none;
-    }
-
-    a:hover {
-      color: #004499;
-      text-decoration: underline;
-    }
-
-    .download-link {
-      display: inline-block;
-      padding: 0.8rem 1.5rem;
-      background: #0066cc;
-      color: white;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: background-color 0.3s ease;
-    }
-
-    .download-link:hover {
-      background: #004499;
-      color: white;
-    }
-
-    .regulations p {
-      margin-bottom: 1.5rem;
-      padding: 1rem;
-      background: #f9f9f9;
-      border-radius: 4px;
-      border-left: 3px solid #666;
-    }
-
-    .regulations strong {
-      color: #333;
-      font-size: 1.1rem;
-    }
-
-    .contact-info {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .contact-item {
-      padding: 1.5rem;
-      background: #f9f9f9;
-      border-radius: 5px;
-      border: 1px solid #ddd;
-      text-align: center;
-    }
-
-    .contact-item h3 {
-      color: #333;
-      margin-bottom: 1rem;
-      font-size: 1.2rem;
-    }
-
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2rem;
-      }
-
-      .nav-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-      }
-
-      section {
-        padding: 1.5rem;
-      }
-
-      .contact-info {
-        grid-template-columns: 1fr;
-      }
+    .btn-lang.active {
+      background-color: #23446a;
     }
   </style>
 </head>
-
 <body>
-  <header>
-    <div class="container">
-      <div class="header-content">
-        <img src="logo.png" alt="Contest Logo" class="logo">
-        <h1>On the Right Bank of the Vistula…</h1>
-      </div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#news">News</a></li>
-          <li><a href="#jury">Jury</a></li>
-          <li><a href="#documents">Documents</a></li>
-          <li><a href="#regulations">Regulations</a></li>
-          <li><a href="#organizers">Organizers</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <div style="text-align:center; margin-bottom: 1.5rem;">
+    <button id="btn-pl" class="btn-lang active">Polski</button>
+    <button id="btn-en" class="btn-lang">English</button>
+  </div>
 
-  <main>
-    <div class="container">
-      <section class="intro">
-        <h2>Composition Competition</h2>
-        <p>
-          The composition competition "On the Right Bank of the Vistula…" will take place in Czechowice-Dziedzice – the city of Andrzej Krzanowski.
-          We invite young composers to participate in this unique musical event.
-        </p>
-      </section>
+  <!-- Treści po polsku -->
+  <div class="lang-pl">
+    <h1>Na prawym brzegu Wisły - Konkurs Kompozytorski</h1>
+    <p>Zapraszamy do udziału w konkursie kompozytorskim „Na prawym brzegu Wisły…”.</p>
+    <p><a href="regulamin.pdf" target="_blank">Pobierz regulamin (PDF)</a></p>
+    <p><a href="formularz_zgloszeniowy.pdf" target="_blank">Pobierz formularz zgłoszeniowy (PDF)</a></p>
+    <h2>Regulamin</h2>
+    <p>Tu wklej pełną treść regulaminu konkursu po polsku...</p>
+    <!-- Możesz dodać więcej treści po polsku -->
+  </div>
 
-      <section id="news" class="news">
-        <h2>News</h2>
-        <p>The official contest website is now live! Please review the regulations and send in your compositions. All details are below.</p>
-        
-        <p><strong>Submission deadline: October 1, 2025!</strong></p>
-        
-        <div class="video-container">
-          <video width="640" controls>
-            <source src="NAPRAWYMBRZEGUWISLY.PL.mp4" type="video/mp4">
-            Your browser does not support the video element.
-          </video>
-        </div>
-      </section>
+  <!-- Treści po angielsku -->
+  <div class="lang-en">
+    <h1>On the Right Bank of the Vistula - Composition Contest</h1>
+    <p>We invite you to participate in the composition contest "On the Right Bank of the Vistula…".</p>
+    <p><a href="regulamin.pdf" target="_blank">Download the rules (PDF)</a></p>
+    <p><a href="formularz_zgloszeniowy.pdf" target="_blank">Download the application form (PDF)</a></p>
+    <h2>Rules</h2>
+    <p>Here you can paste the full contest rules in English...</p>
+    <!-- More English content can be added -->
+  </div>
 
-      <section id="jury" class="jury">
-        <h2>Jury</h2>
-        <ul>
-          <li><strong>Prof. Marcin Bortnowski</strong></li>
-          <li><strong>Prof. Stanisław Krupowicz</strong></li>
-          <li><strong>Grażyna Krzanowska</strong></li>
-          <li><strong>Dr. Eneasz Kubit</strong></li>
-          <li><strong>Piotr Zembroń</strong> - Secretary</li>
-          <li><strong>Jagna Krzanowska</strong> - Competition Director</li>
-        </ul>
-      </section>
+  <script>
+    const btnPL = document.getElementById('btn-pl');
+    const btnEN = document.getElementById('btn-en');
+    const plTexts = document.querySelectorAll('.lang-pl');
+    const enTexts = document.querySelectorAll('.lang-en');
 
-      <section id="documents" class="documents">
-        <h2>Downloadable Documents</h2>
-        <ul>
-          <li><a href="regulations.pdf" class="download-link" download>📄 Competition Regulations (PDF)</a></li>
-          <li><a href="Application_Form.docx" class="download-link" download>📝 Application Form (DOCX)</a></li>
-        </ul>
-        <p style="margin-top: 1.5rem; font-style: italic; color: #7f8c8d;">
-          Download the application form, fill it out according to the instructions in the regulations, and then send it along with your composition to the provided email address.
-        </p>
-      </section>
+    function showPL() {
+      plTexts.forEach(el => el.style.display = 'block');
+      enTexts.forEach(el => el.style.display = 'none');
+      btnPL.classList.add('active');
+      btnEN.classList.remove('active');
+    }
 
-      <section id="regulations" class="regulations">
-        <h2>Regulations</h2>
-        
-        <p><strong>1. Organizers</strong><br />
-        The competition is organized by: Andrzej Krzanowski Foundation, Small Music Academy in Czechowice-Dziedzice, Municipal Cultural Center in Czechowice-Dziedzice.</p>
+    function showEN() {
+      plTexts.forEach(el => el.style.display = 'none');
+      enTexts.forEach(el => el.style.display = 'block');
+      btnEN.classList.add('active');
+      btnPL.classList.remove('active');
+    }
 
-        <p><strong>2. Purpose of the Competition</strong><br />
-        The competition aims to promote the work of young composers and enrich the contemporary accordion repertoire.</p>
+    // Start with Polish visible
+    showPL();
 
-        <p><strong>3. Participants</strong><br />
-        The competition is open to composers up to 35 years of age (born after October 1, 1990), regardless of nationality.</p>
-
-        <p><strong>4. Repertoire</strong><br />
-        Works for accordion solo, accordion with electronics, accordion with other instruments, and accordion ensembles are accepted.</p>
-
-        <p><strong>5. Submission Deadline</strong><br />
-        October 1, 2025. Compositions received after this date will not be considered.</p>
-
-        <p><strong>6. Awards</strong><br />
-        Prizes totaling 10,000 PLN will be awarded, including the Grand Prize, 1st, 2nd, 3rd place, and special mentions.</p>
-
-        <p><strong>7. Jury</strong><br />
-        The jury consists of six members who are experts in contemporary music and accordion repertoire.</p>
-
-        <p><strong>8. Other Provisions</strong><br />
-        Participants agree to the publication of their compositions and recordings as part of the contest's promotion.</p>
-      </section>
-
-      <section id="organizers" class="organizers">
-        <h2>Organizers</h2>
-        <p>Andrzej Krzanowski Foundation</p>
-        <p>Small Music Academy in Czechowice-Dziedzice</p>
-        <p>Municipal Cultural Center in Czechowice-Dziedzice</p>
-      </section>
-
-      <section id="contact" class="contact">
-        <h2>Contact</h2>
-        <div class="contact-info">
-          <div class="contact-item">
-            <h3>Phone</h3>
-            <p>+48 33 817 85 40</p>
-          </div>
-          <div class="contact-item">
-            <h3>Email</h3>
-            <p><a href="mailto:alkagran@wp.pl">alkagran@wp.pl</a></p>
-          </div>
-          <div class="contact-item">
-            <h3>Facebook</h3>
-            <p><a href="https://www.facebook.com/alkagran" target="_blank" rel="noopener noreferrer">facebook.com/alkagran</a></p>
-          </div>
-        </div>
-      </section>
-    </div>
-  </main>
+    btnPL.addEventListener('click', showPL);
+    btnEN.addEventListener('click', showEN);
+  </script>
 </body>
-
 </html>
