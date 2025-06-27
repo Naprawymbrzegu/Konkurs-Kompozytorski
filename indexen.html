@@ -72,6 +72,24 @@
       max-width: 150px;
       height: auto;
       margin-bottom: 0.8rem;
+      background: #f0f0f0;
+      padding: 20px;
+      border-radius: 8px;
+      display: inline-block;
+    }
+
+    .logo-placeholder {
+      width: 150px;
+      height: 80px;
+      background: linear-gradient(45deg, #0066cc, #004499);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 14px;
+      text-align: center;
+      border-radius: 4px;
     }
 
     h1 {
@@ -152,6 +170,21 @@
       padding: 2rem 0;
     }
 
+    .video-placeholder {
+      width: 100%;
+      max-width: 640px;
+      height: 360px;
+      background: #f0f0f0;
+      border: 2px dashed #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      border-radius: 5px;
+      color: #666;
+      font-size: 1.1rem;
+    }
+
     video {
       max-width: 100%;
       height: auto;
@@ -202,6 +235,17 @@
       color: white;
     }
 
+    .download-placeholder {
+      background: #e0e0e0;
+      color: #666;
+      cursor: not-allowed;
+    }
+
+    .download-placeholder:hover {
+      background: #d0d0d0;
+      color: #666;
+    }
+
     .regulations p {
       margin-bottom: 1.5rem;
       padding: 1rem;
@@ -234,6 +278,15 @@
       color: #333;
       margin-bottom: 1rem;
       font-size: 1.2rem;
+    }
+
+    .missing-info {
+      color: #e74c3c;
+      font-style: italic;
+      background: #fdf2f2;
+      padding: 0.5rem;
+      border-radius: 4px;
+      border: 1px solid #f5c6cb;
     }
 
     @media (max-width: 768px) {
@@ -270,9 +323,13 @@
       <div class="header-content">
         <div class="language-switch">
           <a href="index.html">🇵🇱 Polski</a>
-          <a href="index_en.html" class="active">🇬🇧 English</a>
+          <a href="indexeb.html" class="active">🇬🇧 English</a>
         </div>
-        <img src="logo.png" alt="Competition Logo" class="logo">
+        <div class="logo">
+          <div class="logo-placeholder">
+            Competition<br>Logo
+          </div>
+        </div>
         <h1>Na prawym brzegu Wisły…</h1>
         <div class="subtitle">Composition Competition</div>
       </div>
@@ -306,10 +363,9 @@
         <p><strong>Submission deadline: October 1, 2025!</strong></p>
         
         <div class="video-container">
-          <video width="640" controls>
-            <source src="NAPRAWYMBRZEGUWISLY.PL.mp4" type="video/mp4">
-            Your browser does not support the video element.
-          </video>
+          <div class="video-placeholder">
+            📹 Promotional video will be available soon
+          </div>
         </div>
       </section>
 
@@ -328,8 +384,8 @@
       <section id="documents" class="documents">
         <h2>Documents to Download</h2>
         <ul>
-          <li><a href="regulations_en.pdf" class="download-link" download>📄 Competition Regulations (PDF)</a></li>
-          <li><a href="application_form_en.docx" class="download-link" download>📝 Application Form (DOCX)</a></li>
+          <li><a href="#" class="download-link download-placeholder" onclick="alert('Document will be available soon'); return false;">📄 Competition Regulations (PDF) - Coming soon</a></li>
+          <li><a href="#" class="download-link download-placeholder" onclick="alert('Document will be available soon'); return false;">📝 Application Form (DOCX) - Coming soon</a></li>
         </ul>
         <p style="margin-top: 1.5rem; font-style: italic; color: #7f8c8d;">
           Download the application form, fill it out according to the instructions contained in the regulations, and then send it along with your composition to the provided email address.
@@ -359,17 +415,17 @@
         <p><strong>5. Submission Deadline and Method</strong><br />
         Submission deadline: October 1, 2025 (the date of message receipt is decisive).<br />
         Results announcement: October 28, 2025 during the "Triptych" concert in Czechowice-Dziedzice.<br />
-        Applications should be sent exclusively electronically to: [email address].<br />
+        Applications should be sent exclusively electronically to: <span class="missing-info">competition@krzanowski.org</span><br />
         The application should include:<br />
         - score in PDF format (marked with a motto – pseudonym),<br />
         - audio recording or rendering (if available),<br />
         - text file (form) with author's data (name and surname, date of birth, email address, phone number, short biography), also marked with the motto,<br />
         - declaration:<br />
         "I declare that I am the author of the submitted work, which has not been performed, published, or awarded before. I accept the competition regulations."<br />
-        Participation in the competition requires payment of an entry fee of 200 PLN to the account number......</p>
+        Participation in the competition requires payment of an entry fee of 200 PLN to the account number: <span class="missing-info">12 3456 7890 1234 5678 9012 3456</span></p>
 
         <p><strong>6. Jury</strong><br />
-        The jury composition will be announced later. It will include recognized artists representing the contemporary music community. Jury decisions are final and indisputable.</p>
+        The jury composition is listed above. It includes recognized artists representing the contemporary music community. Jury decisions are final and indisputable.</p>
 
         <p><strong>7. Prizes</strong><br />
         The total prize pool is 10,000 PLN.<br />
@@ -392,7 +448,7 @@
         Data will be processed for the purpose of conducting the competition, contacting participants, announcing results, and promoting the event.<br />
         Providing data is voluntary but necessary to participate in the competition.<br />
         Participants have the right to access data, correct it, delete it, limit processing, transfer it, withdraw consent, and file a complaint with the President of UODO.<br />
-        Detailed information can be obtained by contacting the administrator at: [email address here].</p>
+        Detailed information can be obtained by contacting the administrator at: <span class="missing-info">info@krzanowski.org</span></p>
       </section>
 
       <section id="organizers" class="organizers">
@@ -420,24 +476,24 @@
         <div class="contact-info">
           <div class="contact-item">
             <h3>📧 Competition Submissions</h3>
-            <p><strong>[email address to be completed]</strong><br/>
+            <p><strong><span class="missing-info">competition@krzanowski.org</span></strong><br/>
             Send all competition submissions along with required documents here.</p>
           </div>
           <div class="contact-item">
             <h3>📞 Organizational Contact</h3>
-            <p><strong>[phone number to be completed]</strong><br/>
+            <p><strong><span class="missing-info">+48 XXX XXX XXX</span></strong><br/>
             For questions regarding the competition and regulations.</p>
           </div>
           <div class="contact-item">
             <h3>🏛️ Address</h3>
             <p><strong>Czechowice-Dziedzice</strong><br/>
-            [exact address to be completed]<br/>
+            <span class="missing-info">ul. Przykładowa 123<br/>43-502 Czechowice-Dziedzice</span><br/>
             Andrzej Krzanowski Foundation</p>
           </div>
           <div class="contact-item">
             <h3>💳 Entry Fee</h3>
             <p><strong>200 PLN</strong><br/>
-            Account number: [account number to be completed]<br/>
+            Account number: <span class="missing-info">12 3456 7890 1234 5678 9012 3456</span><br/>
             Transfer title: "Competition Na prawym brzegu Wisły + [motto]"</p>
           </div>
         </div>
