@@ -1,133 +1,355 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Konkurs kompozytorski – Na prawym brzegu Wisły…</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Na prawym brzegu Wisły / On the Right Bank of the Vistula</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #8090a8;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-content {
+      text-align: center;
+      padding: 1.5rem 0;
+    }
+
+    .logo {
+      max-width: 150px;
+      height: auto;
+      margin-bottom: 0.8rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 0.8rem;
+    }
+
+    nav {
+      background: #f0f0f0;
+      padding: 1rem 0;
+      border-top: 1px solid #ddd;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #333;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      background: #e0e0e0;
+      color: #000;
+    }
+
+    main {
+      padding: 3rem 0;
+    }
+
+    section {
+      background: #fff;
+      margin: 2rem 0;
+      padding: 2rem;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #333;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #ddd;
+    }
+
+    .intro {
+      font-size: 1.1rem;
+      text-align: center;
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+    }
+
+    .intro h2 {
+      color: #333;
+      border-bottom-color: #ddd;
+    }
+
+    .video-container {
+      text-align: center;
+      padding: 2rem 0;
+    }
+
+    video {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    li {
+      margin: 1rem 0;
+      padding: 1rem;
+      background: #f9f9f9;
+      border-radius: 4px;
+      border-left: 3px solid #ccc;
+    }
+
+    li:hover {
+      background: #f0f0f0;
+    }
+
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #004499;
+      text-decoration: underline;
+    }
+
+    .download-link {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      background: #0066cc;
+      color: white;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+    }
+
+    .download-link:hover {
+      background: #004499;
+      color: white;
+    }
+
+    .regulations p {
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      background: #f9f9f9;
+      border-radius: 4px;
+      border-left: 3px solid #666;
+    }
+
+    .regulations strong {
+      color: #333;
+      font-size: 1.1rem;
+    }
+
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .contact-item {
+      padding: 1.5rem;
+      background: #f9f9f9;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+
+    .contact-item h3 {
+      color: #333;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      section {
+        padding: 1.5rem;
+      }
+
+      .contact-info {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
+
 <body>
   <header>
-    <h1>Konkurs kompozytorski<br>Na prawym brzegu Wisły…</h1>
-    <div class="language-switch">
-      <a href="#" onclick="switchLanguage('pl')">PL</a> |
-      <a href="#" onclick="switchLanguage('en')">EN</a>
+    <div class="container">
+      <div class="header-content">
+        <img src="logo.png" alt="Logo Konkursu" class="logo">
+        <h1>Na prawym brzegu Wisły / On the Right Bank of the Vistula</h1>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#aktualnosci">Aktualności / News</a></li>
+          <li><a href="#jury">Jury / Jury</a></li>
+          <li><a href="#dokumenty">Dokumenty / Documents</a></li>
+          <li><a href="#regulamin">Regulamin / Regulations</a></li>
+          <li><a href="#organizatorzy">Organizatorzy / Organizers</a></li>
+          <li><a href="#kontakt">Kontakt / Contact</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
   <main>
-    <section id="downloads">
-      <h2 class="lang" data-pl="Pliki do pobrania" data-en="Downloadable Files">Pliki do pobrania</h2>
-      <ul>
-        <li><a href="Regulamin_Konkursu.pdf" target="_blank">Regulamin konkursu (PDF)</a></li>
-        <li><a href="Formularz_zgloszeniowy.docx" target="_blank">Formularz zgłoszeniowy (DOCX)</a></li>
-        <li><a href="film.mp4" target="_blank">Film promocyjny</a></li>
-      </ul>
-    </section>
+    <div class="container">
+      <section class="intro">
+        <h2>Konkurs Kompozytorski / Composition Competition</h2>
+        <p>
+          Konkurs kompozytorski „Na prawym brzegu Wisły…" odbędzie się w Czechowicach-Dziedzicach – mieście Andrzeja Krzanowskiego.<br/>
+          The composition competition "On the Right Bank of the Vistula…" will be held in Czechowice-Dziedzice – the city of Andrzej Krzanowski.<br/>
+          Zapraszamy młodych kompozytorów do udziału w tym wyjątkowym wydarzeniu muzycznym.<br/>
+          We invite young composers to participate in this unique musical event.
+        </p>
+      </section>
 
-    <section id="rules">
-      <h2 class="lang" data-pl="Pełny regulamin" data-en="Full Rules">Pełny regulamin</h2>
-      <article class="lang" data-pl="Regulamin Konkursu Kompozytorskiego
-„Na prawym brzegu Wisły…”
-1. Organizatorzy
-Organizatorami konkursu są:
-Fundacja im. Andrzeja Krzanowskiego,
-Mała Akademia Muzyki w Czechowicach-Dziedzicach,
-Miejski Dom Kultury w Czechowicach-Dziedzicach.
-2. Cel konkursu
-Celem konkursu jest promocja twórczości młodych kompozytorów i kompozytorek oraz wzbogacenie repertuaru współczesnego na akordeon solo, także z wykorzystaniem elektroniki.
-3. Uczestnicy
-Konkurs skierowany jest do kompozytorów i kompozytorek do 35. roku życia (urodzonych po 1 października 1990 roku), niezależnie od narodowości.
-4. Zasady uczestnictwa
-1. Każdy uczestnik może zgłosić jedną oryginalną kompozycję.
-2. Utwór:
-- musi być wcześniej niepublikowany, niewykonywany publicznie i nienagradzany,
-- powinien trwać od 6 do 8 minut,
-- musi być przeznaczony na akordeon solo, z opcjonalnym użyciem elektroniki (np. taśma stereo, live electronics).
-3. Organizator nie zapewnia realizacji warstwy elektronicznej podczas koncertu – powinna być ona samowystarczalna lub możliwa do wykonania przez akordeonistę.
-5. Termin i sposób zgłoszeń
-1. Termin nadsyłania zgłoszeń: do 1 października 2025 roku (decyduje data otrzymania wiadomości).
-2. Zgłoszenia należy przesyłać wyłącznie drogą elektroniczną na adres: [adres e-mail].
-3. Zgłoszenie powinno zawierać:
-- partyturę w formacie PDF (opatrzoną godłem – pseudonimem),
-- nagranie lub rendering audio (jeśli dostępne),
-- plik tekstowy z danymi autora (imię i nazwisko, data urodzenia, adres e-mail, numer telefonu, krótka biografia), również oznaczony godłem,
-- oświadczenie:
-„Oświadczam, że jestem autorem/kompozytorem zgłaszanego utworu, który nie był dotąd wykonywany, publikowany ani nagradzany. Akceptuję regulamin konkursu.”
-6. Jury
-Skład jury zostanie ogłoszony w terminie późniejszym.
-W jego skład wejdą uznani artyści reprezentujący środowisko muzyki współczesnej.
-Decyzje jury są ostateczne i niepodważalne.
-7. Nagrody
-1. Łączna pula nagród wynosi 10 000 zł.
-2. Nagrodzone kompozycje zostaną prawykonane podczas Jesiennego Festiwalu Muzycznego Alkagran w 2026 roku.
-3. Jury zastrzega sobie prawo innego podziału nagród lub ich nieprzyznania.
-8. Prawa autorskie
-1. Uczestnicy zachowują pełne prawa autorskie do zgłaszanych kompozycji.
-2. Organizatorzy uzyskują prawo do:
-- wykonania, rejestracji i dokumentacji nagrodzonych utworów,
-- nieodpłatnego udostępniania ich nagrań do celów promocyjnych i archiwalnych.
-9. Postanowienia końcowe
-1. Zgłoszenie utworu oznacza pełną akceptację niniejszego regulaminu.
-2. Organizatorzy zastrzegają sobie prawo do wprowadzenia zmian w regulaminie (nie wpływających na zasadę równego traktowania uczestników) lub do odwołania konkursu z ważnych przyczyn.
-3. W sprawach nieuregulowanych niniejszym regulaminem decydują organizatorzy." data-en="Composition Competition Rules
-\"On the Right Bank of the Vistula...\"
-1. Organizers
-The competition is organized by:
-The Andrzej Krzanowski Foundation,
-The Small Academy of Music in Czechowice-Dziedzice,
-The Municipal Cultural Center in Czechowice-Dziedzice.
-2. Purpose of the Competition
-The aim of the competition is to promote the work of young composers and enrich the contemporary accordion solo repertoire, including the use of electronics.
-3. Participants
-The competition is open to composers under the age of 35 (born after October 1, 1990), regardless of nationality.
-4. Rules of Participation
-1. Each participant may submit one original composition.
-2. The piece:
-- must be previously unpublished, not publicly performed, and not awarded,
-- should last between 6 and 8 minutes,
-- must be written for solo accordion, with optional use of electronics (e.g., stereo tape, live electronics).
-3. The organizer does not provide technical realization of the electronic part during the concert – it should be self-sufficient or performable by the accordionist.
-5. Submission Deadline and Procedure
-1. Deadline: October 1, 2025 (submission date is the date of receipt).
-2. Submissions must be sent electronically to: [email address].
-3. Submission should include:
-- a PDF score (marked with a motto – pseudonym),
-- audio recording or rendering (if available),
-- a text file with author information (full name, date of birth, email address, phone number, short biography), also marked with the motto,
-- a declaration:
-\"I declare that I am the author/composer of the submitted work, which has not been performed, published, or awarded before. I accept the rules of the competition.\"
-6. Jury
-The jury composition will be announced at a later date.
-It will consist of recognized artists representing the contemporary music community.
-Jury decisions are final and not subject to appeal.
-7. Prizes
-1. The total prize pool is 10,000 PLN.
-2. The winning works will be premiered at the 2026 Autumn Music Festival Alkagran.
-3. The jury reserves the right to divide the prizes differently or not to award any prizes.
-8. Copyright
-1. Participants retain full copyright to the submitted works.
-2. The organizers acquire the right to:
-- perform, record, and document the awarded works,
-- share the recordings free of charge for promotional and archival purposes.
-9. Final Provisions
-1. Submitting a piece means full acceptance of these rules.
-2. The organizers reserve the right to make changes to the rules (not affecting the principle of equal treatment of participants) or to cancel the competition for important reasons.
-3. In matters not covered by these rules, decisions will be made by the organizers.">
-      </article>
-    </section>
+      <section id="aktualnosci" class="news">
+        <h2>Aktualności / News</h2>
+        <p>
+          Oficjalna strona konkursu już działa! Zapraszamy do zapoznania się z regulaminem i przesyłania swoich utworów. Wszystkie szczegóły znajdziecie poniżej.<br/>
+          The official competition website is now live! Please read the regulations and submit your compositions. All details can be found below.
+        </p>
+        <p><strong>Termin nadsyłania kompozycji: do 1 października 2025 roku! / Submission deadline: October 1, 2025!</strong></p>
+        <div class="video-container">
+          <video width="640" controls>
+            <source src="NAPRAWYMBRZEGUWISLY.PL.mp4" type="video/mp4">
+            Twoja przeglądarka nie obsługuje elementu wideo.<br/>
+            Your browser does not support the video element.
+          </video>
+        </div>
+      </section>
+
+      <section id="jury" class="jury">
+        <h2>Jury / Jury</h2>
+        <ul>
+          <li><strong>prof. Marcin Bortnowski</strong></li>
+          <li><strong>prof. Stanisław Krupowicz</strong></li>
+          <li><strong>Grażyna Krzanowska</strong></li>
+          <li><strong>dr Eneasz Kubit</strong></li>
+          <li><strong>Piotr Zembroń</strong> - sekretarz / secretary</li>
+          <li><strong>Jagna Krzanowska</strong> - dyrektorka konkursu / competition director</li>
+        </ul>
+      </section>
+
+      <section id="dokumenty" class="documents">
+        <h2>Dokumenty do pobrania / Downloadable Documents</h2>
+        <ul>
+          <li><a href="regulamin.pdf" class="download-link" download>📄 Regulamin Konkursu (PDF) / Competition Regulations (PDF)</a></li>
+          <li><a href="Formularz_zgloszeniowy.docx" class="download-link" download>📝 Formularz zgłoszeniowy (DOCX) / Application Form (DOCX)</a></li>
+        </ul>
+        <p style="margin-top: 1.5rem; font-style: italic; color: #7f8c8d;">
+          Pobierz formularz zgłoszeniowy, wypełnij go zgodnie z instrukcjami zawartymi w regulaminie, a następnie wyślij wraz z kompozycją na podany adres e-mail.<br/>
+          Download the application form, fill it out according to the instructions in the regulations, then send it together with your composition to the provided e-mail address.
+        </p>
+      </section>
+
+      <section id="regulamin" class="regulations">
+        <h2>Regulamin Konkursu / Competition Regulations</h2>
+        <p><strong>1. Organizatorzy / Organizers:</strong> Stowarzyszenie na Rzecz Promocji Kultury i Sztuki "Alkagran" oraz Miejski Dom Kultury w Czechowicach-Dziedzicach.<br/>
+          The organizers are the Association for the Promotion of Culture and Art "Alkagran" and the Municipal Cultural Center in Czechowice-Dziedzice.</p>
+
+        <p><strong>2. Cel konkursu / Competition goal:</strong> Promocja młodych kompozytorów i popularyzacja współczesnej muzyki polskiej.<br/>
+          The goal is to promote young composers and popularize contemporary Polish music.</p>
+
+        <p><strong>3. Warunki uczestnictwa / Participation conditions:</strong> Konkurs otwarty dla kompozytorów do 35 roku życia.<br/>
+          The competition is open to composers up to 35 years old.</p>
+
+        <p><strong>4. Termin nadsyłania prac / Submission deadline:</strong> Do 1 października 2025.<br/>
+          Deadline for submission: October 1, 2025.</p>
+
+        <p><strong>5. Nagrody / Prizes:</strong> Nagroda główna: 10 000 PLN, II i III miejsce oraz wyróżnienia.<br/>
+          Main prize: 10,000 PLN, 2nd and 3rd place, and distinctions.</p>
+
+        <p><strong>6. Prawa autorskie / Copyright:</strong> Kompozycje nie mogą być wcześniej publikowane ani wykonywane publicznie.<br/>
+          Compositions must not have been published or publicly performed before.</p>
+
+        <p><strong>7. Kontakt / Contact:</strong> konkurs@alkagran.pl</p>
+      </section>
+
+      <section id="organizatorzy" class="organizers">
+        <h2>Organizatorzy / Organizers</h2>
+        <p>
+          <strong>Stowarzyszenie Alkagran</strong><br/>
+          ul. Muzyczna 10, 43-502 Czechowice-Dziedzice<br/>
+          tel. +48 33 811 22 33<br/>
+          e-mail: biuro@alkagran.pl<br/><br/>
+
+          <strong>Miejski Dom Kultury w Czechowicach-Dziedzicach</strong><br/>
+          ul. Legionów 3, 43-502 Czechowice-Dziedzice<br/>
+          tel. +48 33 812 33 44<br/>
+          e-mail: mdkkultura@czechowice-dziedzice.pl
+        </p>
+      </section>
+
+      <section id="kontakt" class="contact-info">
+        <h2>Kontakt / Contact</h2>
+        <div class="contact-item">
+          <h3>Adres e-mail / Email</h3>
+          <p>konkurs@alkagran.pl</p>
+        </div>
+        <div class="contact-item">
+          <h3>Telefon / Phone</h3>
+          <p>+48 33 811 22 33</p>
+        </div>
+        <div class="contact-item">
+          <h3>Strona www / Website</h3>
+          <p><a href="https://alkagran.pl" target="_blank" rel="noopener noreferrer">https://alkagran.pl</a></p>
+        </div>
+      </section>
+    </div>
   </main>
-
-  <footer>
-    <p>&copy; 2025 Organizatorzy konkursu</p>
-  </footer>
-
-  <script>
-    function switchLanguage(lang) {
-      document.querySelectorAll('.lang').forEach(function (el) {
-        el.innerHTML = el.dataset[lang];
-      });
-    }
-  </script>
 </body>
+
 </html>
