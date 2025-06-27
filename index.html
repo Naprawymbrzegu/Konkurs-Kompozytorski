@@ -1,356 +1,117 @@
 <!DOCTYPE html>
 <html lang="pl">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Na prawym brzegu Wisły / On the Right Bank of the Vistula</title>
+  <title>Konkurs kompozytorski – Na prawym brzegu Wisły…</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background-color: #8090a8;
       margin: 0;
-      padding: 0;
+      font-family: Arial, sans-serif;
     }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
     header {
-      background: #fff;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .header-content {
-      text-align: center;
-      padding: 1.5rem 0;
-    }
-
-    .logo {
-      max-width: 150px;
-      height: auto;
-      margin-bottom: 0.8rem;
-    }
-
-    h1 {
-      font-size: 2rem;
-      color: #333;
-      margin-bottom: 0.8rem;
-    }
-
-    nav {
-      background: #142850; /* granatowy kolor menu */
-      padding: 1rem 0;
-      border-top: 1px solid #0f1f3d;
-    }
-
-    .nav-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 2rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: #e0e6f8; /* jasny kolor tekstu w menu */
-      text-decoration: none;
-      font-weight: 500;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      transition: all 0.3s ease;
-    }
-
-    .nav-links a:hover {
-      background: #0f1f3d;
-      color: #ffffff;
-    }
-
-    main {
-      padding: 3rem 0;
-    }
-
-    section {
-      background: #fff;
-      margin: 2rem 0;
-      padding: 2rem;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    h2 {
-      color: #333;
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 2px solid #ddd;
-    }
-
-    .intro {
-      font-size: 1.1rem;
-      text-align: center;
-      background: #f9f9f9;
-      border: 1px solid #ddd;
-    }
-
-    .intro h2 {
-      color: #333;
-      border-bottom-color: #ddd;
-    }
-
-    .video-container {
-      text-align: center;
-      padding: 2rem 0;
-    }
-
-    video {
-      max-width: 100%;
-      height: auto;
-      border-radius: 5px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    li {
-      margin: 1rem 0;
+      background-color: #5f7c8a; /* szaroniebieskie tło */
+      color: white;
       padding: 1rem;
-      background: #f9f9f9;
-      border-radius: 4px;
-      border-left: 3px solid #ccc;
+      text-align: center;
     }
-
-    li:hover {
-      background: #f0f0f0;
+    header h1 {
+      margin: 0;
     }
-
-    a {
-      color: #0066cc;
+    .language-switch {
+      margin-top: 0.5rem;
+    }
+    .language-switch a {
+      color: #fff;
+      text-decoration: underline;
+      margin: 0 0.5rem;
+    }
+    nav {
+      background-color: #445963;
+      padding: 0.5rem;
+      text-align: center;
+    }
+    nav a {
+      color: white;
       text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
     }
-
-    a:hover {
-      color: #004499;
+    nav a:hover {
       text-decoration: underline;
     }
-
-    .download-link {
-      display: inline-block;
-      padding: 0.8rem 1.5rem;
-      background: #0066cc;
-      color: white;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: background-color 0.3s ease;
-    }
-
-    .download-link:hover {
-      background: #004499;
-      color: white;
-    }
-
-    .regulations p {
-      margin-bottom: 1.5rem;
+    main {
       padding: 1rem;
-      background: #f9f9f9;
-      border-radius: 4px;
-      border-left: 3px solid #666;
-      white-space: pre-line; /* zachowuje formatowanie z enterami */
     }
-
-    .regulations strong {
-      color: #333;
-      font-size: 1.1rem;
+    section {
+      margin-bottom: 2rem;
     }
-
-    .contact-info {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .contact-item {
-      padding: 1.5rem;
-      background: #f9f9f9;
-      border-radius: 5px;
-      border: 1px solid #ddd;
+    footer {
+      background-color: #5f7c8a;
+      color: white;
       text-align: center;
-    }
-
-    .contact-item h3 {
-      color: #333;
-      margin-bottom: 1rem;
-      font-size: 1.2rem;
-    }
-
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2rem;
-      }
-
-      .nav-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-      }
-
-      section {
-        padding: 1.5rem;
-      }
-
-      .contact-info {
-        grid-template-columns: 1fr;
-      }
+      padding: 1rem;
     }
   </style>
 </head>
-
 <body>
   <header>
-    <div class="container">
-      <div class="header-content">
-        <img src="logo.png" alt="Logo Konkursu Na prawym brzegu Wisły" class="logo" />
-        <h1>Na prawym brzegu Wisły / On the Right Bank of the Vistula</h1>
-      </div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#aktualnosci">Aktualności / News</a></li>
-          <li><a href="#jury">Jury / Jury</a></li>
-          <li><a href="#dokumenty">Dokumenty / Documents</a></li>
-          <li><a href="#regulamin">Regulamin / Regulations</a></li>
-          <li><a href="#organizatorzy">Organizatorzy / Organizers</a></li>
-          <li><a href="#kontakt">Kontakt / Contact</a></li>
-        </ul>
-      </nav>
+    <h1>Konkurs kompozytorski<br>Na prawym brzegu Wisły…</h1>
+    <div class="language-switch">
+      <a href="#" onclick="switchLanguage('pl')">PL</a> |
+      <a href="#" onclick="switchLanguage('en')">EN</a>
     </div>
   </header>
 
+  <nav>
+    <a href="#downloads">Pliki</a>
+    <a href="#rules">Regulamin</a>
+    <a href="#news">Aktualności</a>
+    <a href="#contact">Kontakt</a>
+  </nav>
+
   <main>
-    <div class="container">
-      <section class="intro">
-        <h2>Konkurs Kompozytorski / Composition Competition</h2>
-        <p>
-          Konkurs kompozytorski „Na prawym brzegu Wisły…" odbędzie się w
-          Czechowicach-Dziedzicach – mieście Andrzeja Krzanowskiego.<br />
-          The composition competition "On the Right Bank of the Vistula…" will be
-          held in Czechowice-Dziedzice – the city of Andrzej Krzanowski.<br />
-          Zapraszamy młodych kompozytorów do udziału w tym wyjątkowym wydarzeniu
-          muzycznym.<br />
-          We invite young composers to participate in this unique musical event.
-        </p>
-      </section>
+    <section id="downloads">
+      <h2 class="lang" data-pl="Pliki do pobrania" data-en="Downloadable Files">Pliki do pobrania</h2>
+      <ul>
+        <li><a href="Regulamin_Konkursu.pdf" target="_blank">Regulamin konkursu (PDF)</a></li>
+        <li><a href="Formularz_zgloszeniowy.docx" target="_blank">Formularz zgłoszeniowy (DOCX)</a></li>
+        <li><a href="film.mp4" target="_blank">Film promocyjny</a></li>
+      </ul>
+    </section>
 
-      <section id="aktualnosci" class="news">
-        <h2>Aktualności / News</h2>
-        <p>
-          Oficjalna strona konkursu już działa! Zapraszamy do zapoznania się z regulaminem oraz formularzem zgłoszeniowym.<br />
-          The official competition website is now live! Please check the regulations and application form.
-        </p>
-      </section>
+    <section id="rules">
+      <h2 class="lang" data-pl="Pełny regulamin" data-en="Full Rules">Pełny regulamin</h2>
+      <article class="lang" data-pl="Regulamin Konkursu Kompozytorskiego[...]" data-en="Composition Competition Rules[...]">
+      </article>
+    </section>
 
-      <section id="jury" class="jury">
-        <h2>Jury / Jury</h2>
-        <ul>
-          <li>Marcin Bortnowski</li>
-          <li>Stanisław Krupowicz</li>
-          <li>Grażyna Krzanowska</li>
-          <li>Eneasz Kubit</li>
-          <li>Piotr Zembroń (sekretarz / secretary)</li>
-          <li>Jagna Krzanowska (dyrektor Konkursu / director)</li>
-        </ul>
-      </section>
+    <section id="news">
+      <h2 class="lang" data-pl="Aktualności" data-en="News">Aktualności</h2>
+      <p class="lang" data-pl="Wkrótce opublikujemy najnowsze informacje dotyczące konkursu." data-en="We will soon publish the latest information about the competition.">
+        Wkrótce opublikujemy najnowsze informacje dotyczące konkursu.
+      </p>
+    </section>
 
-      <section id="dokumenty" class="documents">
-        <h2>Dokumenty / Documents</h2>
-        <ul>
-          <li>
-            <a href="Regulamin_Konkursu_Na_prawym_brzegu_Wisly.pdf" target="_blank" rel="noopener"
-              >Regulamin Konkursu (PDF)</a
-            >
-            &nbsp; <a class="download-link" href="Regulamin_Konkursu_Na_prawym_brzegu_Wisly.pdf" download>⬇ Pobierz</a>
-          </li>
-          <li>
-            <a href="Formularz_zgloszeniowy_Na_prawym_brzegu_Wisly.pdf" target="_blank" rel="noopener"
-              >Formularz zgłoszeniowy (PDF)</a
-            >
-            &nbsp; <a class="download-link" href="Formularz_zgloszeniowy_Na_prawym_brzegu_Wisly.pdf" download>⬇ Pobierz</a>
-          </li>
-          <li>
-            <a href="film_promocyjny.mp4" target="_blank" rel="noopener">Film promocyjny (video)</a>
-          </li>
-        </ul>
-      </section>
-
-      <section id="regulamin" class="regulations">
-        <h2>Regulamin konkursu / Competition Regulations</h2>
-        <p>
-          <strong>1. Cel konkursu / Purpose of the competition:</strong><br />
-          Konkurs ma na celu promocję młodych kompozytorów i ich twórczości. <br />
-          The competition aims to promote young composers and their works.
-        </p>
-        <p>
-          <strong>2. Uczestnicy / Participants:</strong><br />
-          Konkurs jest otwarty dla wszystkich kompozytorów do 35 roku życia.<br />
-          The competition is open to all composers up to 35 years of age.
-        </p>
-        <p>
-          <strong>3. Termin zgłoszeń / Submission deadline:</strong><br />
-          Zgłoszenia przyjmujemy do 31 sierpnia 2025 roku.<br />
-          Applications are accepted until August 31, 2025.
-        </p>
-        <!-- ... tu wklej pozostały pełny tekst regulaminu w obu językach ... -->
-      </section>
-
-      <section id="organizatorzy" class="organizers">
-        <h2>Organizatorzy / Organizers</h2>
-        <p>
-          Miejski Ośrodek Kultury w Czechowicach-Dziedzicach<br />
-          The Municipal Cultural Center in Czechowice-Dziedzice
-        </p>
-        <p>
-          Partnerzy: Związek Kompozytorów Polskich, Fundacja im. Andrzeja Krzanowskiego<br />
-          Partners: Polish Composers’ Union, Andrzej Krzanowski Foundation
-        </p>
-      </section>
-
-      <section id="kontakt" class="contact">
-        <h2>Kontakt / Contact</h2>
-        <div class="contact-info">
-          <div class="contact-item">
-            <h3>E-mail</h3>
-            <p><a href="mailto:kontakt@konkurs-prawybrzeg.pl">kontakt@konkurs-prawybrzeg.pl</a></p>
-          </div>
-          <div class="contact-item">
-            <h3>Telefon / Phone</h3>
-            <p>+48 123 456 789</p>
-          </div>
-          <div class="contact-item">
-            <h3>Adres / Address</h3>
-            <p>Miejski Ośrodek Kultury<br />ul. Przykładowa 1<br />43-502 Czechowice-Dziedzice</p>
-          </div>
-        </div>
-      </section>
-    </div>
+    <section id="contact">
+      <h2 class="lang" data-pl="Kontakt" data-en="Contact">Kontakt</h2>
+      <p class="lang" data-pl="W sprawach związanych z konkursem prosimy pisać na adres: kontakt@konkurs.pl" data-en="For competition inquiries, please contact: kontakt@konkurs.pl">
+        W sprawach związanych z konkursem prosimy pisać na adres: kontakt@konkurs.pl
+      </p>
+    </section>
   </main>
-</body>
 
+  <footer>
+    <p>&copy; 2025 Organizatorzy konkursu</p>
+  </footer>
+
+  <script>
+    function switchLanguage(lang) {
+      document.querySelectorAll('.lang').forEach(function (el) {
+        el.innerHTML = el.dataset[lang];
+      });
+    }
+  </script>
+</body>
 </html>
