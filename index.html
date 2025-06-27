@@ -7,71 +7,94 @@
   <link rel="stylesheet" href="style.css" />
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-    }
-    header {
-      background-color: #5f7c8a; /* szaroniebieskie tło */
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-    header h1 {
       margin: 0;
+      padding: 0;
+      color: #222;
+      background-color: #f8f9fa;
     }
-    .language-switch {
-      margin-top: 0.5rem;
-    }
-    .language-switch a {
-      color: #fff;
-      text-decoration: underline;
-      margin: 0 0.5rem;
-    }
-    nav {
-      background-color: #445963;
-      padding: 0.5rem;
+
+    header {
+      background-color: #4a6b82; /* szaroniebieski */
+      color: white;
+      padding: 2rem 1rem;
       text-align: center;
     }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 1rem;
+
+    .language-switch {
+      margin-top: 1rem;
       font-weight: bold;
     }
-    nav a:hover {
-      text-decoration: underline;
+
+    .language-switch a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 0.5rem;
     }
+
     main {
-      padding: 1rem;
+      padding: 2rem;
+      max-width: 960px;
+      margin: auto;
     }
+
     section {
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
     }
+
+    h2 {
+      border-bottom: 2px solid #4a6b82;
+      padding-bottom: 0.3rem;
+      margin-bottom: 1rem;
+      color: #4a6b82;
+    }
+
     footer {
-      background-color: #5f7c8a;
+      background-color: #4a6b82;
       color: white;
       text-align: center;
       padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    a {
+      color: #1a4c7c;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Konkurs kompozytorski<br>Na prawym brzegu Wisły…</h1>
+    <h1 class="lang" data-pl="Konkurs kompozytorski<br>Na prawym brzegu Wisły…" data-en="Composition Competition<br>On the Right Bank of the Vistula…">Konkurs kompozytorski<br>Na prawym brzegu Wisły…</h1>
     <div class="language-switch">
       <a href="#" onclick="switchLanguage('pl')">PL</a> |
       <a href="#" onclick="switchLanguage('en')">EN</a>
     </div>
   </header>
 
-  <nav>
-    <a href="#downloads">Pliki</a>
-    <a href="#rules">Regulamin</a>
-    <a href="#news">Aktualności</a>
-    <a href="#contact">Kontakt</a>
-  </nav>
-
   <main>
+    <section id="about">
+      <h2 class="lang" data-pl="O konkursie" data-en="About the Competition">O konkursie</h2>
+      <p class="lang" data-pl="Konkurs kompozytorski „Na prawym brzegu Wisły…” ma na celu promocję twórczości młodych kompozytorów oraz poszerzenie repertuaru na akordeon solo z uwzględnieniem elektroniki. Organizowany jest przez Fundację im. Andrzeja Krzanowskiego oraz partnerów w ramach Festiwalu Alkagran." data-en="The composition competition 'On the Right Bank of the Vistula...' aims to promote young composers and expand the repertoire for solo accordion including electronics. It is organized by the Andrzej Krzanowski Foundation and partners as part of the Alkagran Festival.">
+        Konkurs kompozytorski „Na prawym brzegu Wisły…” ma na celu promocję twórczości młodych kompozytorów...
+      </p>
+    </section>
+
+    <section id="jury">
+      <h2 class="lang" data-pl="Jury" data-en="Jury">Jury</h2>
+      <ul class="lang" data-pl="<li>Marcin Bortnowski</li><li>Stanisław Krupowicz</li><li>Grażyna Krzanowska</li><li>Eneasz Kubit</li><li>Piotr Zembroń (sekretarz)</li><li>Jagna Krzanowska (dyrektor Konkursu)</li>" data-en="<li>Marcin Bortnowski</li><li>Stanisław Krupowicz</li><li>Grażyna Krzanowska</li><li>Eneasz Kubit</li><li>Piotr Zembroń (secretary)</li><li>Jagna Krzanowska (Director of the Competition)</li>">
+        <li>Marcin Bortnowski</li>
+        <li>Stanisław Krupowicz</li>
+        <li>Grażyna Krzanowska</li>
+        <li>Eneasz Kubit</li>
+        <li>Piotr Zembroń (sekretarz)</li>
+        <li>Jagna Krzanowska (dyrektor Konkursu)</li>
+      </ul>
+    </section>
+
     <section id="downloads">
       <h2 class="lang" data-pl="Pliki do pobrania" data-en="Downloadable Files">Pliki do pobrania</h2>
       <ul>
@@ -83,21 +106,38 @@
 
     <section id="rules">
       <h2 class="lang" data-pl="Pełny regulamin" data-en="Full Rules">Pełny regulamin</h2>
-      <article class="lang" data-pl="Regulamin Konkursu Kompozytorskiego[...]" data-en="Composition Competition Rules[...]">
+      <article class="lang" data-pl="Regulamin Konkursu Kompozytorskiego
+„Na prawym brzegu Wisły…”
+1. Organizatorzy
+Organizatorami konkursu są:
+Fundacja im. Andrzeja Krzanowskiego,
+Mała Akademia Muzyki w Czechowicach-Dziedzicach,
+Miejski Dom Kultury w Czechowicach-Dziedzicach.
+...
+(decyzje organizatorów)." 
+data-en="Composition Competition Rules
+'On the Right Bank of the Vistula...'
+1. Organizers
+The competition is organized by:
+The Andrzej Krzanowski Foundation,
+The Small Academy of Music in Czechowice-Dziedzice,
+The Municipal Cultural Center in Czechowice-Dziedzice.
+...
+(by the organizers).">
       </article>
     </section>
 
     <section id="news">
       <h2 class="lang" data-pl="Aktualności" data-en="News">Aktualności</h2>
-      <p class="lang" data-pl="Wkrótce opublikujemy najnowsze informacje dotyczące konkursu." data-en="We will soon publish the latest information about the competition.">
-        Wkrótce opublikujemy najnowsze informacje dotyczące konkursu.
+      <p class="lang" data-pl="Szczegóły dotyczące ogłoszenia wyników oraz harmonogramu pojawią się jesienią 2025 roku." data-en="Details on results announcement and schedule will appear in autumn 2025.">
+        Szczegóły dotyczące ogłoszenia wyników oraz harmonogramu pojawią się jesienią 2025 roku.
       </p>
     </section>
 
     <section id="contact">
       <h2 class="lang" data-pl="Kontakt" data-en="Contact">Kontakt</h2>
-      <p class="lang" data-pl="W sprawach związanych z konkursem prosimy pisać na adres: kontakt@konkurs.pl" data-en="For competition inquiries, please contact: kontakt@konkurs.pl">
-        W sprawach związanych z konkursem prosimy pisać na adres: kontakt@konkurs.pl
+      <p class="lang" data-pl="Wszelkie pytania prosimy kierować na adres e-mail: konkurs@example.com" data-en="Please direct any questions to the email address: konkurs@example.com">
+        Wszelkie pytania prosimy kierować na adres e-mail: konkurs@example.com
       </p>
     </section>
   </main>
@@ -109,7 +149,9 @@
   <script>
     function switchLanguage(lang) {
       document.querySelectorAll('.lang').forEach(function (el) {
-        el.innerHTML = el.dataset[lang];
+        if (el.dataset[lang]) {
+          el.innerHTML = el.dataset[lang];
+        }
       });
     }
   </script>
