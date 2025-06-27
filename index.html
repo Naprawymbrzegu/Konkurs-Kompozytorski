@@ -1,18 +1,32 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Na prawym brzegu Wisły – Konkurs Kompozytorski</title>
   <style>
-    /* STYLES: identyczne jak wcześniej – możesz wkleić swój styl CSS tutaj */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: Arial, sans-serif;
-      background-color: #8090a8;
+      line-height: 1.6;
       color: #333;
+      background-color: #8090a8;
       margin: 0;
       padding: 0;
     }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
     header {
       background: #fff;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -20,99 +34,239 @@
       top: 0;
       z-index: 100;
     }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+
     .header-content {
       text-align: center;
       padding: 1.5rem 0;
       position: relative;
     }
+
     .language-switch {
       position: absolute;
       top: 1rem;
       right: 1rem;
+      display: flex;
+      gap: 0.5rem;
+      font-weight: 600;
     }
+
     .language-switch a {
+      padding: 0.5rem 1rem;
       background: #f0f0f0;
       color: #333;
       text-decoration: none;
-      padding: 0.5rem 1rem;
-      margin-left: 0.5rem;
-      border-radius: 5px;
+      border-radius: 4px;
+      font-weight: 500;
+      transition: all 0.3s ease;
     }
+
     .language-switch a:hover {
       background: #e0e0e0;
     }
-    .logo img {
-      max-width: 150px;
+
+    .language-switch a.active {
+      background: #0066cc;
+      color: white;
     }
-    nav ul {
+
+    .logo {
+      max-width: 150px;
+      height: auto;
+      margin-bottom: 0.8rem;
+      padding: 10px;
+      border-radius: 8px;
+      display: inline-block;
+      background: #f0f0f0;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: #666;
+      font-style: italic;
+      margin-bottom: 0.8rem;
+    }
+
+    nav {
+      background: #f0f0f0;
+      padding: 1rem 0;
+      border-top: 1px solid #ddd;
+    }
+
+    .nav-links {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
+      gap: 2rem;
       list-style: none;
-      padding: 0;
-      background: #f0f0f0;
-      margin: 0;
     }
-    nav ul li {
-      margin: 0.5rem 1rem;
-    }
-    nav ul li a {
-      text-decoration: none;
+
+    .nav-links a {
       color: #333;
-      font-weight: bold;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: all 0.3s ease;
     }
-    nav ul li a:hover {
-      text-decoration: underline;
+
+    .nav-links a:hover {
+      background: #e0e0e0;
+      color: #000;
     }
+
     main {
-      padding: 2rem 0;
+      padding: 3rem 0;
     }
+
     section {
       background: #fff;
+      margin: 2rem 0;
       padding: 2rem;
-      margin-bottom: 2rem;
       border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
-    .download-link {
-      display: inline-block;
-      margin-top: 1rem;
-      background: #0066cc;
-      color: white;
-      padding: 0.8rem 1.2rem;
-      text-decoration: none;
-      border-radius: 4px;
+
+    h2 {
+      color: #333;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #ddd;
     }
-    .download-link:hover {
-      background: #004499;
+
+    .intro {
+      font-size: 1.1rem;
+      text-align: center;
+      background: #f9f9f9;
+      border: 1px solid #ddd;
     }
+
+    .video-container {
+      text-align: center;
+      padding: 2rem 0;
+    }
+
     video {
       max-width: 100%;
+      height: auto;
       border-radius: 5px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    li {
+      margin: 1rem 0;
+      padding: 1rem;
+      background: #f9f9f9;
+      border-radius: 4px;
+      border-left: 3px solid #ccc;
+    }
+
+    li:hover {
+      background: #f0f0f0;
+    }
+
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #004499;
+      text-decoration: underline;
+    }
+
+    .download-link {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      background: #0066cc;
+      color: white;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+    }
+
+    .download-link:hover {
+      background: #004499;
+      color: white;
+    }
+
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .contact-item {
+      padding: 1.5rem;
+      background: #f9f9f9;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+
+    .contact-item h3 {
+      color: #333;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      .language-switch {
+        position: static;
+        justify-content: center;
+        margin-bottom: 1rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      section {
+        padding: 1.5rem;
+      }
+
+      .contact-info {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
-<body>
 
+<body>
   <header>
     <div class="container">
       <div class="header-content">
         <div class="language-switch">
-          <a href="index.html">🇵🇱</a>
-          <a href="indexen.html">🇬🇧</a>
+          <a href="index.html" class="active">🇵🇱 Polski</a>
+          <a href="indexen.html">🇬🇧 English</a>
         </div>
         <div class="logo">
           <img src="logo.png" alt="Logo konkursu" />
         </div>
         <h1>Na prawym brzegu Wisły…</h1>
-        <p><em>Konkurs kompozytorski</em></p>
+        <div class="subtitle">Konkurs Kompozytorski</div>
       </div>
       <nav>
-        <ul>
+        <ul class="nav-links">
           <li><a href="#aktualnosci">Aktualności</a></li>
           <li><a href="#jury">Jury</a></li>
           <li><a href="#dokumenty">Dokumenty</a></li>
@@ -124,56 +278,9 @@
     </div>
   </header>
 
-  <main class="container">
-    <section id="aktualnosci">
-      <h2>Aktualności</h2>
-      <p>Oficjalna strona konkursu jest już dostępna! Zapraszamy do zapoznania się z regulaminem i przesyłania swoich kompozycji.</p>
-      <p><strong>Termin nadsyłania zgłoszeń: 1 października 2025!</strong></p>
-      <video controls poster="logo.png">
-        <source src="NAPRAWYMBRZEGUWISLY.PL.mp4" type="video/mp4">
-        Twój przeglądarka nie obsługuje odtwarzania wideo.
-      </video>
-    </section>
-
-    <section id="jury">
-      <h2>Jury</h2>
-      <ul>
-        <li>Marcin Bortnowski</li>
-        <li>Stanisław Krupowicz</li>
-        <li>Grażyna Krzanowska</li>
-        <li>Eneasz Kubit</li>
-        <li>Piotr Zembroń (sekretarz)</li>
-        <li>Jagna Krzanowska (dyrektor Konkursu)</li>
-      </ul>
-    </section>
-
-    <section id="dokumenty">
-      <h2>Dokumenty</h2>
-      <a href="regulamin.pdf" class="download-link" download>Pobierz regulamin (PDF)</a><br>
-      <a href="Formularz_zgloszeniowy.docx" class="download-link" download>Pobierz formularz zgłoszeniowy (DOCX)</a>
-    </section>
-
-    <section id="regulamin">
-      <h2>Regulamin (skrót)</h2>
-      <p><strong>§1 Cel konkursu</strong><br>
-        Konkurs kompozytorski „Na prawym brzegu Wisły…” ma na celu promocję młodych kompozytorów oraz nowych utworów inspirowanych Czechowicami-Dziedzicami.</p>
-      <p><strong>§2 Uczestnictwo</strong><br>
-        Konkurs przeznaczony jest dla kompozytorów do 35 roku życia. Szczegółowe warunki zawarte są w pełnym regulaminie.</p>
-    </section>
-
-    <section id="organizatorzy">
-      <h2>Organizatorzy</h2>
-      <p>Miejski Dom Kultury w Czechowicach-Dziedzicach<br>
-      Fundacja im. Andrzeja Krzanowskiego</p>
-    </section>
-
-    <section id="kontakt">
-      <h2>Kontakt</h2>
-      <p>Email: <a href="mailto:contact@naprawymbrzeguwisly.pl">contact@naprawymbrzeguwisly.pl</a></p>
-      <p>Telefon: +48 123 456 789</p>
-      <p>Strona: <a href="http://www.naprawymbrzeguwisly.pl">naprawymbrzeguwisly.pl</a></p>
-    </section>
-  </main>
+  <!-- Reszta treści strony polskiej tutaj -->
+  <!-- Możesz wkleić swoje sekcje aktualności, jury, itp. -->
 
 </body>
+
 </html>
