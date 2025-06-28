@@ -2,124 +2,88 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Na prawym brzegu Wisły - Konkurs Kompozytorski</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>na prawym brzegu Wisły… – Konkurs kompozytorski</title>
   <style>
-    /* ... (WSZYSTKIE STYLE – jak w Twoim oryginalnym pliku – zostały zachowane bez zmian) ... */
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #f4f6f8;
+      color: #1f2937;
+    }
+    header {
+      background-color: #1e3a5f;
+      color: white;
+      padding: 1em;
+      text-align: center;
+    }
+    nav {
+      background-color: #374e6a;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0.5em;
+    }
+    nav li {
+      margin: 0 1em;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 2em;
+      max-width: 800px;
+      margin: auto;
+    }
+    h2 {
+      color: #1e3a5f;
+      margin-top: 1em;
+    }
+    a.download {
+      display: inline-block;
+      margin: 1em 0;
+      padding: 0.5em 1em;
+      background-color: #1e3a5f;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+    footer {
+      background-color: #1e3a5f;
+      color: white;
+      text-align: center;
+      padding: 1em;
+      margin-top: 2em;
+    }
   </style>
 </head>
 <body>
   <header>
-    <div class="container">
-      <div class="header-content">
-        <div class="language-switch">
-          <a href="index.html" class="active">🇵🇱 Polski</a>
-          <a href="indexen.html">🇬🇧 English</a>
-        </div>
-        <a href="#" class="logo">
-          <img src="logo.png" alt="Logo Konkursu" style="max-width: 150px; height: auto;">
-        </a>
-        <h1>na prawym brzegu Wisły…</h1>
-        <div class="subtitle">Konkurs Kompozytorski</div>
-      </div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#aktualnosci">Aktualności</a></li>
-          <li><a href="#jury">Jury</a></li>
-          <li><a href="#dokumenty">Dokumenty</a></li>
-          <li><a href="#regulamin">Regulamin</a></li>
-          <li><a href="#organizatorzy">Organizatorzy</a></li>
-          <li><a href="#kontakt">Kontakt</a></li>
-        </ul>
-      </nav>
-    </div>
+    <h1>na prawym brzegu Wisły…</h1>
+    <p>Konkurs kompozytorski – Czechowice-Dziedzice 2025</p>
   </header>
 
-  <main>
-    <div class="container">
-      <section class="intro">
-        <h2>Konkurs Kompozytorski</h2>
-        <p>
-          Konkurs kompozytorski „Na prawym brzegu Wisły…" odbędzie się w Czechowicach-Dziedzicach – mieście Andrzeja Krzanowskiego.
-          Zapraszamy młodych kompozytorów do udziału w tym wyjątkowym wydarzeniu muzycznym.
-        </p>
-        
-        <!-- Tutaj wstawiono pełny regulamin w wersji tekstowej -->
-        <div class="regulations">
-          <p><strong>1. Organizatorzy</strong><br>
-          Fundacja im. Andrzeja Krzanowskiego, Mała Akademia Muzyczna w Czechowicach-Dziedzicach, Miejski Ośrodek Kultury w Czechowicach-Dziedzicach.</p>
+  <nav>
+    <ul>
+      <li><a href="#aktualnosci">Aktualności</a></li>
+      <li><a href="#konkurs">o konkursie</a></li>
+      <li><a href="#jury">Jury</a></li>
+      <li><a href="#dokumenty">Dokumenty</a></li>
+      <li><a href="#regulamin">Regulamin</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+  </nav>
 
-          <p><strong>2. Cel Konkursu</strong><br>
-          Promocja twórczości młodych kompozytorów oraz poszerzanie repertuaru współczesnego na akordeon solo.</p>
-
-          <p><strong>3. Uczestnicy</strong><br>
-          Kompozytorzy urodzeni po 1 października 1990 r. bez względu na narodowość.</p>
-
-          <p><strong>4. Zasady Uczestnictwa</strong><br>
-          - Jedna oryginalna kompozycja<br>
-          - Na akordeon solo (możliwa elektronika: taśma lub live electronics)<br>
-          - Czas trwania: 6–8 minut<br>
-          - Utwór nienagradzany, niepublikowany i niewykonywany<br>
-          - Warstwa elektroniczna musi być samowystarczalna lub możliwa do wykonania przez akordeonistę</p>
-
-          <p><strong>5. Termin i sposób zgłaszania</strong><br>
-          - Termin nadsyłania zgłoszeń: 1 października 2025 r.<br>
-          - Ogłoszenie wyników: 28 października 2025 r. podczas koncertu "Tryptyk" w Czechowicach-Dziedzicach<br>
-          - Zgłoszenia e-mail: <span class="missing-info">konkurs@krzanowski.org</span><br>
-          - Zgłoszenie musi zawierać:<br>
-            &nbsp;&nbsp;&bull; Partyturę PDF z mottem<br>
-            &nbsp;&nbsp;&bull; Nagranie lub rendering (jeśli dostępne)<br>
-            &nbsp;&nbsp;&bull; Formularz z danymi autora (imię i nazwisko, data urodzenia, adres e-mail, numer telefonu, krótka biografia)<br>
-            &nbsp;&nbsp;&bull; Oświadczenie:<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;"Oświadczam, że jestem autorem zgłoszonego utworu, który nie był wcześniej wykonywany, publikowany ani nagradzany. Akceptuję regulamin konkursu."<br>
-          - Opłata rejestracyjna: 200 zł<br>
-          - Numer konta: <span class="missing-info">12 3456 7890 1234 5678 9012 3456</span></p>
-
-          <p><strong>6. Jury</strong><br>
-          Marcin Bortnowski, Stanisław Krupowicz, Grażyna Krzanowska, Eneasz Kubit, Piotr Zembroń (sekretarz), Jagna Krzanowska (dyrektor konkursu).</p>
-
-          <p><strong>7. Nagrody</strong><br>
-          - Łączna pula nagród: 10 000 zł<br>
-          - Prawykonania podczas festiwalu Alkagran 2026<br>
-          - Jury może nie przyznać nagród lub zmienić ich podział</p>
-
-          <p><strong>8. Prawa autorskie</strong><br>
-          - Uczestnicy zachowują prawa autorskie<br>
-          - Organizatorzy uzyskują prawo do wykonania, nagrania, publikacji i promocji nagrodzonych utworów</p>
-
-          <p><strong>9. Postanowienia końcowe</strong><br>
-          - Zgłoszenie oznacza akceptację regulaminu<br>
-          - Organizatorzy mogą zmienić regulamin lub odwołać konkurs z ważnych przyczyn</p>
-
-          <p><strong>10. Ochrona danych osobowych</strong><br>
-          - Dane uczestników będą przetwarzane zgodnie z RODO<br>
-          - Administratorem danych jest Fundacja im. Andrzeja Krzanowskiego<br>
-          - Dane będą wykorzystywane wyłącznie do celów konkursu</p>
-        </div>
-        <!-- Koniec regulaminu -->
-      </section>
-
-      <!-- Pozostałe sekcje strony -->
-      <section id="aktualnosci" class="news">
-        <!-- ... -->
-      </section>
-
-      <section id="jury" class="jury">
-        <!-- ... -->
-      </section>
-
-      <section id="dokumenty" class="documents">
-        <!-- ... -->
-      </section>
-
-      <section id="organizatorzy" class="contact-info">
-        <!-- ... -->
-      </section>
-
-      <section id="kontakt" class="contact-info">
-        <!-- ... -->
-      </section>
-    </div>
-  </main>
-</body>
-</html>
+  <section id="konkurs">
+    <h2>O konkursie</h2>
+    <p>
+      W 2025 roku Czechowice-Dziedzice stają się miejscem wyjątkowego wydarzenia artystycznego: konkursu kompozytorskiego <em>„na prawym brzegu Wisły…”</em>, skierowanego do młodych kompozytorek i kompozytorów z Polski i zagranicy.
+    </p>
+    <p>
+      Celem konkursu jest nie tylko promocja współczesnej muzyki akordeonowej, ale przede wszystkim stworzenie przestrzeni, w której nowa generacja twó
