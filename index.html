@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Na prawym brzegu Wisły - Konkurs Kompozytorski</title>
+  <title>Na prawym brzegu Wisły - Composition Competition</title>
   <style>
     * {
       margin: 0;
@@ -78,6 +78,20 @@
       display: inline-block;
     }
 
+    .logo-placeholder {
+      width: 150px;
+      height: 80px;
+      background: linear-gradient(45deg, #0066cc, #004499);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 14px;
+      text-align: center;
+      border-radius: 4px;
+    }
+
     h1 {
       font-size: 2rem;
       color: #333;
@@ -93,7 +107,7 @@
 
     nav {
       background: #f0f0f0;
-      padding: 0.3rem 0;
+      padding: 0.5rem 0;
       border-top: 1px solid #ddd;
     }
 
@@ -101,7 +115,7 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 0.8rem;
+      gap: 1rem;
       list-style: none;
     }
 
@@ -109,10 +123,10 @@
       color: #333;
       text-decoration: none;
       font-weight: 500;
-      padding: 0.2rem 0.6rem;
+      padding: 0.3rem 0.8rem;
       border-radius: 4px;
       transition: all 0.3s ease;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
     }
 
     .nav-links a:hover {
@@ -155,6 +169,21 @@
     .video-container {
       text-align: center;
       padding: 2rem 0;
+    }
+
+    .video-placeholder {
+      width: 100%;
+      max-width: 640px;
+      height: 360px;
+      background: #f0f0f0;
+      border: 2px dashed #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      border-radius: 5px;
+      color: #666;
+      font-size: 1.1rem;
     }
 
     video {
@@ -294,23 +323,23 @@
     <div class="container">
       <div class="header-content">
         <div class="language-switch">
-          <a href="index.html" class="active">🇵🇱 Polski</a>
-          <a href="indexen.html">🇬🇧 English</a>
+          <a href="index.html">🇵🇱 Polski</a>
+          <a href="indexen.html" class="active">🇬🇧 English</a>
         </div>
         <a href="#" class="logo">
-          <img src="logo.png" alt="Logo Konkursu" style="max-width: 150px; height: auto;">
+          <img src="logo.png" alt="Competition Logo" style="max-width: 150px; height: auto;">
         </a>
         <h1>na prawym brzegu Wisły…</h1>
-        <div class="subtitle">Konkurs Kompozytorski</div>
+        <div class="subtitle">Composition Competition</div>
       </div>
       <nav>
         <ul class="nav-links">
-          <li><a href="#aktualnosci">Aktualności</a></li>
+          <li><a href="#news">news</a></li>
           <li><a href="#jury">Jury</a></li>
-          <li><a href="#dokumenty">Dokumenty</a></li>
-          <li><a href="#regulamin">Regulamin</a></li>
-          <li><a href="#organizatorzy">Organizatorzy</a></li>
-          <li><a href="#kontakt">Kontakt</a></li>
+          <li><a href="#documents">Documents</a></li>
+          <li><a href="#regulations">Regulations</a></li>
+          <li><a href="#organizers">Organizers</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -319,23 +348,31 @@
   <main>
     <div class="container">
       <section class="intro">
-        <h2>Konkurs Kompozytorski</h2>
+        <h2>Composition Competition</h2>
         <p>
-          Konkurs kompozytorski „Na prawym brzegu Wisły…" odbędzie się w Czechowicach-Dziedzicach – mieście Andrzeja Krzanowskiego.
-          Zapraszamy młodych kompozytorów do udziału w tym wyjątkowym wydarzeniu muzycznym.
+          W 2025 roku Czechowice-Dziedzice stają się miejscem wyjątkowego wydarzenia artystycznego: konkursu kompozytorskiego <em>„Na prawym brzegu Wisły…"</em>, skierowanego do młodych kompozytorek i kompozytorów z Polski i zagranicy. Celem konkursu jest nie tylko promocja współczesnej muzyki akordeonowej, ale przede wszystkim stworzenie przestrzeni, w której nowa generacja twórczyń i twórców może zaprezentować swoje poszukiwania, wizje i indywidualny język muzyczny. Wierzymy, że warto dawać młodym artystkom i artystom impuls do działania – zwłaszcza dziś, gdy tak bardzo potrzeba świeżej, odważnej sztuki, która mówi o świecie na nowo.
+        </p>
+        <p>
+          Nieprzypadkowo Czechowice-Dziedzice są miejscem tej inicjatywy. To właśnie tutaj żył i tworzył <strong>Andrzej Krzanowski</strong> – wybitny kompozytor i akordeonista, postać charyzmatyczna, która głęboko zapisała się w historii polskiej muzyki współczesnej. Konkurs odbywa się w <strong>35. rocznicę jego przedwczesnej śmierci</strong> – stanowi nie tylko hołd dla jego dorobku, ale też żywe świadectwo, że jego duch i energia twórcza wciąż są obecne, inspirujące i potrzebne.
+        </p>
+        <p>
+          Jury, złożone z uznanych artystów reprezentujących środowisko muzyki współczesnej, wyłoni laureatki i laureatów spośród zgłoszeń napływających z Polski oraz z zagranicy. <strong>Ogłoszenie wyników nastąpi 28 października 2025 roku podczas koncertu finałowego w Czechowicach-Dziedzicach</strong> – wieczoru, który stanie się świętem nowej muzyki i symbolicznym zwieńczeniem pierwszej edycji konkursu.
+        </p>
+        <p>
+          Konkurs <em>„Na prawym brzegu Wisły…"</em> staje się nowym, ważnym punktem na mapie muzyki współczesnej oraz kolejną kulturalną wizytówką Czechowic-Dziedzic – wydarzeniem, które łączy tradycję z nowoczesnością i wspiera rozwój młodych artystek i artystów.
         </p>
       </section>
 
-      <section id="aktualnosci" class="news">
-        <h2>Aktualności</h2>
-        <p>Oficjalna strona konkursu jest już dostępna! Zapraszamy do zapoznania się z regulaminem i nadsyłania kompozycji. Wszystkie szczegóły znajdziecie poniżej.</p>
+      <section id="news" class="news">
+        <h2>news</h2>
+        <p>The official competition website is now live! We invite you to familiarize yourself with the regulations and submit your compositions. You can find all the details below.</p>
         
-        <p><strong>Termin nadsyłania prac: 1 października 2025!</strong></p>
+        <p><strong>Submission deadline: October 1, 2025!</strong></p>
         
         <div class="video-container">
           <video width="640" controls>
             <source src="NAPRAWYMBRZEGUWISLY.PL.mp4" type="video/mp4">
-            Twoja przeglądarka nie obsługuje elementu video.
+            Your browser does not support the video element.
           </video>
         </div>
       </section>
@@ -347,125 +384,125 @@
           <li><strong>prof. Stanisław Krupowicz</strong></li>
           <li><strong>Grażyna Krzanowska</strong></li>
           <li><strong>dr Eneasz Kubit</strong></li>
-          <li><strong>Piotr Zembroń</strong> - sekretarz</li>
-          <li><strong>Jagna Krzanowska</strong> - dyrektor konkursu</li>
+          <li><strong>Piotr Zembroń</strong> - secretary</li>
+          <li><strong>Jagna Krzanowska</strong> - competition director</li>
         </ul>
       </section>
 
-      <section id="dokumenty" class="documents">
-        <h2>Dokumenty do Pobrania</h2>
+      <section id="documents" class="documents">
+        <h2>Documents to Download</h2>
         <ul>
-          <li><a href="#" class="download-link download-placeholder" onclick="alert('Dokument będzie wkrótce dostępny'); return false;">📄 Regulamin Konkursu (PDF) - Wkrótce</a></li>
-          <li><a href="#" class="download-link download-placeholder" onclick="alert('Dokument będzie wkrótce dostępny'); return false;">📝 Formularz Zgłoszeniowy (DOCX) - Wkrótce</a></li>
+          <li><a href="#" class="download-link download-placeholder" onclick="alert('Document will be available soon'); return false;">📄 Competition Regulations (PDF) - Coming soon</a></li>
+          <li><a href="#" class="download-link download-placeholder" onclick="alert('Document will be available soon'); return false;">📝 Application Form (DOCX) - Coming soon</a></li>
         </ul>
         <p style="margin-top: 1.5rem; font-style: italic; color: #7f8c8d;">
-          Pobierz formularz zgłoszeniowy, wypełnij go zgodnie z instrukcjami zawartymi w regulaminie, a następnie wyślij wraz z kompozycją na podany adres e-mail.
+          Download the application form, fill it out according to the instructions contained in the regulations, and then send it along with your composition to the provided email address.
         </p>
       </section>
 
-      <section id="regulamin" class="regulations">
-        <h2>Regulamin</h2>
+      <section id="regulations" class="regulations">
+        <h2>Regulations</h2>
         
-        <p><strong>1. Organizatorzy</strong><br />
-        Konkurs organizowany jest przez: Fundację im. Andrzeja Krzanowskiego, Małą Akademię Muzyczną w Czechowicach-Dziedzicach, Miejski Ośrodek Kultury w Czechowicach-Dziedzicach.</p>
+        <p><strong>1. Organizers</strong><br />
+        The competition is organized by: Andrzej Krzanowski Foundation, Small Music Academy in Czechowice-Dziedzice, Municipal Culture Center in Czechowice-Dziedzice.</p>
 
-        <p><strong>2. Cel Konkursu</strong><br />
-        Celem konkursu jest promocja twórczości młodych kompozytorów oraz wzbogacenie współczesnego repertuaru akordeonowego.</p>
+        <p><strong>2. Competition Purpose</strong><br />
+        The purpose of the competition is to promote the work of young composers and enrich the contemporary accordion repertoire.</p>
 
-        <p><strong>3. Uczestnicy</strong><br />
-        W konkursie mogą brać udział kompozytorzy do 35. roku życia (urodzeni po 1 października 1990 r.), bez względu na narodowość.</p>
+        <p><strong>3. Participants</strong><br />
+        The competition is open to composers up to 35 years of age (born after October 1, 1990), regardless of nationality.</p>
 
-        <p><strong>4. Zasady Uczestnictwa</strong><br />
-        Każdy uczestnik może zgłosić jedną oryginalną kompozycję.<br />
-        Utwór:<br />
-        - musi być wcześniej niepublikowany, niewywkonywany publicznie i nienagradzany,<br />
-        - powinien trwać od 6 do 8 minut,<br />
-        - musi być napisany na akordeon solo, z opcjonalnym wykorzystaniem elektroniki (np. taśma stereo, live electronics).<br />
-        Organizator nie zapewnia realizacji warstwy elektronicznej podczas koncertu – powinna być samowystarczalna lub możliwa do wykonania przez akordeonistę.</p>
+        <p><strong>4. Participation Rules</strong><br />
+        Each participant may submit one original composition.<br />
+        The work:<br />
+        - must be previously unpublished, not performed publicly, and not awarded,<br />
+        - should last from 6 to 8 minutes,<br />
+        - must be written for solo accordion, with optional use of electronics (e.g., stereo tape, live electronics).<br />
+        The organizer does not provide realization of the electronic layer during the concert – it should be self-sufficient or possible to perform by the accordionist.</p>
 
-        <p><strong>5. Termin i Sposób Zgłaszania</strong><br />
-        Termin zgłaszania: 1 października 2025 r. (decyduje data otrzymania wiadomości).<br />
-        Ogłoszenie wyników: 28 października 2025 r. podczas koncertu „Tryptyk" w Czechowicach-Dziedzicach.<br />
-        Zgłoszenia należy wysyłać wyłącznie drogą elektroniczną na adres: <span class="missing-info">konkurs@krzanowski.org</span><br />
-        Zgłoszenie powinno zawierać:<br />
-        - partyturę w formacie PDF (oznaczoną mottem – pseudonimem),<br />
-        - nagranie audio lub rendering (jeśli dostępne),<br />
-        - plik tekstowy (formularz) z danymi autora (imię i nazwisko, data urodzenia, adres e-mail, numer telefonu, krótka biografia), również oznaczony mottem,<br />
-        - oświadczenie:<br />
-        „Oświadczam, że jestem autorem zgłoszonego utworu, który nie był wcześniej wykonywany, publikowany ani nagradzany. Akceptuję regulamin konkursu."<br />
-        Udział w konkursie wymaga wniesienia opłaty rejestracyjnej w wysokości 200 zł na numer konta: <span class="missing-info">12 3456 7890 1234 5678 9012 3456</span></p>
+        <p><strong>5. Submission Deadline and Method</strong><br />
+        Submission deadline: October 1, 2025 (the date of message receipt is decisive).<br />
+        Results announcement: October 28, 2025 during the "Triptych" concert in Czechowice-Dziedzice.<br />
+        Applications should be sent exclusively electronically to: <span class="missing-info">competition@krzanowski.org</span><br />
+        The application should include:<br />
+        - score in PDF format (marked with a motto – pseudonym),<br />
+        - audio recording or rendering (if available),<br />
+        - text file (form) with author's data (name and surname, date of birth, email address, phone number, short biography), also marked with the motto,<br />
+        - declaration:<br />
+        "I declare that I am the author of the submitted work, which has not been performed, published, or awarded before. I accept the competition regulations."<br />
+        Participation in the competition requires payment of an entry fee of 200 PLN to the account number: <span class="missing-info">12 3456 7890 1234 5678 9012 3456</span></p>
 
         <p><strong>6. Jury</strong><br />
-        Skład jury został podany powyżej. Składa się z uznanych artystów reprezentujących środowisko muzyki współczesnej. Decyzje jury są ostateczne i niepodważalne.</p>
+        The jury composition is listed above. It includes recognized artists representing the contemporary music community. Jury decisions are final and indisputable.</p>
 
-        <p><strong>7. Nagrody</strong><br />
-        Łączna pula nagród wynosi 10 000 zł.<br />
-        Nagrodzone kompozycje zostaną wykonane premierowo podczas Jesiennego Festiwalu Muzycznego Alkagran w 2026 roku.<br />
-        Jury zastrzega sobie prawo do innego rozdzielenia nagród lub ich nieudzielenia.</p>
+        <p><strong>7. Prizes</strong><br />
+        The total prize pool is 10,000 PLN.<br />
+        The awarded compositions will be premiered during the Autumn Musical Festival Alkagran in 2026.<br />
+        The jury reserves the right to distribute prizes differently or not award them.</p>
 
-        <p><strong>8. Prawa Autorskie</strong><br />
-        Uczestnicy zachowują pełne prawa autorskie do zgłaszanych kompozycji.<br />
-        Organizatorzy uzyskują prawo do:<br />
-        - wykonywania, nagrywania i dokumentowania nagrodzonych utworów,<br />
-        - udostępniania ich nagrań bezpłatnie w celach promocyjnych i archiwalnych.</p>
+        <p><strong>8. Copyright</strong><br />
+        Participants retain full copyright to their submitted compositions.<br />
+        Organizers obtain the right to:<br />
+        - perform, record, and document the awarded works,<br />
+        - make their recordings available free of charge for promotional and archival purposes.</p>
 
-        <p><strong>9. Postanowienia Końcowe</strong><br />
-        Zgłoszenie utworu oznacza pełną akceptację niniejszego regulaminu.<br />
-        Organizatorzy zastrzegają sobie prawo do wprowadzania zmian w regulaminie (nienaruszających zasady równego traktowania uczestników) lub odwołania konkursu z ważnych przyczyn.<br />
-        W sprawach nieuregulowanych niniejszym regulaminem decydują organizatorzy.</p>
+        <p><strong>9. Final Provisions</strong><br />
+        Submitting a work means full acceptance of these regulations.<br />
+        Organizers reserve the right to introduce changes to the regulations (not affecting the principle of equal treatment of participants) or to cancel the competition for important reasons.<br />
+        In matters not regulated by these regulations, the organizers decide.</p>
 
-        <p><strong>10. Ochrona Danych Osobowych (RODO)</strong><br />
-        Administratorem danych osobowych uczestników jest Fundacja im. Andrzeja Krzanowskiego z siedzibą w Czechowicach-Dziedzicach.<br />
-        Dane będą przetwarzane w celu przeprowadzenia konkursu, kontaktowania się z uczestnikami, ogłaszania wyników oraz promocji wydarzenia.<br />
-        Podanie danych jest dobrowolne, ale konieczne do uczestnictwa w konkursie.<br />
-        Uczestnicy mają prawo do dostępu do danych, ich sprostowania, usunięcia, ograniczenia przetwarzania, przenoszenia, cofnięcia zgody oraz wniesienia skargi do Prezesa UODO.<br />
-        Szczegółowe informacje można uzyskać kontaktując się z administratorem pod adresem: <span class="missing-info">info@krzanowski.org</span></p>
+        <p><strong>10. Personal Data Protection (GDPR)</strong><br />
+        The administrator of participants' personal data is the Andrzej Krzanowski Foundation based in Czechowice-Dziedzice.<br />
+        Data will be processed for the purpose of conducting the competition, contacting participants, announcing results, and promoting the event.<br />
+        Providing data is voluntary but necessary to participate in the competition.<br />
+        Participants have the right to access data, correct it, delete it, limit processing, transfer it, withdraw consent, and file a complaint with the President of UODO.<br />
+        Detailed information can be obtained by contacting the administrator at: <span class="missing-info">info@krzanowski.org</span></p>
       </section>
 
-      <section id="organizatorzy" class="organizers">
-        <h2>Organizatorzy</h2>
-        <p>Konkurs organizowany jest przez: Fundację im. Andrzeja Krzanowskiego, Małą Akademię Muzyczną w Czechowicach-Dziedzicach, Miejski Ośrodek Kultury w Czechowicach-Dziedzicach.</p>
+      <section id="organizers" class="organizers">
+        <h2>Organizers</h2>
+        <p>The competition is organized by: Andrzej Krzanowski Foundation, Small Music Academy in Czechowice-Dziedzice, Municipal Culture Center in Czechowice-Dziedzice.</p>
         
         <div class="contact-info">
           <div class="contact-item">
-            <h3>Fundacja im. Andrzeja Krzanowskiego</h3>
-            <p>Główny organizator konkursu, odpowiedzialny za koordynację całego wydarzenia.</p>
+            <h3>Andrzej Krzanowski Foundation</h3>
+            <p>Main organizer of the competition, responsible for coordinating the entire event.</p>
           </div>
           <div class="contact-item">
-            <h3>Mała Akademia Muzyczna</h3>
-            <p>Czechowice-Dziedzice<br/>Współorganizator odpowiedzialny za aspekty edukacyjne.</p>
+            <h3>Small Music Academy</h3>
+            <p>Czechowice-Dziedzice<br/>Co-organizer responsible for educational aspects.</p>
           </div>
           <div class="contact-item">
-            <h3>Miejski Ośrodek Kultury</h3>
-            <p>Czechowice-Dziedzice<br/>Miejsce koncertu finałowego i ogłoszenia wyników.</p>
+            <h3>Municipal Culture Center</h3>
+            <p>Czechowice-Dziedzice<br/>Venue for the final concert and results announcement.</p>
           </div>
         </div>
       </section>
 
-      <section id="kontakt" class="contact">
-        <h2>Kontakt</h2>
+      <section id="contact" class="contact">
+        <h2>Contact</h2>
         <div class="contact-info">
           <div class="contact-item">
-            <h3>📧 Zgłoszenia do Konkursu</h3>
-            <p><strong><span class="missing-info">konkurs@krzanowski.org</span></strong><br/>
-            Wysyłaj tutaj wszystkie zgłoszenia konkursowe wraz z wymaganymi dokumentami.</p>
+            <h3>📧 Competition Submissions</h3>
+            <p><strong><span class="missing-info">competition@krzanowski.org</span></strong><br/>
+            Send all competition submissions along with required documents here.</p>
           </div>
           <div class="contact-item">
-            <h3>📞 Kontakt Organizacyjny</h3>
+            <h3>📞 Organizational Contact</h3>
             <p><strong><span class="missing-info">+48 XXX XXX XXX</span></strong><br/>
-            W sprawach dotyczących konkursu i regulaminu.</p>
+            For questions regarding the competition and regulations.</p>
           </div>
           <div class="contact-item">
-            <h3>🏛️ Adres</h3>
+            <h3>🏛️ Address</h3>
             <p><strong>Czechowice-Dziedzice</strong><br/>
             <span class="missing-info">ul. Przykładowa 123<br/>43-502 Czechowice-Dziedzice</span><br/>
-            Fundacja im. Andrzeja Krzanowskiego</p>
+            Andrzej Krzanowski Foundation</p>
           </div>
           <div class="contact-item">
-            <h3>💳 Opłata Rejestracyjna</h3>
-            <p><strong>200 zł</strong><br/>
-            Numer konta: <span class="missing-info">12 3456 7890 1234 5678 9012 3456</span><br/>
-            Tytuł przelewu: "Konkurs Na prawym brzegu Wisły + [motto]"</p>
+            <h3>💳 Entry Fee</h3>
+            <p><strong>200 PLN</strong><br/>
+            Account number: <span class="missing-info">12 3456 7890 1234 5678 9012 3456</span><br/>
+            Transfer title: "Competition Na prawym brzegu Wisły + [motto]"</p>
           </div>
         </div>
       </section>
