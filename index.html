@@ -1,33 +1,30 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Na prawym brzegu Wisły… — konkurs kompozytorski</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      body {
-        font-family: 'Inter', sans-serif;
-      }
-      .bg-custom {
-        background-color: #e7edf3;
-      }
-      .text-shadow {
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-      }
-    </style>
+    <title>Na prawym brzegu Wisły… | Composition Competition</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="bg-custom text-gray-800">
-    <div class="max-w-4xl mx-auto px-4 py-8">
-      <header class="mb-12">
-        <h1 class="text-4xl font-bold text-center mb-4 text-shadow">Na prawym brzegu Wisły…</h1>
-        <h2 class="text-xl font-semibold text-center text-gray-600">konkurs kompozytorski</h2>
-      </header>
+  <body>
+    <header>
+      <div class="logo">Na prawym brzegu Wisły…</div>
+      <nav>
+        <ul>
+          <li><a href="#intro">Competition</a></li>
+          <li><a href="#downloads">Downloads</a></li>
+          <li><a href="#regulations">Regulations</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
 
-      <section class="intro mb-10 space-y-4 text-justify">
+    <main>
+      <section class="intro" id="intro">
+        <h2>Composition Competition</h2>
         <p>
-          W 2025 roku Czechowice-Dziedzice stają się miejscem wyjątkowego wydarzenia artystycznego: konkursu kompozytorskiego <em>„Na prawym brzegu Wisły…”</em>, skierowanego do młodych kompozytorek i kompozytorów z Polski i zagranicy.
+          The composition competition "Na prawym brzegu Wisły…" (On the Right Bank of the Vistula...) will take place in Czechowice-Dziedzice – the city of Andrzej Krzanowski.
+          We invite young composers to participate in this unique musical event.
         </p>
         <p>
           Celem konkursu jest nie tylko promocja współczesnej muzyki akordeonowej, ale przede wszystkim stworzenie przestrzeni, w której nowa generacja twórczyń i twórców może zaprezentować swoje poszukiwania, wizje i indywidualny język muzyczny. Wierzymy, że warto dawać młodym artystkom i artystom impuls do działania – zwłaszcza dziś, gdy tak bardzo potrzeba świeżej, odważnej sztuki, która mówi o świecie na nowo.
@@ -43,15 +40,38 @@
         </p>
       </section>
 
-      <section class="downloads mb-10">
-        <h3 class="text-2xl font-semibold mb-4">Materiały do pobrania</h3>
-        <ul class="list-disc list-inside space-y-2">
-          <li><a href="regulamin.pdf" class="text-blue-600 underline">Regulamin konkursu (PDF)</a></li>
-          <li><a href="formularz.pdf" class="text-blue-600 underline">Formularz zgłoszeniowy (PDF)</a></li>
-          <li><a href="film.mp4" class="text-blue-600 underline">Film promocyjny</a></li>
+      <section class="downloads" id="downloads">
+        <h2>Downloads</h2>
+        <ul>
+          <li><a href="regulations.pdf" download>Competition Regulations (PDF)</a></li>
+          <li><a href="application_form.pdf" download>Application Form (PDF)</a></li>
+          <li><a href="promo_video.mp4" download>Promotional Video</a></li>
         </ul>
       </section>
 
-      <section class="full-regulamin mb-10">
-        <h3 class="text-2xl font-semibold mb-4">Pełny regulamin</h3>
-        <p class="mb-4">Peł
+      <section class="regulations" id="regulations">
+        <h2>Competition Regulations</h2>
+        <p>
+          [Insert full regulations text here. Make sure the English and Polish versions are both included without cuts.]
+        </p>
+      </section>
+
+      <section class="contact" id="contact">
+        <h2>Contact</h2>
+        <p>
+          For any questions or additional information, please contact us at:
+        </p>
+        <p>
+          <strong>Email:</strong> konkurs@alkagran.pl
+        </p>
+        <p>
+          <strong>Phone:</strong> +48 123 456 789
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Na prawym brzegu Wisły… All rights reserved.</p>
+    </footer>
+  </body>
+</html>
