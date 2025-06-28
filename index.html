@@ -1,476 +1,57 @@
 <!DOCTYPE html>
 <html lang="pl">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Na prawym brzegu Wisły - Konkurs Kompozytorski</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background-color: #8090a8;
-      margin: 0;
-      padding: 0;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    header {
-      background: #fff;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .header-content {
-      text-align: center;
-      padding: 1.5rem 0;
-      position: relative;
-    }
-
-    .language-switch {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      display: flex;
-      gap: 0.5rem;
-    }
-
-    .language-switch a {
-      padding: 0.5rem 1rem;
-      background: #f0f0f0;
-      color: #333;
-      text-decoration: none;
-      border-radius: 4px;
-      font-weight: 500;
-      transition: all 0.3s ease;
-    }
-
-    .language-switch a:hover {
-      background: #e0e0e0;
-    }
-
-    .language-switch a.active {
-      background: #0066cc;
-      color: white;
-    }
-
-    .logo {
-      max-width: 150px;
-      height: auto;
-      margin-bottom: 0.8rem;
-      background: #f0f0f0;
-      padding: 20px;
-      border-radius: 8px;
-      display: inline-block;
-    }
-
-    h1 {
-      font-size: 2rem;
-      color: #333;
-      margin-bottom: 0.5rem;
-    }
-
-    .subtitle {
-      font-size: 1.2rem;
-      color: #666;
-      font-style: italic;
-      margin-bottom: 0.8rem;
-    }
-
-    nav {
-      background: #f0f0f0;
-      padding: 0.3rem 0;
-      border-top: 1px solid #ddd;
-    }
-
-    .nav-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: #333;
-      text-decoration: none;
-      font-weight: 500;
-      padding: 0.2rem 0.6rem;
-      border-radius: 4px;
-      transition: all 0.3s ease;
-      font-size: 0.85rem;
-    }
-
-    .nav-links a:hover {
-      background: #e0e0e0;
-      color: #000;
-    }
-
-    main {
-      padding: 3rem 0;
-    }
-
-    section {
-      background: #fff;
-      margin: 2rem 0;
-      padding: 2rem;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    h2 {
-      color: #333;
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 2px solid #ddd;
-    }
-
-    .intro {
-      font-size: 1.1rem;
-      text-align: center;
-      background: #f9f9f9;
-      border: 1px solid #ddd;
-    }
-
-    .intro h2 {
-      color: #333;
-      border-bottom-color: #ddd;
-    }
-
-    .video-container {
-      text-align: center;
-      padding: 2rem 0;
-    }
-
-    video {
-      max-width: 100%;
-      height: auto;
-      border-radius: 5px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    li {
-      margin: 1rem 0;
-      padding: 1rem;
-      background: #f9f9f9;
-      border-radius: 4px;
-      border-left: 3px solid #ccc;
-    }
-
-    li:hover {
-      background: #f0f0f0;
-    }
-
-    a {
-      color: #0066cc;
-      text-decoration: none;
-    }
-
-    a:hover {
-      color: #004499;
-      text-decoration: underline;
-    }
-
-    .download-link {
-      display: inline-block;
-      padding: 0.8rem 1.5rem;
-      background: #0066cc;
-      color: white;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: background-color 0.3s ease;
-    }
-
-    .download-link:hover {
-      background: #004499;
-      color: white;
-    }
-
-    .download-placeholder {
-      background: #e0e0e0;
-      color: #666;
-      cursor: not-allowed;
-    }
-
-    .download-placeholder:hover {
-      background: #d0d0d0;
-      color: #666;
-    }
-
-    .regulations p {
-      margin-bottom: 1.5rem;
-      padding: 1rem;
-      background: #f9f9f9;
-      border-radius: 4px;
-      border-left: 3px solid #666;
-    }
-
-    .regulations strong {
-      color: #333;
-      font-size: 1.1rem;
-    }
-
-    .contact-info {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .contact-item {
-      padding: 1.5rem;
-      background: #f9f9f9;
-      border-radius: 5px;
-      border: 1px solid #ddd;
-      text-align: center;
-    }
-
-    .contact-item h3 {
-      color: #333;
-      margin-bottom: 1rem;
-      font-size: 1.2rem;
-    }
-
-    .missing-info {
-      color: #e74c3c;
-      font-style: italic;
-      background: #fdf2f2;
-      padding: 0.5rem;
-      border-radius: 4px;
-      border: 1px solid #f5c6cb;
-    }
-
-    @media (max-width: 768px) {
-      .language-switch {
-        position: static;
-        justify-content: center;
-        margin-bottom: 1rem;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Na prawym brzegu Wisły… — konkurs kompozytorski</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
       }
-
-      h1 {
-        font-size: 1.8rem;
+      .bg-custom {
+        background-color: #e7edf3;
       }
-
-      .nav-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
+      .text-shadow {
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
       }
+    </style>
+  </head>
+  <body class="bg-custom text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+      <header class="mb-12">
+        <h1 class="text-4xl font-bold text-center mb-4 text-shadow">Na prawym brzegu Wisły…</h1>
+        <h2 class="text-xl font-semibold text-center text-gray-600">konkurs kompozytorski</h2>
+      </header>
 
-      section {
-        padding: 1.5rem;
-      }
-
-      .contact-info {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <header>
-    <div class="container">
-      <div class="header-content">
-        <div class="language-switch">
-          <a href="index.html" class="active">🇵🇱 Polski</a>
-          <a href="indexen.html">🇬🇧 English</a>
-        </div>
-        <a href="#" class="logo">
-          <img src="logo.png" alt="Logo Konkursu" style="max-width: 150px; height: auto;">
-        </a>
-        <h1>na prawym brzegu Wisły…</h1>
-        <div class="subtitle">Konkurs Kompozytorski</div>
-      </div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#aktualnosci">Aktualności</a></li>
-          <li><a href="#jury">Jury</a></li>
-          <li><a href="#dokumenty">Dokumenty</a></li>
-          <li><a href="#regulamin">Regulamin</a></li>
-          <li><a href="#organizatorzy">Organizatorzy</a></li>
-          <li><a href="#kontakt">Kontakt</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <div class="container">
-      <section class="intro">
-        <h2>Konkurs Kompozytorski</h2>
+      <section class="intro mb-10 space-y-4 text-justify">
         <p>
-          Konkurs kompozytorski „Na prawym brzegu Wisły…" odbędzie się w Czechowicach-Dziedzicach – mieście Andrzeja Krzanowskiego.
-          Zapraszamy młodych kompozytorów do udziału w tym wyjątkowym wydarzeniu muzycznym.
+          W 2025 roku Czechowice-Dziedzice stają się miejscem wyjątkowego wydarzenia artystycznego: konkursu kompozytorskiego <em>„Na prawym brzegu Wisły…”</em>, skierowanego do młodych kompozytorek i kompozytorów z Polski i zagranicy.
+        </p>
+        <p>
+          Celem konkursu jest nie tylko promocja współczesnej muzyki akordeonowej, ale przede wszystkim stworzenie przestrzeni, w której nowa generacja twórczyń i twórców może zaprezentować swoje poszukiwania, wizje i indywidualny język muzyczny. Wierzymy, że warto dawać młodym artystkom i artystom impuls do działania – zwłaszcza dziś, gdy tak bardzo potrzeba świeżej, odważnej sztuki, która mówi o świecie na nowo.
+        </p>
+        <p>
+          Nieprzypadkowo Czechowice-Dziedzice są miejscem tej inicjatywy. To właśnie tutaj żył i tworzył <strong>Andrzej Krzanowski</strong> – wybitny kompozytor i akordeonista, postać charyzmatyczna, która głęboko zapisała się w historii polskiej muzyki współczesnej. Konkurs odbywa się w <strong>35. rocznicę jego przedwczesnej śmierci</strong> – stanowi nie tylko hołd dla jego dorobku, ale też żywe świadectwo, że jego duch i energia twórcza wciąż są obecne, inspirujące i potrzebne.
+        </p>
+        <p>
+          Jury, złożone z uznanych artystów reprezentujących środowisko muzyki współczesnej, wyłoni laureatki i laureatów spośród zgłoszeń napływających z Polski oraz z zagranicy. <strong>Ogłoszenie wyników nastąpi 28 października 2025 roku podczas koncertu finałowego w Czechowicach-Dziedzicach</strong> – wieczoru, który stanie się świętem nowej muzyki i symbolicznym zwieńczeniem pierwszej edycji konkursu.
+        </p>
+        <p>
+          Konkurs <em>„Na prawym brzegu Wisły…”</em> staje się nowym, ważnym punktem na mapie muzyki współczesnej oraz kolejną kulturalną wizytówką Czechowic-Dziedzic – wydarzeniem, które łączy tradycję z nowoczesnością i wspiera rozwój młodych artystek i artystów.
         </p>
       </section>
 
-      <section id="aktualnosci" class="news">
-        <h2>Aktualności</h2>
-        <p>Oficjalna strona konkursu jest już dostępna! Zapraszamy do zapoznania się z regulaminem i nadsyłania kompozycji. Wszystkie szczegóły znajdziecie poniżej.</p>
-        
-        <p><strong>Termin nadsyłania prac: 1 października 2025!</strong></p>
-        
-        <div class="video-container">
-          <video width="640" controls>
-            <source src="NAPRAWYMBRZEGUWISLY.PL.mp4" type="video/mp4">
-            Twoja przeglądarka nie obsługuje elementu video.
-          </video>
-        </div>
-      </section>
-
-      <section id="jury" class="jury">
-        <h2>Jury</h2>
-        <ul>
-          <li><strong>prof. Marcin Bortnowski</strong></li>
-          <li><strong>prof. Stanisław Krupowicz</strong></li>
-          <li><strong>Grażyna Krzanowska</strong></li>
-          <li><strong>dr Eneasz Kubit</strong></li>
-          <li><strong>Piotr Zembroń</strong> - sekretarz</li>
-          <li><strong>Jagna Krzanowska</strong> - dyrektor konkursu</li>
+      <section class="downloads mb-10">
+        <h3 class="text-2xl font-semibold mb-4">Materiały do pobrania</h3>
+        <ul class="list-disc list-inside space-y-2">
+          <li><a href="regulamin.pdf" class="text-blue-600 underline">Regulamin konkursu (PDF)</a></li>
+          <li><a href="formularz.pdf" class="text-blue-600 underline">Formularz zgłoszeniowy (PDF)</a></li>
+          <li><a href="film.mp4" class="text-blue-600 underline">Film promocyjny</a></li>
         </ul>
       </section>
 
-      <section id="dokumenty" class="documents">
-        <h2>Dokumenty do Pobrania</h2>
-        <ul>
-          <li><a href="#" class="download-link download-placeholder" onclick="alert('Dokument będzie wkrótce dostępny'); return false;">📄 Regulamin Konkursu (PDF) - Wkrótce</a></li>
-          <li><a href="#" class="download-link download-placeholder" onclick="alert('Dokument będzie wkrótce dostępny'); return false;">📝 Formularz Zgłoszeniowy (DOCX) - Wkrótce</a></li>
-        </ul>
-        <p style="margin-top: 1.5rem; font-style: italic; color: #7f8c8d;">
-          Pobierz formularz zgłoszeniowy, wypełnij go zgodnie z instrukcjami zawartymi w regulaminie, a następnie wyślij wraz z kompozycją na podany adres e-mail.
-        </p>
-      </section>
-
-      <section id="regulamin" class="regulations">
-        <h2>Regulamin</h2>
-        
-        <p><strong>1. Organizatorzy</strong><br />
-        Konkurs organizowany jest przez: Fundację im. Andrzeja Krzanowskiego, Małą Akademię Muzyczną w Czechowicach-Dziedzicach, Miejski Ośrodek Kultury w Czechowicach-Dziedzicach.</p>
-
-        <p><strong>2. Cel Konkursu</strong><br />
-        Celem konkursu jest promocja twórczości młodych kompozytorów oraz wzbogacenie współczesnego repertuaru akordeonowego.</p>
-
-        <p><strong>3. Uczestnicy</strong><br />
-        W konkursie mogą brać udział kompozytorzy do 35. roku życia (urodzeni po 1 października 1990 r.), bez względu na narodowość.</p>
-
-        <p><strong>4. Zasady Uczestnictwa</strong><br />
-        Każdy uczestnik może zgłosić jedną oryginalną kompozycję.<br />
-        Utwór:<br />
-        - musi być wcześniej niepublikowany, niewywkonywany publicznie i nienagradzany,<br />
-        - powinien trwać od 6 do 8 minut,<br />
-        - musi być napisany na akordeon solo, z opcjonalnym wykorzystaniem elektroniki (np. taśma stereo, live electronics).<br />
-        Organizator nie zapewnia realizacji warstwy elektronicznej podczas koncertu – powinna być samowystarczalna lub możliwa do wykonania przez akordeonistę.</p>
-
-        <p><strong>5. Termin i Sposób Zgłaszania</strong><br />
-        Termin zgłaszania: 1 października 2025 r. (decyduje data otrzymania wiadomości).<br />
-        Ogłoszenie wyników: 28 października 2025 r. podczas koncertu „Tryptyk" w Czechowicach-Dziedzicach.<br />
-        Zgłoszenia należy wysyłać wyłącznie drogą elektroniczną na adres: <span class="missing-info">konkurs@krzanowski.org</span><br />
-        Zgłoszenie powinno zawierać:<br />
-        - partyturę w formacie PDF (oznaczoną mottem – pseudonimem),<br />
-        - nagranie audio lub rendering (jeśli dostępne),<br />
-        - plik tekstowy (formularz) z danymi autora (imię i nazwisko, data urodzenia, adres e-mail, numer telefonu, krótka biografia), również oznaczony mottem,<br />
-        - oświadczenie:<br />
-        „Oświadczam, że jestem autorem zgłoszonego utworu, który nie był wcześniej wykonywany, publikowany ani nagradzany. Akceptuję regulamin konkursu."<br />
-        Udział w konkursie wymaga wniesienia opłaty rejestracyjnej w wysokości 200 zł na numer konta: <span class="missing-info">12 3456 7890 1234 5678 9012 3456</span></p>
-
-        <p><strong>6. Jury</strong><br />
-        Skład jury został podany powyżej. Składa się z uznanych artystów reprezentujących środowisko muzyki współczesnej. Decyzje jury są ostateczne i niepodważalne.</p>
-
-        <p><strong>7. Nagrody</strong><br />
-        Łączna pula nagród wynosi 10 000 zł.<br />
-        Nagrodzone kompozycje zostaną wykonane premierowo podczas Jesiennego Festiwalu Muzycznego Alkagran w 2026 roku.<br />
-        Jury zastrzega sobie prawo do innego rozdzielenia nagród lub ich nieudzielenia.</p>
-
-        <p><strong>8. Prawa Autorskie</strong><br />
-        Uczestnicy zachowują pełne prawa autorskie do zgłaszanych kompozycji.<br />
-        Organizatorzy uzyskują prawo do:<br />
-        - wykonywania, nagrywania i dokumentowania nagrodzonych utworów,<br />
-        - udostępniania ich nagrań bezpłatnie w celach promocyjnych i archiwalnych.</p>
-
-        <p><strong>9. Postanowienia Końcowe</strong><br />
-        Zgłoszenie utworu oznacza pełną akceptację niniejszego regulaminu.<br />
-        Organizatorzy zastrzegają sobie prawo do wprowadzania zmian w regulaminie (nienaruszających zasady równego traktowania uczestników) lub odwołania konkursu z ważnych przyczyn.<br />
-        W sprawach nieuregulowanych niniejszym regulaminem decydują organizatorzy.</p>
-
-        <p><strong>10. Ochrona Danych Osobowych (RODO)</strong><br />
-        Administratorem danych osobowych uczestników jest Fundacja im. Andrzeja Krzanowskiego z siedzibą w Czechowicach-Dziedzicach.<br />
-        Dane będą przetwarzane w celu przeprowadzenia konkursu, kontaktowania się z uczestnikami, ogłaszania wyników oraz promocji wydarzenia.<br />
-        Podanie danych jest dobrowolne, ale konieczne do uczestnictwa w konkursie.<br />
-        Uczestnicy mają prawo do dostępu do danych, ich sprostowania, usunięcia, ograniczenia przetwarzania, przenoszenia, cofnięcia zgody oraz wniesienia skargi do Prezesa UODO.<br />
-        Szczegółowe informacje można uzyskać kontaktując się z administratorem pod adresem: <span class="missing-info">info@krzanowski.org</span></p>
-      </section>
-
-      <section id="organizatorzy" class="organizers">
-        <h2>Organizatorzy</h2>
-        <p>Konkurs organizowany jest przez: Fundację im. Andrzeja Krzanowskiego, Małą Akademię Muzyczną w Czechowicach-Dziedzicach, Miejski Ośrodek Kultury w Czechowicach-Dziedzicach.</p>
-        
-        <div class="contact-info">
-          <div class="contact-item">
-            <h3>Fundacja im. Andrzeja Krzanowskiego</h3>
-            <p>Główny organizator konkursu, odpowiedzialny za koordynację całego wydarzenia.</p>
-          </div>
-          <div class="contact-item">
-            <h3>Mała Akademia Muzyczna</h3>
-            <p>Czechowice-Dziedzice<br/>Współorganizator odpowiedzialny za aspekty edukacyjne.</p>
-          </div>
-          <div class="contact-item">
-            <h3>Miejski Ośrodek Kultury</h3>
-            <p>Czechowice-Dziedzice<br/>Miejsce koncertu finałowego i ogłoszenia wyników.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="kontakt" class="contact">
-        <h2>Kontakt</h2>
-        <div class="contact-info">
-          <div class="contact-item">
-            <h3>📧 Zgłoszenia do Konkursu</h3>
-            <p><strong><span class="missing-info">konkurs@krzanowski.org</span></strong><br/>
-            Wysyłaj tutaj wszystkie zgłoszenia konkursowe wraz z wymaganymi dokumentami.</p>
-          </div>
-          <div class="contact-item">
-            <h3>📞 Kontakt Organizacyjny</h3>
-            <p><strong><span class="missing-info">+48 XXX XXX XXX</span></strong><br/>
-            W sprawach dotyczących konkursu i regulaminu.</p>
-          </div>
-          <div class="contact-item">
-            <h3>🏛️ Adres</h3>
-            <p><strong>Czechowice-Dziedzice</strong><br/>
-            <span class="missing-info">ul. Przykładowa 123<br/>43-502 Czechowice-Dziedzice</span><br/>
-            Fundacja im. Andrzeja Krzanowskiego</p>
-          </div>
-          <div class="contact-item">
-            <h3>💳 Opłata Rejestracyjna</h3>
-            <p><strong>200 zł</strong><br/>
-            Numer konta: <span class="missing-info">12 3456 7890 1234 5678 9012 3456</span><br/>
-            Tytuł przelewu: "Konkurs Na prawym brzegu Wisły + [motto]"</p>
-          </div>
-        </div>
-      </section>
-    </div>
-  </main>
-</body>
-
-</html>
+      <section class="full-regulamin mb-10">
+        <h3 class="text-2xl font-semibold mb-4">Pełny regulamin</h3>
+        <p class="mb-4">Peł
