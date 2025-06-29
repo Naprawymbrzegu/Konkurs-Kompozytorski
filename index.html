@@ -54,6 +54,10 @@
       justify-content: center;
       font-size: 2rem;
       border: 2px solid rgba(255, 255, 255, 0.3);
+      background-image: url('logo.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
     }
 
     .sidebar h1 {
@@ -347,14 +351,24 @@
       margin-bottom: 1rem;
     }
 
-    /* Missing Info */
-    .missing-info {
-      background: #fff3cd;
-      color: #856404;
-      padding: 0.5rem;
-      border-radius: 4px;
-      border: 1px solid #ffeaa7;
-      font-weight: 500;
+    .regulation-item ul {
+      margin: 1rem 0;
+      padding-left: 1.5rem;
+    }
+
+    .regulation-item ul li {
+      margin: 0.5rem 0;
+    }
+
+    /* Bank details styling */
+    .bank-details {
+      background: #e8f4fd;
+      border: 1px solid #bee5eb;
+      border-radius: 8px;
+      padding: 1rem;
+      margin: 1rem 0;
+      font-family: monospace;
+      font-size: 0.95rem;
     }
 
     /* Special styling for deadline info */
@@ -561,11 +575,11 @@
         </div>
         <div class="section-content">
           <div class="download-section">
-            <a href="#" class="download-link download-placeholder" onclick="alert('Dokument będzie wkrótce dostępny'); return false;">
-              📄 Regulamin Konkursu (PDF) - Wkrótce
+            <a href="Regulamin_konkursu_2025.pdf" class="download-link" target="_blank">
+              📄 Regulamin Konkursu (PDF)
             </a>
-            <a href="#" class="download-link download-placeholder" onclick="alert('Dokument będzie wkrótce dostępny'); return false;">
-              📝 Formularz Zgłoszeniowy (DOCX) - Wkrótce
+            <a href="Formularz_zgloszeniowy.docx" class="download-link" target="_blank">
+              📝 Formularz Zgłoszeniowy (DOCX)
             </a>
           </div>
           <p style="margin-top: 1.5rem; font-style: italic; color: #6c757d;">
@@ -582,62 +596,102 @@
         <div class="section-content">
           <div class="regulation-item">
             <strong>1. Organizatorzy</strong>
-            Konkurs organizowany jest przez: Fundację im. Andrzeja Krzanowskiego, Małą Akademię Muzyki w Czechowicach-Dziedzicach, Miejski Dom Kultury w Czechowicach-Dziedzicach.
+            Organizatorami konkursu są:
+            <ul>
+              <li>Fundacja im. Andrzeja Krzanowskiego</li>
+              <li>Mała Akademia Muzyki w Czechowicach-Dziedzicach</li>
+              <li>Miejski Dom Kultury w Czechowicach-Dziedzicach</li>
+            </ul>
           </div>
 
           <div class="regulation-item">
-            <strong>2. Cel Konkursu</strong>
-            Celem konkursu jest promocja twórczości młodych kompozytorów oraz wzbogacenie współczesnego repertuaru akordeonowego.
+            <strong>2. Cel konkursu</strong>
+            Celem konkursu jest promocja twórczości młodych kompozytorek i kompozytorów oraz wzbogacenie współczesnego repertuaru na akordeon.
           </div>
 
           <div class="regulation-item">
-            <strong>3. Uczestnicy</strong>
-            W konkursie mogą brać udział kompozytorzy do 35. roku życia (urodzeni po 1 października 1990 r.), bez względu na narodowość.
+            <strong>3. Uczestniczki i uczestnicy</strong>
+            Konkurs skierowany jest do kompozytorek i kompozytorów do 35. roku życia (urodzonych po 1 października 1990 roku), niezależnie od narodowości.
           </div>
 
           <div class="regulation-item">
-            <strong>4. Zasady Uczestnictwa</strong>
-            Każdy uczestnik może zgłosić jedną oryginalną kompozycję.<br/>
-            Utwór:<br/>
-            - musi być wcześniej niepublikowany, niewywkonywany publicznie i nienagradzany,<br/>
-            - powinien trwać od 6 do 8 minut,<br/>
-            - musi być napisany na akordeon solo, z opcjonalnym wykorzystaniem elektroniki.<br/>
-            Organizator nie zapewnia realizacji warstwy elektronicznej podczas koncertu.
+            <strong>4. Zasady uczestnictwa</strong>
+            Każda uczestniczka i każdy uczestnik może zgłosić jedną oryginalną kompozycję.<br/>
+            <strong>Utwór:</strong>
+            <ul>
+              <li>musi być wcześniej niepublikowany, niewykonywany publicznie i nienagradzany</li>
+              <li>powinien trwać od 6 do 8 minut</li>
+              <li>musi być przeznaczony na akordeon solo, z opcjonalnym użyciem elektroniki (np. taśma stereo, live electronics)</li>
+            </ul>
+            Organizator nie zapewnia realizacji warstwy elektronicznej podczas koncertu – powinna być ona samowystarczalna lub możliwa do wykonania przez akordeonistę.
           </div>
 
           <div class="regulation-item">
-            <strong>5. Termin i Sposób Zgłaszania</strong>
-            Termin zgłaszania: 1 października 2025 r.<br/>
-            Ogłoszenie wyników: 28 października 2025 r. podczas koncertu „Tryptyk" w Czechowicach-Dziedzicach.<br/>
-            Zgłoszenia wysyłać na: <span class="missing-info">konkurs@krzanowski.org</span><br/>
-            Udział wymaga opłaty 200 zł na konto: <span class="missing-info">12 3456 7890 1234 5678 9012 3456</span>
+            <strong>5. Termin i sposób zgłoszeń</strong>
+            <strong>Termin nadsyłania zgłoszeń:</strong> do 1 października 2025 roku (decyduje data otrzymania wiadomości).<br/>
+            <strong>Ogłoszenie wyników</strong> nastąpi 28 października 2025 podczas koncertu „Tryptyk" w Czechowicach-Dziedzicach.<br/><br/>
+            
+            <strong>Zgłoszenia należy przesyłać wyłącznie drogą elektroniczną na adres:</strong><br/>
+            <strong>zgloszenia@naprawymbrzeguwisly.pl</strong><br/><br/>
+            
+            <strong>Zgłoszenie powinno zawierać:</strong>
+            <ul>
+              <li>partyturę w formacie PDF (opatrzoną godłem – pseudonimem)</li>
+              <li>nagranie lub rendering audio (jeśli dostępne)</li>
+              <li>plik tekstowy (formularz dostępny na stronie) z danymi autorki lub autora (imię i nazwisko, data urodzenia, adres e-mail, numer telefonu, krótka biografia), również oznaczony godłem</li>
+              <li>oświadczenie: „Oświadczam, że jestem autorką/autorem zgłaszanego utworu, który nie był dotąd wykonywany, publikowany ani nagradzany. Akceptuję regulamin konkursu."</li>
+            </ul>
+            
+            <strong>Warunkiem udziału w konkursie jest uiszczenie opłaty wpisowej w wysokości 200zł na konto:</strong>
+            <div class="bank-details">
+              <strong>Miejski Dom Kultury</strong><br/>
+              ING Bank Śląski S.A. Oddział w Czechowicach-Dziedzicach<br/>
+              <strong>Nr 84 1050 1256 1000 0001 0263 5281</strong><br/>
+              <strong>tytuł wpłaty: konkurs kompozytorski</strong>
+            </div>
           </div>
 
           <div class="regulation-item">
             <strong>6. Jury</strong>
+            Skład jury zostanie ogłoszony w terminie późniejszym.
+            W jego skład wejdą uznani artyści reprezentujący środowisko muzyki współczesnej.
             Decyzje jury są ostateczne i niepodważalne.
           </div>
 
           <div class="regulation-item">
             <strong>7. Nagrody</strong>
             Łączna pula nagród wynosi 10 000 zł.<br/>
-            Nagrodzone kompozycje zostaną wykonane podczas Jesiennego Festiwalu Muzycznego Alkagran w 2026 roku.
+            Nagrodzone kompozycje zostaną prawykonane podczas Jesiennego Festiwalu Muzycznego Alkagran w 2026 roku.<br/>
+            Jury zastrzega sobie prawo innego podziału nagród lub ich nieprzyznania.
           </div>
 
           <div class="regulation-item">
-            <strong>8. Prawa Autorskie</strong>
-            Uczestnicy zachowują pełne prawa autorskie do zgłaszanych kompozycji.
+            <strong>8. Prawa autorskie</strong>
+            Uczestniczki i uczestnicy zachowują pełne prawa autorskie do zgłaszanych kompozycji.<br/>
+            Organizatorzy uzyskują prawo do:
+            <ul>
+              <li>wykonania, rejestracji i dokumentacji nagrodzonych utworów</li>
+              <li>nieodpłatnego udostępniania ich nagrań do celów promocyjnych i archiwalnych</li>
+            </ul>
           </div>
 
           <div class="regulation-item">
-            <strong>9. Postanowienia Końcowe</strong>
-            Zgłoszenie utworu oznacza pełną akceptację niniejszego regulaminu.
+            <strong>9. Postanowienia końcowe</strong>
+            Zgłoszenie utworu oznacza pełną akceptację niniejszego regulaminu.<br/>
+            Organizatorzy zastrzegają sobie prawo do wprowadzenia zmian w regulaminie (nie wpływających na zasadę równego traktowania uczestniczek i uczestników) lub do odwołania konkursu z ważnych przyczyn.<br/>
+            W sprawach nieuregulowanych niniejszym regulaminem decydują organizatorzy.
           </div>
 
           <div class="regulation-item">
-            <strong>10. Ochrona Danych Osobowych (RODO)</strong>
-            Administratorem danych jest Fundacja im. Andrzeja Krzanowskiego.<br/>
-            Kontakt: <span class="missing-info">info@krzanowski.org</span>
+            <strong>10. Ochrona danych osobowych (RODO)</strong>
+            Zgodnie z art. 13 ust. 1 i 2 RODO informujemy, że:
+            <ul>
+              <li>Administratorem danych osobowych uczestniczek i uczestników jest Fundacja im. Andrzeja Krzanowskiego z siedzibą w Czechowicach-Dziedzicach</li>
+              <li>Dane będą przetwarzane w celu przeprowadzenia konkursu, kontaktu z uczestniczkami i uczestnikami, ogłoszenia wyników oraz promocji wydarzenia</li>
+              <li>Podanie danych jest dobrowolne, ale niezbędne do udziału w konkursie</li>
+              <li>Uczestniczkom i uczestnikom przysługuje prawo dostępu do danych, ich sprostowania, usunięcia, ograniczenia przetwarzania, przenoszenia, cofnięcia zgody oraz wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych</li>
+              <li>Szczegółowe informacje dotyczące przetwarzania danych osobowych można uzyskać kontaktując się z administratorem pod adresem: <strong>biuro@naprawymbrzeguwisly.pl</strong></li>
+            </ul>
           </div>
         </div>
       </section>
@@ -671,76 +725,5 @@
           <div class="cards-grid">
             <div class="card">
               <h3>📧 Zgłoszenia do Konkursu</h3>
-              <p><strong><span class="missing-info">konkurs@krzanowski.org</span></strong><br/>
+              <p><strong>zgloszenia@naprawymbrzeguwisly.pl</strong><br/>
               TU WYŚLIJ SWOJE ZGŁOSZENIE</p>
-            </div>
-            <div class="card">
-              <h3>📞 Kontakt Organizacyjny</h3>
-              <p><strong><span class="missing-info">+48 XXX XXX XXX</span></strong><br/>
-              W sprawach dotyczących konkursu.</p>
-            </div>
-            <div class="card">
-              <h3>🏛️ Adres</h3>
-              <p><strong>Czechowice-Dziedzice</strong><br/>
-              <span class="missing-info">ul. Przykładowa 123<br/>43-502 Czechowice-Dziedzice</span></p>
-            </div>
-            <div class="card">
-              <h3>💳 Opłata Rejestracyjna</h3>
-              <p><strong>200 zł</strong><br/>
-              Konto: <span class="missing-info">12 3456 7890 1234 5678 9012 3456</span><br/>
-              Tytuł: "Konkurs Na prawym brzegu Wisły + [motto]"</p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  </main>
-
-  <script>
-    function toggleSidebar() {
-      const sidebar = document.getElementById('sidebar');
-      sidebar.classList.toggle('open');
-    }
-
-    function closeSidebar() {
-      const sidebar = document.getElementById('sidebar');
-      sidebar.classList.remove('open');
-    }
-
-    // Close sidebar when clicking outside on mobile
-    document.addEventListener('click', function(event) {
-      const sidebar = document.getElementById('sidebar');
-      const menuBtn = document.querySelector('.mobile-menu-btn');
-      
-      if (window.innerWidth <= 768 && 
-          !sidebar.contains(event.target) && 
-          !menuBtn.contains(event.target)) {
-        sidebar.classList.remove('open');
-      }
-    });
-
-    // Active navigation highlight
-    window.addEventListener('scroll', function() {
-      const sections = document.querySelectorAll('section[id]');
-      const navLinks = document.querySelectorAll('.nav-links a');
-      
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (scrollY >= (sectionTop - 200)) {
-          current = section.getAttribute('id');
-        }
-      });
-
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + current) {
-          link.classList.add('active');
-        }
-      });
-    });
-  </script>
-</body>
-
-</html>
