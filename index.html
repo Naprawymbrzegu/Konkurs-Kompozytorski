@@ -323,16 +323,30 @@
     /* Video Container */
     .video-container {
       text-align: center;
-      background: #f8f9fa;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
       border-radius: 12px;
       padding: 2rem;
       margin: 2rem 0;
+      border: 1px solid #dee2e6;
     }
 
-    video {
-      max-width: 100%;
+    .video-container h3 {
+      color: #3d4f5c;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .video-container video {
       border-radius: 8px;
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .video-container video:hover {
+      transform: scale(1.02);
     }
 
     /* Regulations */
@@ -413,6 +427,14 @@
 
       .cards-grid {
         grid-template-columns: 1fr;
+      }
+
+      .video-container {
+        padding: 1rem;
+      }
+      
+      .video-container video {
+        width: 100%;
       }
     }
 
@@ -543,10 +565,17 @@
           </div>
           
           <div class="video-container">
-            <video width="640" controls>
+            <h3>Film promocyjny konkursu</h3>
+            <video width="100%" height="auto" controls preload="metadata">
+              <source src="./NAPRAWYMBRZEGUWISLY.PL.mp4" type="video/mp4">
               <source src="NAPRAWYMBRZEGUWISLY.PL.mp4" type="video/mp4">
-              Twoja przeglądarka nie obsługuje elementu video.
+              <p>Twoja przeglądarka nie obsługuje elementu video. 
+                 <a href="NAPRAWYMBRZEGUWISLY.PL.mp4" download>Pobierz film</a>
+              </p>
             </video>
+            <p style="margin-top: 1rem; font-size: 0.9rem; color: #6c757d; font-style: italic;">
+              Film przedstawia ideę konkursu "Na prawym brzegu Wisły..." w Czechowicach-Dziedzicach
+            </p>
           </div>
         </div>
       </section>
@@ -703,31 +732,4 @@
         </div>
         <div class="section-content">
           <div class="cards-grid">
-            <div class="card">
-              <h3>Fundacja im. Andrzeja Krzanowskiego</h3>
-            </div>
-            <div class="card">
-              <h3>Mała Akademia Muzyki</h3>
-            </div>
-            <div class="card">
-              <h3>Miejski Dom Kultury</h3>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Contact Section -->
-      <section id="kontakt" class="section">
-        <div class="section-header">
-          <h2>Kontakt</h2>
-        </div>
-        <div class="section-content">
-          <div class="cards-grid">
-            <div class="card">
-              <h3>📧 Zgłoszenia do Konkursu</h3>
-              <p><strong>zgloszenia@naprawymbrzeguwisly.pl</strong><br/>
-              TU WYŚLIJ SWOJE ZGŁOSZENIE</p>
-            </div>
-            <div class="card">
-              <h3>📧 Biuro Konkursu</h3>
-              <p><strong>biuro@naprawymbrzeguwisly.pl
+            <div class="car
