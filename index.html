@@ -13,12 +13,13 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background-color: #8090a8;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.7;
+      color: #2c3e50;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       margin: 0;
       padding: 0;
+      min-height: 100vh;
     }
 
     .container {
@@ -28,16 +29,18 @@
     }
 
     header {
-      background: #fff;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
       position: sticky;
       top: 0;
       z-index: 1000;
+      transition: all 0.3s ease;
     }
 
     .header-content {
       text-align: center;
-      padding: 1.5rem 0;
+      padding: 2rem 0;
       position: relative;
     }
 
@@ -50,118 +53,183 @@
     }
 
     .language-switch a {
-      padding: 0.5rem 1rem;
-      background: #f0f0f0;
-      color: #333;
+      padding: 0.7rem 1.2rem;
+      background: rgba(102, 126, 234, 0.1);
+      color: #667eea;
       text-decoration: none;
-      border-radius: 4px;
-      font-weight: 500;
+      border-radius: 25px;
+      font-weight: 600;
       transition: all 0.3s ease;
+      border: 2px solid transparent;
     }
 
     .language-switch a:hover {
-      background: #e0e0e0;
+      background: rgba(102, 126, 234, 0.2);
+      transform: translateY(-2px);
     }
 
     .language-switch a.active {
-      background: #0066cc;
+      background: #667eea;
       color: white;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
     }
 
     .logo {
       max-width: 150px;
       height: auto;
-      margin-bottom: 0.8rem;
-      background: #f0f0f0;
-      padding: 20px;
-      border-radius: 8px;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      padding: 25px;
+      border-radius: 20px;
       display: inline-block;
+      box-shadow: 0 8px 25px rgba(240, 147, 251, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.05);
     }
 
     h1 {
-      font-size: 2rem;
-      color: #333;
+      font-size: 2.5rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
       margin-bottom: 0.5rem;
+      font-weight: 700;
     }
 
     .subtitle {
-      font-size: 1.2rem;
-      color: #666;
+      font-size: 1.3rem;
+      color: #7f8c8d;
       font-style: italic;
-      margin-bottom: 0.8rem;
+      margin-bottom: 1rem;
+      font-weight: 300;
     }
 
     nav {
-      background: #f0f0f0;
-      padding: 0.3rem 0;
-      border-top: 1px solid #ddd;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 1rem 0;
+      border-top: 1px solid rgba(102, 126, 234, 0.2);
     }
 
     .nav-links {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 0.8rem;
+      gap: 1.5rem;
       list-style: none;
     }
 
     .nav-links a {
-      color: #333;
+      color: #2c3e50;
       text-decoration: none;
-      font-weight: 500;
-      padding: 0.2rem 0.6rem;
-      border-radius: 4px;
+      font-weight: 600;
+      padding: 0.8rem 1.5rem;
+      border-radius: 25px;
       transition: all 0.3s ease;
-      font-size: 0.85rem;
+      font-size: 0.95rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .nav-links a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      transition: left 0.3s ease;
+      z-index: -1;
+    }
+
+    .nav-links a:hover::before {
+      left: 0;
     }
 
     .nav-links a:hover {
-      background: #e0e0e0;
-      color: #000;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
     }
 
     main {
-      padding: 3rem 0;
+      padding: 4rem 0;
     }
 
     section {
-      background: #fff;
-      margin: 2rem 0;
-      padding: 2rem;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      background: rgba(255, 255, 255, 0.95);
+      margin: 3rem 0;
+      padding: 3rem;
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 20px 20px 0 0;
+    }
+
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
     }
 
     h2 {
-      color: #333;
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 2px solid #ddd;
+      color: #2c3e50;
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 3px solid transparent;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) padding-box,
+                  linear-gradient(135deg, #667eea 0%, #764ba2 100%) border-box;
+      border-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%) 1;
+      font-weight: 700;
     }
 
     .intro {
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+      border: 2px solid rgba(102, 126, 234, 0.2);
+      text-align: justify;
       font-size: 1.1rem;
-      text-align: center;
-      background: #f9f9f9;
-      border: 1px solid #ddd;
+      line-height: 1.8;
     }
 
-    .intro h2 {
-      color: #333;
-      border-bottom-color: #ddd;
+    .intro::before {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
     }
 
     .video-container {
       text-align: center;
-      padding: 2rem 0;
+      padding: 3rem 0;
+      background: rgba(102, 126, 234, 0.05);
+      border-radius: 15px;
+      margin: 2rem 0;
     }
 
     video {
       max-width: 100%;
       height: auto;
-      border-radius: 5px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 15px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    video:hover {
+      transform: scale(1.02);
     }
 
     ul {
@@ -170,95 +238,185 @@
     }
 
     li {
-      margin: 1rem 0;
-      padding: 1rem;
-      background: #f9f9f9;
-      border-radius: 4px;
-      border-left: 3px solid #ccc;
+      margin: 1.5rem 0;
+      padding: 1.5rem;
+      background: rgba(102, 126, 234, 0.05);
+      border-radius: 15px;
+      border-left: 5px solid #667eea;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    li::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      transition: width 0.3s ease;
     }
 
     li:hover {
-      background: #f0f0f0;
+      background: rgba(102, 126, 234, 0.1);
+      transform: translateX(10px);
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
+    }
+
+    li:hover::before {
+      width: 100%;
+      opacity: 0.1;
     }
 
     a {
-      color: #0066cc;
+      color: #667eea;
       text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
     }
 
     a:hover {
-      color: #004499;
+      color: #764ba2;
       text-decoration: underline;
     }
 
     .download-link {
       display: inline-block;
-      padding: 0.8rem 1.5rem;
-      background: #0066cc;
+      padding: 1rem 2rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
-      border-radius: 4px;
+      border-radius: 30px;
       text-decoration: none;
-      font-weight: 500;
-      transition: background-color 0.3s ease;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .download-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+      transition: left 0.3s ease;
+      z-index: -1;
     }
 
     .download-link:hover {
-      background: #004499;
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
       color: white;
     }
 
+    .download-link:hover::before {
+      left: 0;
+    }
+
     .download-placeholder {
-      background: #e0e0e0;
-      color: #666;
+      background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);
       cursor: not-allowed;
+      box-shadow: 0 8px 25px rgba(149, 165, 166, 0.3);
     }
 
     .download-placeholder:hover {
-      background: #d0d0d0;
-      color: #666;
+      transform: none;
+      box-shadow: 0 8px 25px rgba(149, 165, 166, 0.3);
     }
 
     .regulations p {
-      margin-bottom: 1.5rem;
-      padding: 1rem;
-      background: #f9f9f9;
-      border-radius: 4px;
-      border-left: 3px solid #666;
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: rgba(52, 152, 219, 0.05);
+      border-radius: 12px;
+      border-left: 4px solid #3498db;
+      transition: all 0.3s ease;
+    }
+
+    .regulations p:hover {
+      background: rgba(52, 152, 219, 0.1);
+      transform: translateX(5px);
     }
 
     .regulations strong {
-      color: #333;
-      font-size: 1.1rem;
+      color: #2c3e50;
+      font-size: 1.15rem;
+      display: block;
+      margin-bottom: 0.5rem;
     }
 
     .contact-info {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 2rem;
       margin-top: 2rem;
     }
 
     .contact-item {
-      padding: 1.5rem;
-      background: #f9f9f9;
-      border-radius: 5px;
-      border: 1px solid #ddd;
+      padding: 2rem;
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+      border-radius: 20px;
+      border: 2px solid rgba(102, 126, 234, 0.1);
       text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 20px 20px 0 0;
+    }
+
+    .contact-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+      border-color: rgba(102, 126, 234, 0.3);
     }
 
     .contact-item h3 {
-      color: #333;
-      margin-bottom: 1rem;
-      font-size: 1.2rem;
+      color: #2c3e50;
+      margin-bottom: 1.5rem;
+      font-size: 1.3rem;
+      font-weight: 600;
     }
 
     .missing-info {
       color: #e74c3c;
       font-style: italic;
-      background: #fdf2f2;
+      background: rgba(231, 76, 60, 0.1);
       padding: 0.5rem;
-      border-radius: 4px;
-      border: 1px solid #f5c6cb;
+      border-radius: 8px;
+      border: 1px solid rgba(231, 76, 60, 0.2);
+      font-weight: 500;
+    }
+
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Progress bar for scrolling */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 4px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      z-index: 9999;
+      transition: width 0.1s ease;
     }
 
     @media (max-width: 768px) {
@@ -269,7 +427,7 @@
       }
 
       h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
       }
 
       .nav-links {
@@ -279,17 +437,41 @@
       }
 
       section {
-        padding: 1.5rem;
+        padding: 2rem;
+        margin: 2rem 0;
       }
 
       .contact-info {
         grid-template-columns: 1fr;
       }
+
+      h2 {
+        font-size: 1.8rem;
+      }
+    }
+
+    /* Animation for sections appearing */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    section {
+      animation: fadeInUp 0.6s ease forwards;
     }
   </style>
 </head>
 
 <body>
+  <!-- Progress bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
   <header>
     <div class="container">
       <div class="header-content">
@@ -321,11 +503,19 @@
       <section class="intro">
         <h2>Konkurs Kompozytorski</h2>
         <p>
-         W 2025 roku Czechowice-Dziedzice stają się miejscem wyjątkowego wydarzenia artystycznego: konkursu kompozytorskiego *„Na prawym brzegu Wisły...”*, skierowanego do młodych kompozytorek i kompozytorów z Polski i zagranicy.
-Celem konkursu jest nie tylko promocja współczesnej muzyki akordeonowej, ale przede wszystkim stworzenie przestrzeni, w której nowa generacja twórczyń i twórców może zaprezentować swoje poszukiwania, wizje i indywidualny język muzyczny. Wierzymy, że warto dawać młodym artystkom i artystom impuls do działania – zwłaszcza dziś, gdy tak bardzo potrzeba świeżej, odważnej sztuki, która mówi o świecie na nowo.
-Nieprzypadkowo Czechowice-Dziedzice są miejscem tej inicjatywy. To właśnie tutaj żył i tworzył **Andrzej Krzanowski** – wybitny kompozytor i akordeonista, postać charyzmatyczna, która głęboko zapisała się w historii polskiej muzyki współczesnej. Konkurs odbywa się w **35. rocznicę jego przedwczesnej śmierci** – stanowi nie tylko hołd dla jego dorobku, ale też żywe świadectwo, że jego duch i energia twórcza wciąż są obecne, inspirujące i potrzebne.
-Jury, złożone z uznanych artystów reprezentujących środowisko muzyki współczesnej, wyłoni laureatki i laureatów spośród zgłoszeń napływających z Polski oraz z zagranicy. **Ogłoszenie wyników nastąpi 28 października 2025 roku podczas koncertu finałowego w Czechowicach-Dziedzicach** – wieczoru, który stanie się świętem nowej muzyki i symbolicznym zwieńczeniem pierwszej edycji konkursu.
-Konkurs *„Na prawym brzegu Wisły...”* staje się nowym, ważnym punktem na mapie muzyki współczesnej oraz kolejną kulturalną wizytówką Czechowic-Dziedzic – wydarzeniem, które łączy tradycję z nowoczesnością i wspiera rozwój młodych artystek i artystów.
+         W 2025 roku Czechowice-Dziedzice stają się miejscem wyjątkowego wydarzenia artystycznego: konkursu kompozytorskiego <strong>„Na prawym brzegu Wisły..."</strong>, skierowanego do młodych kompozytorek i kompozytorów z Polski i zagranicy.
+        </p>
+        <p>
+        Celem konkursu jest nie tylko promocja współczesnej muzyki akordeonowej, ale przede wszystkim stworzenie przestrzeni, w której nowa generacja twórczyń i twórców może zaprezentować swoje poszukiwania, wizje i indywidualny język muzyczny. Wierzymy, że warto dawać młodym artystkom i artystom impuls do działania – zwłaszcza dziś, gdy tak bardzo potrzeba świeżej, odważnej sztuki, która mówi o świecie na nowo.
+        </p>
+        <p>
+        Nieprzypadkowo Czechowice-Dziedzice są miejscem tej inicjatywy. To właśnie tutaj żył i tworzył <strong>Andrzej Krzanowski</strong> – wybitny kompozytor i akordeonista, postać charyzmatyczna, która głęboko zapisała się w historii polskiej muzyki współczesnej. Konkurs odbywa się w <strong>35. rocznicę jego przedwczesnej śmierci</strong> – stanowi nie tylko hołd dla jego dorobku, ale też żywe świadectwo, że jego duch i energia twórcza wciąż są obecne, inspirujące i potrzebne.
+        </p>
+        <p>
+        Jury, złożone z uznanych artystów reprezentujących środowisko muzyki współczesnej, wyłoni laureatki i laureatów spośród zgłoszeń napływających z Polski oraz z zagranicy. <strong>Ogłoszenie wyników nastąpi 28 października 2025 roku podczas koncertu finałowego w Czechowicach-Dziedzicach</strong> – wieczoru, który stanie się świętem nowej muzyki i symbolicznym zwieńczeniem pierwszej edycji konkursu.
+        </p>
+        <p>
+        Konkurs <strong>„Na prawym brzegu Wisły..."</strong> staje się nowym, ważnym punktem na mapie muzyki współczesnej oraz kolejną kulturalną wizytówką Czechowic-Dziedzic – wydarzeniem, które łączy tradycję z nowoczesnością i wspiera rozwój młodych artystek i artystów.
         </p>
       </section>
 
@@ -468,12 +658,4 @@ Konkurs *„Na prawym brzegu Wisły...”* staje się nowym, ważnym punktem na 
             <h3>💳 Opłata Rejestracyjna</h3>
             <p><strong>200 zł</strong><br/>
             Numer konta: <span class="missing-info">12 3456 7890 1234 5678 9012 3456</span><br/>
-            Tytuł przelewu: "Konkurs Na prawym brzegu Wisły + [motto]"</p>
-          </div>
-        </div>
-      </section>
-    </div>
-  </main>
-</body>
-
-</html>
+            Tytuł przelewu: "Konkurs Na
