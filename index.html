@@ -384,6 +384,193 @@
       box-shadow: 0 4px 15px rgba(74, 85, 104, 0.3);
     }
 
+    /* FOOTER STYLES */
+    .footer {
+      background: linear-gradient(135deg, #2c3e50 0%, #3d4f5c 50%, #556b7a 100%);
+      color: white;
+      margin-left: 280px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="music-footer" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="15" cy="15" r="0.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23music-footer)"/></svg>');
+      opacity: 0.3;
+    }
+
+    .footer-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem 2rem;
+    }
+
+    .footer-main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-section h3 {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      color: #ffffff;
+      font-weight: 600;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+      padding-bottom: 0.5rem;
+    }
+
+    /* Organizers Section */
+    .organizers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .organizer-item {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .organizer-item:hover {
+      background: rgba(255, 255, 255, 0.12);
+      transform: translateY(-5px);
+    }
+
+    .organizer-logo {
+      width: 80px;
+      height: 80px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 8px;
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: #3d4f5c;
+      font-weight: bold;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .organizer-logo img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+
+    .organizer-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.95);
+      line-height: 1.4;
+    }
+
+    /* Sponsors Section */
+    .sponsors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .sponsor-item {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .sponsor-item:hover {
+      background: rgba(255, 255, 255, 1);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .sponsor-logo {
+      width: 60px;
+      height: 60px;
+      background: #f8f9fa;
+      border-radius: 6px;
+      margin: 0 auto 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: #3d4f5c;
+      font-weight: bold;
+      border: 1px solid #dee2e6;
+    }
+
+    .sponsor-logo img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 3px;
+    }
+
+    .sponsor-name {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #3d4f5c;
+      line-height: 1.3;
+    }
+
+    /* Footer Bottom */
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding-top: 2rem;
+      text-align: center;
+    }
+
+    .footer-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+      text-align: left;
+    }
+
+    .footer-info div {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1.5rem;
+      border-radius: 8px;
+      border-left: 4px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .footer-info h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: #ffffff;
+    }
+
+    .footer-info p {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      line-height: 1.5;
+    }
+
+    .footer-copyright {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
     /* Mobile Responsive */
     @media (max-width: 768px) {
       .sidebar {
@@ -395,7 +582,7 @@
         transform: translateX(0);
       }
 
-      .main-content {
+      .main-content, .footer {
         margin-left: 0;
       }
 
@@ -413,6 +600,28 @@
 
       .cards-grid {
         grid-template-columns: 1fr;
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .footer-content {
+        padding: 2rem 1rem 1rem;
+      }
+
+      .organizers-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sponsors-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-info {
+        grid-template-columns: 1fr;
+        gap: 1rem;
       }
     }
 
@@ -521,12 +730,6 @@
           <p>
             Celem konkursu jest nie tylko promocja współczesnej muzyki akordeonowej, ale przede wszystkim stworzenie przestrzeni, w której nowa generacja twórców może zaprezentować swoje poszukiwania, wizje i indywidualny język muzyczny.
           </p>
-          <p>
-            Nieprzypadkowo Czechowice-Dziedzice są miejscem tej inicjatywy. To właśnie tutaj żył i tworzył Andrzej Krzanowski (1951-1990) – wybitny kompozytor i akordeonista, postać charyzmatyczna, która głęboko zapisała się w historii polskiej muzyki współczesnej. Konkurs odbywa się w 35. rocznicę jego przedwczesnej śmierci.
-          </p>
-          <p>
-            Ogłoszenie wyników Konkursu nastąpi 28 października 2025 roku podczas koncertu finałowego – wieczoru, który stanie się świętem nowej muzyki i symbolicznym zwieńczeniem pierwszej edycji konkursu.
-          </p>
         </div>
       </section>
 
@@ -580,7 +783,7 @@
         </div>
         <div class="section-content">
           <div class="download-section">
-            <a href="Regulamin_Konkursu.pdf" class="download-link" target="_blank">
+            <a href="Regulamin_Konkursu_2025.pdf" class="download-link" target="_blank">
               📄 Regulamin Konkursu (PDF)
             </a>
             <a href="Formularz_zgloszeniowy.docx" class="download-link" target="_blank">
@@ -723,7 +926,7 @@
       </section>
 
       <!-- Contact Section -->
-      <section id="contact" class="section">
+      <section id="kontakt" class="section">
         <div class="section-header">
           <h2>Kontakt</h2>
         </div>
@@ -732,7 +935,7 @@
             <div class="card">
               <h3>📧 Zgłoszenia do Konkursu </h3>
               <p><strong>zgloszenia@naprawymbrzeguwisly.pl</strong><br/>
-              TU WYŚLUJ SWOJE ZGŁOSZENIE </p>
+              TU WYŚLIJ SWOJE ZGŁOSZENIE </p>
             </div>
             <div class="card">
               <h3>📧 Biuro Konkursu </h3>
@@ -740,6 +943,144 @@
               wszystkie pytania i informacje</p>
             </div>
             <div class="card">
-              <h3>📍 adres </h3>
+              <h3>📍 Adres </h3>
               <p><strong>ul. Niepodległości 42, 43-502 Czechowice-Dziedzice, Poland</strong><br/>
-            </p>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-main">
+        <!-- Organizatorzy -->
+        <div class="footer-section">
+          <h3>Organizatorzy</h3>
+          <div class="organizers-grid">
+            <div class="organizer-item">
+              <div class="organizer-logo">
+                <!-- Miejsce na logo - zamień src na właściwy plik -->
+                <img src="logo-fundacja.png" alt="Fundacja Krzanowskiego" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="display: none;">FK</div>
+              </div>
+              <div class="organizer-name">Fundacja im. Andrzeja Krzanowskiego</div>
+            </div>
+            
+            <div class="organizer-item">
+              <div class="organizer-logo">
+                <!-- Miejsce na logo - zamień src na właściwy plik -->
+                <img src="logo-mam.png" alt="Mała Akademia Muzyki" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="display: none;">MAM</div>
+              </div>
+              <div class="organizer-name">Mała Akademia Muzyki w Czechowicach-Dziedzicach</div>
+            </div>
+            
+            <div class="organizer-item">
+              <div class="organizer-logo">
+                <!-- Miejsce na logo - zamień src na właściwy plik -->
+                <img src="logo-mdk.png" alt="Miejski Dom Kultury" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="display: none;">MDK</div>
+              </div>
+              <div class="organizer-name">Miejski Dom Kultury w Czechowicach-Dziedzicach</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sponsorzy -->
+        <div class="footer-section">
+          <h3>Sponsorzy i Partnerzy</h3>
+          <div class="sponsors-grid">
+            <div class="sponsor-item">
+              <div class="sponsor-logo">
+                <!-- Miejsce na logo sponsora - zamień src na właściwy plik -->
+                <img src="sponsor1.png" alt="Sponsor 1" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="display: none;">S1</div>
+              </div>
+              <div class="sponsor-name">Nazwa Sponsora 1</div>
+            </div>
+            
+            <div class="sponsor-item">
+              <div class="sponsor-logo">
+                <!-- Miejsce na logo sponsora - zamień src na właściwy plik -->
+                <img src="sponsor2.png" alt="Sponsor 2" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="display: none;">S2</div>
+              </div>
+              <div class="sponsor-name">Nazwa Sponsora 2</div>
+            </div>
+            
+            <div class="sponsor-item">
+              <div class="sponsor-logo">
+                <!-- Miejsce na logo sponsora - zamień src na właściwy plik -->
+                <img src="sponsor3.png" alt="Sponsor 3" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="display: none;">S3</div>
+              </div>
+              <div class="sponsor-name">Nazwa Sponsora 3</div>
+            </div>
+            
+            <div class="sponsor-item">
+              <div class="sponsor-logo">
+                <!-- Miejsce na logo sponsora - zamień src na właściwy plik -->
+                <img src="sponsor4.png" alt="Sponsor 4" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="display: none;">S4</div>
+              </div>
+              <div class="sponsor-name">Nazwa Sponsora 4</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-info">
+          <div>
+            <h4>📍 Adres</h4>
+            <p>ul. Niepodległości 42<br/>43-502 Czechowice-Dziedzice<br/>Poland</p>
+          </div>
+          <div>
+            <h4>📧 Kontakt</h4>
+            <p>biuro@naprawymbrzeguwisly.pl<br/>zgloszenia@naprawymbrzeguwisly.pl</p>
+          </div>
+          <div>
+            <h4>📅 Terminy</h4>
+            <p>Termin zgłoszeń: 1 października 2025<br/>Ogłoszenie wyników: 28 października 2025</p>
+          </div>
+        </div>
+        
+        <div class="footer-copyright">
+          <p>&copy; 2025 Konkurs Kompozytorski "Na prawym brzegu Wisły...". Wszystkie prawa zastrzeżone.</p>
+          <p>Organizatorzy: Fundacja im. Andrzeja Krzanowskiego • Mała Akademia Muzyki • Miejski Dom Kultury w Czechowicach-Dziedzicach</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('open');
+    }
+
+    function closeSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.remove('open');
+    }
+
+    // Close sidebar when clicking outside on mobile
+    document.addEventListener('click', function(event) {
+      const sidebar = document.getElementById('sidebar');
+      const menuBtn = document.querySelector('.mobile-menu-btn');
+      
+      if (window.innerWidth <= 768 && 
+          !sidebar.contains(event.target) && 
+          !menuBtn.contains(event.target) && 
+          sidebar.classList.contains('open')) {
+        closeSidebar();
+      }
+    });
+  </script>
+
+</body>
+</html>
