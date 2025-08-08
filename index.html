@@ -558,6 +558,104 @@
       box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
     }
 
+    /* PATRONAT MEDIALNY - nowe style */
+    .footer-patronat {
+      margin-top: 3rem;
+      padding-top: 3rem;
+      border-top: 2px solid rgba(255, 255, 255, 0.2);
+      text-align: center;
+    }
+
+    .footer-patronat h3 {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      color: #ffffff;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .patronat-grid {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .patronat-item {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 3px solid rgba(255, 215, 0, 0.4);
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+      max-width: 280px;
+      position: relative;
+    }
+
+    .patronat-item::before {
+      content: '🏆';
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #ffd700 0%, #ffed4a 100%);
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+    }
+
+    .patronat-item:hover {
+      background: rgba(255, 255, 255, 1);
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+      border-color: rgba(255, 215, 0, 0.7);
+    }
+
+    .patronat-logo {
+      width: 120px;
+      height: 120px;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      border-radius: 12px;
+      margin: 0 auto 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      color: #3d4f5c;
+      font-weight: bold;
+      border: 2px solid #dee2e6;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .patronat-logo img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .patronat-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #2c3e50;
+      line-height: 1.3;
+      margin-top: 1rem;
+    }
+
+    .patronat-subtitle {
+      font-size: 0.85rem;
+      color: #6c757d;
+      font-style: italic;
+      margin-top: 0.5rem;
+    }
+
     /* Footer Bottom */
     .footer-bottom {
       border-top: 1px solid rgba(255, 255, 255, 0.2);
@@ -653,6 +751,31 @@
       .footer-info {
         grid-template-columns: 1fr;
         gap: 1rem;
+      }
+
+      /* Patronat responsive */
+      .patronat-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .patronat-item {
+        max-width: 260px;
+        padding: 2rem 1.5rem;
+      }
+      
+      .patronat-logo {
+        width: 100px;
+        height: 100px;
+      }
+      
+      .patronat-name {
+        font-size: 0.9rem;
+      }
+
+      .footer-patronat {
+        margin-top: 2rem;
+        padding-top: 2rem;
       }
     }
 
@@ -1033,33 +1156,21 @@
               </div>
               <div class="sponsor-name">PWM Edition</div>
             </div>
-            
-            <!-- Ukryte partnerzy - odkomentuj gdy będą potrzebni -->
-            <!--
-            <div class="sponsor-item">
-              <div class="sponsor-logo">
-                <img src="partner2.png" alt="Partner 2" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                <div style="display: none;">P2</div>
-              </div>
-              <div class="sponsor-name">Nazwa Partnera 2</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PATRONAT MEDIALNY -->
+      <div class="footer-patronat">
+        <h3>Patronat Medialny</h3>
+        <div class="patronat-grid">
+          <div class="patronat-item">
+            <div class="patronat-logo">
+              <img src="polmic.jpg" alt="POLSKIE CENTRUM INFORMACJI MUZYCZNEJ POLMIC" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div style="display: none;">POLMIC</div>
             </div>
-            
-            <div class="sponsor-item">
-              <div class="sponsor-logo">
-                <img src="partner3.png" alt="Partner 3" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                <div style="display: none;">P3</div>
-              </div>
-              <div class="sponsor-name">Nazwa Partnera 3</div>
-            </div>
-            
-            <div class="sponsor-item">
-              <div class="sponsor-logo">
-                <img src="partner4.png" alt="Partner 4" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                <div style="display: none;">P4</div>
-              </div>
-              <div class="sponsor-name">Nazwa Partnera 4</div>
-            </div>
-            -->
+            <div class="patronat-name">POLSKIE CENTRUM<br/>INFORMACJI MUZYCZNEJ<br/>POLMIC</div>
+            <div class="patronat-subtitle">Patronat Medialny</div>
           </div>
         </div>
       </div>
