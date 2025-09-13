@@ -558,6 +558,27 @@
       box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
     }
 
+    /* Special styles for City of Czechowice-Dziedzice - enlarged logo */
+    .sponsor-item.miasto-partner .sponsor-logo {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      border: 2px solid #dee2e6;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .sponsor-item.miasto-partner .sponsor-name {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-top: 0.75rem;
+    }
+
+    .sponsor-item.miasto-partner:hover {
+      border-color: rgba(0, 128, 255, 0.5);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+    }
+
     /* MEDIA PATRON - new styles */
     .footer-patronat {
       margin-top: 3rem;
@@ -727,6 +748,10 @@
       }
 
       .sponsor-item.pwm-partner {
+        grid-column: span 2;
+      }
+
+      .sponsor-item.miasto-partner {
         grid-column: span 2;
       }
 
@@ -1105,7 +1130,6 @@
           <div class="organizers-grid">
             <div class="organizer-item">
               <div class="organizer-logo">
-                <!-- Place for logo - replace src with actual file -->
                 <img src="logo-fundacja.png" alt="Krzanowski Foundation" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                 <div style="display: none;">KF</div>
               </div>
@@ -1114,7 +1138,6 @@
             
             <div class="organizer-item">
               <div class="organizer-logo">
-                <!-- Place for logo - replace src with actual file -->
                 <img src="logo-mam.png" alt="Little Academy of Music" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                 <div style="display: none;">LAM</div>
               </div>
@@ -1123,7 +1146,6 @@
             
             <div class="organizer-item">
               <div class="organizer-logo">
-                <!-- Place for logo - replace src with actual file -->
                 <img src="logo-mdk.png" alt="Municipal Cultural Centre" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                 <div style="display: none;">MCC</div>
               </div>
@@ -1138,11 +1160,17 @@
           <div class="sponsors-grid">
             <div class="sponsor-item pwm-partner">
               <div class="sponsor-logo">
-                <!-- Place for partner logo - replace src with actual file -->
                 <img src="partner1.png" alt="PWM Edition" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                 <div style="display: none;">PWM</div>
               </div>
               <div class="sponsor-name">PWM Edition</div>
+            </div>
+            <div class="sponsor-item miasto-partner">
+              <div class="sponsor-logo">
+                <img src="logo_miasta.png" alt="City of Czechowice-Dziedzice" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="display: none;">MC</div>
+              </div>
+              <div class="sponsor-name">City of Czechowice-Dziedzice</div>
             </div>
           </div>
         </div>
