@@ -558,6 +558,27 @@
       box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
     }
 
+    /* Specjalne style dla Miasto Czechowice-Dziedzice - powiększone logo */
+    .sponsor-item.miasto-partner .sponsor-logo {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      border: 2px solid #dee2e6;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .sponsor-item.miasto-partner .sponsor-name {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-top: 0.75rem;
+    }
+
+    .sponsor-item.miasto-partner:hover {
+      border-color: rgba(0, 128, 255, 0.5);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+    }
+
     /* PATRONAT MEDIALNY - nowe style */
     .footer-patronat {
       margin-top: 3rem;
@@ -727,6 +748,10 @@
       }
 
       .sponsor-item.pwm-partner {
+        grid-column: span 2;
+      }
+
+      .sponsor-item.miasto-partner {
         grid-column: span 2;
       }
 
@@ -1049,7 +1074,6 @@
 
       <!-- Organizers Section -->
       <section id="organizatorzy" class="section">
-       周年
         <div class="section-header">
           <h2>Organizatorzy</h2>
         </div>
@@ -1135,7 +1159,7 @@
               </div>
               <div class="sponsor-name">PWM Edition</div>
             </div>
-            <div class="sponsor-item">
+            <div class="sponsor-item miasto-partner">
               <div class="sponsor-logo">
                 <img src="logo_miasta.png" alt="Miasto Czechowice-Dziedzice" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                 <div style="display: none;">MC</div>
