@@ -1123,9 +1123,7 @@
           </div>
         </div>
 
-       <!-- Partnerzy -->
-<footer class="footer">
-  <div class="container">
+         <!-- Partnerzy -->
     <div class="footer-content">
       <div class="footer-column">
         <h3>Kontakt</h3>
@@ -1145,10 +1143,10 @@
             <div class="sponsor-name">Miasto Czechowice-Dziedzice</div>
           </div>
 
-          <!-- tu pozostali partnerzy -->
+          <!-- Przykład innego partnera -->
           <div class="sponsor-item">
             <div class="sponsor-logo">
-              <img src="logo_innego.png" alt="Inny Partner">
+              <img src="logo_inny.png" alt="Inny Partner">
             </div>
             <div class="sponsor-name">Inny Partner</div>
           </div>
@@ -1193,3 +1191,31 @@
     </div>
   </div>
 </footer>
+
+<script>
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('open');
+  }
+
+  function closeSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.remove('open');
+  }
+
+  // Close sidebar when clicking outside on mobile
+  document.addEventListener('click', function(event) {
+    const sidebar = document.getElementById('sidebar');
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    
+    if (window.innerWidth <= 768 && 
+        !sidebar.contains(event.target) && 
+        !menuBtn.contains(event.target) && 
+        sidebar.classList.contains('open')) {
+      closeSidebar();
+    }
+  });
+</script>
+
+</body>
+</html>
