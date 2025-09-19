@@ -262,6 +262,83 @@
       font-weight: 600;
     }
 
+    /* Facebook Button Styles */
+    .facebook-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 2rem;
+      background: linear-gradient(135deg, #1877f2 0%, #166fe5 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(24, 119, 242, 0.3);
+      margin: 1rem 0;
+    }
+
+    .facebook-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(24, 119, 242, 0.4);
+      color: white;
+      background: linear-gradient(135deg, #166fe5 0%, #1465d6 100%);
+    }
+
+    .facebook-icon {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+    }
+
+    /* Social media section in footer */
+    .social-media {
+      text-align: center;
+      margin: 2rem 0;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .social-media h4 {
+      color: white;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .social-link:hover {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .social-link.facebook:hover {
+      background: #1877f2;
+      border-color: #1877f2;
+    }
+
     /* List Styling */
     .jury-list {
       list-style: none;
@@ -760,6 +837,17 @@
         gap: 1rem;
       }
 
+      /* Social links responsive */
+      .social-links {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .social-link {
+        width: 200px;
+        justify-content: center;
+      }
+
       /* Patronat responsive */
       .patronat-grid {
         flex-direction: column;
@@ -916,6 +1004,8 @@
             <strong style="color: #856404;">⚠️ Important Information</strong>
             Until the competition results are announced, all participant data is known only to the competition secretary.
           </div>
+          
+
           
           <div class="video-container">
             <video width="640" controls>
@@ -1114,6 +1204,16 @@
               <p><strong>ul. Niepodległości 42, 43-502 Czechowice-Dziedzice, Poland</strong><br/>
               </p>
             </div>
+            <div class="card">
+              <h3>📱 Social Media</h3>
+              <p><strong>Stay connected with us!</strong></p>
+              <a href="https://www.facebook.com/profile.php?id=61577606324793" target="_blank" class="facebook-link">
+                <svg class="facebook-icon" viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+                Facebook Page
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -1173,6 +1273,13 @@
               <div class="sponsor-name">City of Czechowice-Dziedzice</div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <!-- Social Media Section in Footer -->
+      <div class="social-media">
+        <h4>Follow Us</h4>
+        <div class="social-links">
         </div>
       </div>
 
