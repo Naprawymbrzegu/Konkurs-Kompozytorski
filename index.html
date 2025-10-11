@@ -517,6 +517,40 @@
       box-shadow: 0 4px 15px rgba(74, 85, 104, 0.3);
     }
 
+    /* Special Awards Grid */
+    .special-awards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .special-award-box {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      border-radius: 12px;
+      padding: 2rem;
+      border: 2px solid #dee2e6;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .special-award-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .special-award-box h3 {
+      color: #3d4f5c;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .special-award-box p {
+      font-size: 1.1rem;
+      color: #2c3e50;
+      font-weight: 600;
+    }
+
     /* FOOTER STYLES */
     .footer {
       background: linear-gradient(135deg, #2c3e50 0%, #3d4f5c 50%, #556b7a 100%);
@@ -615,15 +649,15 @@
     /* Sponsors Section */
     .sponsors-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
       margin-bottom: 1rem;
     }
 
     .sponsor-item {
       background: rgba(255, 255, 255, 0.95);
       border-radius: 8px;
-      padding: 1rem;
+      padding: 1.5rem;
       text-align: center;
       transition: all 0.3s ease;
       border: 2px solid rgba(255, 255, 255, 0.2);
@@ -636,11 +670,11 @@
     }
 
     .sponsor-logo {
-      width: 60px;
-      height: 60px;
+      width: 80px;
+      height: 80px;
       background: #f8f9fa;
       border-radius: 6px;
-      margin: 0 auto 0.5rem;
+      margin: 0 auto 1rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -658,20 +692,19 @@
     }
 
     .sponsor-name {
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       font-weight: 600;
       color: #3d4f5c;
       line-height: 1.3;
     }
 
-    /* Special styles for PWM Edition */
-    .sponsor-item.pwm-partner {
-      grid-column: span 2;
+    /* Special styles for major partners */
+    .sponsor-item.major-partner {
       background: rgba(255, 255, 255, 0.98);
       border: 3px solid rgba(255, 215, 0, 0.3);
     }
 
-    .sponsor-item.pwm-partner .sponsor-logo {
+    .sponsor-item.major-partner .sponsor-logo {
       width: 120px;
       height: 120px;
       background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
@@ -679,14 +712,14 @@
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     }
 
-    .sponsor-item.pwm-partner .sponsor-name {
+    .sponsor-item.major-partner .sponsor-name {
       font-size: 1rem;
       font-weight: 700;
       color: #2c3e50;
       margin-top: 1rem;
     }
 
-    .sponsor-item.pwm-partner:hover {
+    .sponsor-item.major-partner:hover {
       border-color: rgba(255, 215, 0, 0.5);
       box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
     }
@@ -870,15 +903,7 @@
       }
 
       .sponsors-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .sponsor-item.pwm-partner {
-        grid-column: span 2;
-      }
-
-      .sponsor-item.miasto-partner {
-        grid-column: span 2;
+        grid-template-columns: 1fr;
       }
 
       .footer-info {
@@ -908,6 +933,10 @@
       .footer-patronat {
         margin-top: 2rem;
         padding-top: 2rem;
+      }
+
+      .special-awards-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -945,7 +974,7 @@
       animation: fadeInUp 0.6s ease forwards;
     }
 
-    .section:nth-child(1) {animation-delay: 0.1s; }
+    .section:nth-child(1) { animation-delay: 0.1s; }
     .section:nth-child(2) { animation-delay: 0.2s; }
     .section:nth-child(3) { animation-delay: 0.3s; }
     .section:nth-child(4) { animation-delay: 0.4s; }
@@ -1112,9 +1141,15 @@
             Całkowita pula nagród wynosi 10 000 PLN. Nagrodzone utwory zostaną wykonane podczas Jesiennego Festiwalu Muzycznego Alkagran w 2026 roku.
           </p>
           
-          <div style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-radius: 12px; padding: 2rem; margin-top: 2rem; border: 2px solid #dee2e6; text-align: center;">
-            <h3 style="color: #3d4f5c; margin-bottom: 1rem;">🎵 Nagroda Specjalna</h3>
-            <p style="font-size: 1.1rem; color: #2c3e50;"><strong>PWM Edition</strong></p>
+          <div class="special-awards-grid">
+            <div class="special-award-box">
+              <h3>🎵 Nagroda Specjalna</h3>
+              <p><strong>PWM Edition</strong></p>
+            </div>
+            <div class="special-award-box">
+              <h3>🎵 Nagroda Specjalna</h3>
+              <p><strong>Warszawska Jesień</strong></p>
+            </div>
           </div>
         </div>
       </section>
@@ -1220,7 +1255,9 @@
             <strong>7. Nagrody</strong>
             Całkowita pula nagród: 10 000 PLN.<br/>
             Nagrodzone utwory zostaną wykonane w Czechowicach-Dziedzicach podczas Jesiennego Festiwalu Muzycznego Alkagran w 2026 roku.<br/><br/>
-            <strong>Nagroda specjalna PWM Edition</strong><br/><br/>
+            <strong>Nagrody specjalne:</strong><br/>
+            • <strong>PWM Edition</strong><br/>
+            • <strong>Warszawska Jesień</strong><br/><br/>
             Jury zastrzega sobie prawo do innego podziału nagród lub ich nieprzyznania.
           </div>
 
@@ -1344,12 +1381,19 @@
         <div class="footer-section">
           <h3>Partnerzy</h3>
           <div class="sponsors-grid">
-            <div class="sponsor-item pwm-partner">
+            <div class="sponsor-item major-partner">
               <div class="sponsor-logo">
                 <img src="partner1.png" alt="PWM Edition" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                 <div style="display: none;">PWM</div>
               </div>
               <div class="sponsor-name">PWM Edition</div>
+            </div>
+            <div class="sponsor-item major-partner">
+              <div class="sponsor-logo">
+                <img src="wj_logo.png" alt="Warszawska Jesień" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="display: none;">WJ</div>
+              </div>
+              <div class="sponsor-name">Warszawska Jesień</div>
             </div>
             <div class="sponsor-item miasto-partner">
               <div class="sponsor-logo">
