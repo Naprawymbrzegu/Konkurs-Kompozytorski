@@ -17,6 +17,9 @@
       background: #f8f9fa;
       margin: 0;
       padding: 0;
+      min-height: 100vh; /* Upewnia się, że body ma minimalną wysokość */
+      display: flex;
+      flex-direction: column;
     }
     /* Sidebar Navigation */
     .sidebar {
@@ -109,7 +112,8 @@
     /* Main Content */
     .main-content {
       margin-left: 280px;
-      min-height: 100vh;
+      flex: 1 0 auto; /* Umożliwia stopce pozostanie na dole */
+      padding-bottom: 4rem; /* Dodatkowy odstęp na dole */
     }
     /* Hero Section */
     .hero {
@@ -484,7 +488,8 @@
       margin-left: 280px;
       position: relative;
       overflow: hidden;
-      padding-bottom: 2rem; /* Dodano, aby upewnić się, że stopka ma minimalną wysokość */
+      padding: 2rem 0; /* Dodano padding dla widoczności */
+      flex-shrink: 0; /* Zapobiega kurczeniu się stopki */
     }
     .footer::before {
       content: '';
@@ -501,14 +506,14 @@
       z-index: 2;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 4rem 2rem 2rem;
+      padding: 0 2rem;
     }
     .footer-main {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 4rem;
       margin-bottom: 3rem;
-      min-height: 200px; /* Minimalna wysokość, aby upewnić się, że sekcje są widoczne */
+      min-height: 200px; /* Minimalna wysokość dla widoczności */
     }
     .footer-section h3 {
       font-size: 1.5rem;
@@ -1132,3 +1137,248 @@
             Jury zastrzega sobie prawo do innego podziału nagród lub ich nieprzyznania.
           </div>
           <div class="regulation-item">
+            <strong>8. Prawa Autorskie</strong>
+            Uczestnicy zachowują pełne prawa autorskie do zgłaszanych utworów.<br/>
+            Organizatorzy uzyskują prawo do:
+            <ul>
+              <li>wykonania, nagrania i dokumentacji nagrodzonych utworów</li>
+              <li>bezpłatnego rozpowszechniania ich nagrań w celach promocyjnych i archiwalnych</li>
+            </ul>
+          </div>
+          <div class="regulation-item">
+            <strong>9. Postanowienia Końcowe</strong>
+            Zgłoszenie kompozycji oznacza pełną akceptację niniejszego regulaminu.<br/>
+            Organizatorzy zastrzegają sobie prawo do modyfikacji regulaminu (bez wpływu na równe traktowanie uczestników) lub odwołania konkursu z ważnych powodów.<br/>
+            W sprawach nieobjętych regulaminem decyzje podejmują organizatorzy.
+          </div>
+          <div class="regulation-item">
+            <strong>10. Ochrona Danych Osobowych (RODO)</strong>
+            Zgodnie z art. 13 ust. 1 i 2 RODO informujemy, że:
+            <ul>
+              <li>Administratorem danych jest Fundacja im. Andrzeja Krzanowskiego z siedzibą w Czechowicach-Dziedzicach</li>
+              <li>Dane będą przetwarzane w celu przeprowadzenia konkursu, kontaktu z uczestnikami, ogłoszenia wyników i promocji wydarzenia</li>
+              <li>Podanie danych jest dobrowolne, ale niezbędne do udziału w konkursie</li>
+              <li>Uczestnicy mają prawo dostępu do danych, ich sprostowania, usunięcia, ograniczenia przetwarzania, przenoszenia danych, wycofania zgody oraz wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych</li>
+              <li>Szczegółowe informacje dotyczące przetwarzania danych można uzyskać, kontaktując się z administratorem pod adresem: <strong>biuro@naprawymbrzeguwisly.pl</strong></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- Organizers Section -->
+      <section id="organizatorzy" class="section">
+        <div class="section-header">
+          <h2>Organizatorzy</h2>
+        </div>
+        <div class="section-content">
+          <p>
+            Fundacja im. Andrzeja Krzanowskiego,<br/>
+            Mała Akademia Muzyki w Czechowicach-Dziedzicach,<br/>
+            Miejski Dom Kultury w Czechowicach-Dziedzicach
+          </p>
+        </div>
+      </section>
+      <!-- Contact Section -->
+      <section id="kontakt" class="section">
+        <div class="section-header">
+          <h2>Kontakt</h2>
+        </div>
+        <div class="section-content">
+          <div class="cards-grid">
+            <div class="card">
+              <h3>📧 Zgłoszenia do Konkursu</h3>
+              <p><strong>zgloszenia@naprawymbrzeguwisly.pl</strong><br/>
+              Wyślij swoje zgłoszenie tutaj</p>
+            </div>
+            <div class="card">
+              <h3>📧 Biuro Konkursu</h3>
+              <p><strong>biuro@naprawymbrzeguwisly.pl</strong><br/>
+              W sprawie wszystkich pytań i informacji</p>
+            </div>
+            <div class="card">
+              <h3>📍 Adres</h3>
+              <p><strong>ul. Niepodległości 42, 43-502 Czechowice-Dziedzice, Polska</strong></p>
+            </div>
+            <div class="card">
+              <h3>📱 Media Społecznościowe</h3>
+              <p><strong>Bądź z nami w kontakcie!</strong></p>
+              <a href="https://www.facebook.com/profile.php?id=61577606324793" target="_blank" class="facebook-link">
+                <svg class="facebook-icon" viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+                Strona na Facebooku
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-main">
+        <!-- Organizers -->
+        <div class="footer-section">
+          <h3>Organizatorzy</h3>
+          <div class="organizers-grid">
+            <div class="organizer-item">
+              <div class="organizer-logo">
+                <img src="logo-fundacja.png" alt="Fundacja im. Andrzeja Krzanowskiego" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="display: none;">FK</div>
+              </div>
+              <div class="organizer-name">Fundacja im. Andrzeja Krzanowskiego</div>
+            </div>
+           
+            <div class="organizer-item">
+              <div class="organizer-logo">
+                <img src="logo-mam.png" alt="Mała Akademia Muzyki" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="display: none;">MAM</div>
+              </div>
+              <div class="organizer-name">Mała Akademia Muzyki<br/>Czechowice-Dziedzice</div>
+            </div>
+           
+            <div class="organizer-item">
+              <div class="organizer-logo">
+                <img src="logo-mdk.png" alt="Miejski Dom Kultury" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="display: none;">MDK</div>
+              </div>
+              <div class="organizer-name">Miejski Dom Kultury<br/>Czechowice-Dziedzice</div>
+            </div>
+          </div>
+        </div>
+        <!-- Partners -->
+        <div class="footer-section">
+          <h3>Partnerzy</h3>
+          <div class="sponsors-grid">
+            <div class="sponsor-item major-partner">
+              <div class="sponsor-logo">
+                <img src="partner1.png" alt="PWM Edition" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="display: none;">PWM</div>
+              </div>
+              <div class="sponsor-name">PWM Edition</div>
+            </div>
+            <div class="sponsor-item major-partner">
+              <div class="sponsor-logo">
+                <img src="wj_logo.png" alt="Warszawska Jesień" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="display: none;">WJ</div>
+              </div>
+              <div class="sponsor-name">Warszawska Jesień</div>
+            </div>
+            <div class="sponsor-item major-partner">
+              <div class="sponsor-logo">
+                <img src="NFM_logo.png" alt="Narodowe Forum Muzyki" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="display: none;">NFM</div>
+              </div>
+              <div class="sponsor-name">Narodowe Forum Muzyki</div>
+            </div>
+            <div class="sponsor-item miasto-partner">
+              <div class="sponsor-logo">
+                <img src="logo_miasta.png" alt="Miasto Czechowice-Dziedzice" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="display: none;">MC</div>
+              </div>
+              <div class="sponsor-name">Miasto Czechowice-Dziedzice</div>
+            </div>
+            <!-- Nowe logo partnera -->
+            <div class="sponsor-item major-partner">
+              <div class="sponsor-logo">
+                <img src="armonia_dell_arte.png" alt="Armonia dell'Arte" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="display: none;">ADA</div>
+              </div>
+              <div class="sponsor-name">Armonia dell'Arte</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- MEDIA PATRON -->
+      <div class="footer-patronat">
+        <h3>Patronat Medialny</h3>
+        <div class="patronat-grid">
+          <div class="patronat-item">
+            <div class="patronat-logo">
+              <img src="polmic.jpg" alt="Polskie Centrum Informacji Muzycznej POLMIC" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div style="display: none;">POLMIC</div>
+            </div>
+            <div class="patronat-name">Polskie Centrum<br/>Informacji Muzycznej<br/>POLMIC</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-info">
+          <div>
+            <h4>📍 Adres</h4>
+            <p>ul. Niepodległości 42<br/>43-502 Czechowice-Dziedzice<br/>Polska</p>
+          </div>
+          <div>
+            <h4>📧 Kontakt</h4>
+            <p>biuro@naprawymbrzeguwisly.pl<br/>zgloszenia@naprawymbrzeguwisly.pl</p>
+          </div>
+          <div>
+            <h4>📅 Terminy</h4>
+            <p>Termin zgłoszeń: 1 października 2025<br/>Ogłoszenie wyników: 28 października 2025</p>
+          </div>
+        </div>
+       
+        <div class="footer-copyright">
+          <p>&copy; 2025 Konkurs Kompozytorski "Na Prawym Brzegu Wisły...". Wszystkie prawa zastrzeżone.</p>
+          <p>Organizatorzy: Fundacja im. Andrzeja Krzanowskiego • Mała Akademia Muzyki • Miejski Dom Kultury<br/>Czechowice-Dziedzice</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('open');
+    }
+    function closeSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.remove('open');
+    }
+    // Close sidebar when clicking outside on mobile
+    document.addEventListener('click', function(event) {
+      const sidebar = document.getElementById('sidebar');
+      const menuBtn = document.querySelector('.mobile-menu-btn');
+     
+      if (window.innerWidth <= 768 &&
+          !sidebar.contains(event.target) &&
+          !menuBtn.contains(event.target) &&
+          sidebar.classList.contains('open')) {
+        sidebar.classList.remove('open');
+      }
+    });
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+    // Highlight active navigation link
+    window.addEventListener('scroll', function() {
+      const sections = document.querySelectorAll('.section');
+      const navLinks = document.querySelectorAll('.nav-links a');
+     
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= sectionTop - 200) {
+          current = section.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
