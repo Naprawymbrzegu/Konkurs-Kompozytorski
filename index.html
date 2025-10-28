@@ -17,7 +17,7 @@
       background: #f8f9fa;
       margin: 0;
       padding: 0;
-      min-height: 100vh; /* Upewnia się, że body ma minimalną wysokość */
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
     }
@@ -112,8 +112,8 @@
     /* Main Content */
     .main-content {
       margin-left: 280px;
-      flex: 1 0 auto; /* Umożliwia stopce pozostanie na dole */
-      padding-bottom: 4rem; /* Dodatkowy odstęp na dole */
+      flex: 1 0 auto;
+      padding-bottom: 4rem;
     }
     /* Hero Section */
     .hero {
@@ -275,102 +275,25 @@
       background: #e9ecef;
       transform: translateX(5px);
     }
-    /* Laureates Styling */
-    .laureates-info {
-      text-align: center;
-      background: linear-gradient(135deg, #fff8e1 0%, #ffe082 100%);
-      padding: 2rem;
-      border-radius: 12px;
-      margin: 2rem 0;
-      border: 2px solid #ffd54f;
-    }
-    .laureates-info p {
-      font-size: 1.1rem;
-      color: #f57f17;
-      font-weight: 600;
-      margin: 0;
-    }
+    /* Laureates Styling (uproszczone) */
     .laureates-list {
       list-style: none;
       padding: 0;
-      margin-top: 2rem;
+      margin-top: 1rem;
     }
     .laureate-item {
-      background: #f8f9fa;
-      margin: 1.5rem 0;
-      padding: 2rem;
-      border-radius: 12px;
-      border-left: 6px solid #ffd54f;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    .laureate-item::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 6px;
-      height: 100%;
-      background: linear-gradient(180deg, #ffd700 0%, #ffa500 100%);
-    }
-    .laureate-item.first {
-      border-left-color: #ffd700;
-      background: linear-gradient(135deg, #fffbea 0%, #fff8dc 100%);
-    }
-    .laureate-item.second {
-      border-left-color: #c0c0c0;
-    }
-    .laureate-item.third {
-      border-left-color: #cd7f32;
-    }
-    .laureate-item.distinction {
-      border-left-color: #90caf9;
-    }
-    .laureate-place {
-      display: inline-block;
-      background: linear-gradient(135deg, #556b7a 0%, #3d4f5c 100%);
-      color: white;
-      padding: 0.5rem 1.5rem;
-      border-radius: 20px;
-      font-weight: 700;
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    .laureate-item.first .laureate-place {
-      background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
-      color: #b8860b;
-    }
-    .laureate-item.second .laureate-place {
-      background: linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 100%);
-      color: #5f5f5f;
-    }
-    .laureate-item.third .laureate-place {
-      background: linear-gradient(135deg, #cd7f32 0%, #e9a56a 100%);
-      color: #5c3d1f;
-    }
-    .laureate-item.distinction .laureate-place {
-      background: linear-gradient(135deg, #90caf9 0%, #64b5f6 100%);
-      color: #1565c0;
+      margin: 1rem 0;
+      padding: 1rem;
+      font-size: 1.1rem;
     }
     .laureate-name {
-      font-size: 1.3rem;
       font-weight: 700;
       color: #3d4f5c;
-      margin-bottom: 0.5rem;
     }
     .laureate-work {
-      font-size: 1.1rem;
       font-style: italic;
       color: #556b7a;
-      margin-bottom: 1rem;
-    }
-    .laureate-placeholder {
-      color: #6c757d;
-      font-style: italic;
-      font-size: 0.95rem;
+      text-transform: uppercase;
     }
     /* Download Links */
     .download-section {
@@ -488,8 +411,8 @@
       margin-left: 280px;
       position: relative;
       overflow: hidden;
-      padding: 2rem 0; /* Dodano padding dla widoczności */
-      flex-shrink: 0; /* Zapobiega kurczeniu się stopki */
+      padding: 2rem 0;
+      flex-shrink: 0;
     }
     .footer::before {
       content: '';
@@ -513,7 +436,7 @@
       grid-template-columns: 1fr 1fr;
       gap: 4rem;
       margin-bottom: 3rem;
-      min-height: 200px; /* Minimalna wysokość dla widoczności */
+      min-height: 200px;
     }
     .footer-section h3 {
       font-size: 1.5rem;
@@ -574,7 +497,7 @@
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 2rem;
       margin-bottom: 1rem;
-      min-height: 150px; /* Minimalna wysokość dla sekcji partnerów */
+      min-height: 150px;
     }
     .sponsor-item {
       background: rgba(255, 255, 255, 0.95);
@@ -873,7 +796,7 @@
       <h1>Na Prawym Brzegu Wisły…</h1>
       <div class="subtitle">Konkurs Kompozytorski</div>
     </div>
-   
+  
     <ul class="nav-links">
       <li><a href="#intro" onclick="closeSidebar()">O Konkursie</a></li>
       <li><a href="#aktualnosci" onclick="closeSidebar()">Aktualności</a></li>
@@ -884,7 +807,7 @@
       <li><a href="#organizatorzy" onclick="closeSidebar()">Organizatorzy</a></li>
       <li><a href="#kontakt" onclick="closeSidebar()">Kontakt</a></li>
     </ul>
-   
+  
     <div class="language-switch">
       <a href="index.html" class="active">🇵🇱 PL</a>
       <a href="indexen.html">🇬🇧 EN</a>
@@ -911,16 +834,16 @@
         </div>
         <div class="section-content">
           <p>
-            W 2025 roku Czechowice-Dziedzice stają się miejscem wyjątkowego wydarzenia artystycznego: konkursu kompozytorskiego <strong>"Na Prawym Brzegu Wisły..."</strong>, skierowanego do młodych kompozytorów z Polski i zagranicy.
+            W 2025 roku Czechowice-Dziedzice stały się miejscem wyjątkowego wydarzenia artystycznego: konkursu kompozytorskiego <strong>"Na Prawym Brzegu Wisły..."</strong>, skierowanego do młodych kompozytorów z Polski i zagranicy.
           </p>
           <p>
-            Celem konkursu jest nie tylko promocja współczesnej muzyki akordeonowej, ale przede wszystkim stworzenie przestrzeni, w której nowa generacja twórców może zaprezentować swoje poszukiwania, wizje i indywidualny język muzyczny.
+            Celem konkursu była nie tylko promocja współczesnej muzyki akordeonowej, ale przede wszystkim stworzenie przestrzeni, w której nowa generacja twórców mogła zaprezentować swoje poszukiwania, wizje i indywidualny język muzyczny.
           </p>
           <p>
-            Nieprzypadkowo miejscem realizacji tej inicjatywy są Czechowice-Dziedzice. To tutaj żył i tworzył <strong>Andrzej Krzanowski</strong> – wybitny kompozytor i akordeonista, charyzmatyczna postać, która głęboko zapisała się w historii polskiej muzyki współczesnej. Konkurs odbywa się w <strong>35. rocznicę jego przedwczesnej śmierci</strong>.
+            Nieprzypadkowo miejscem realizacji tej inicjatywy były Czechowice-Dziedzice. To tutaj żył i tworzył <strong>Andrzej Krzanowski</strong> – wybitny kompozytor i akordeonista, charyzmatyczna postać, która głęboko zapisała się w historii polskiej muzyki współczesnej. Konkurs odbył się w <strong>35. rocznicę jego przedwczesnej śmierci</strong>.
           </p>
           <p>
-            <strong>Wyniki zostaną ogłoszone 28 października 2025 roku podczas koncertu "Tryptyk" w Czechowicach-Dziedzicach</strong> – wieczór ten stanie się świętem nowej muzyki i symbolicznym zwieńczeniem pierwszej edycji konkursu.
+            <strong>Wyniki zostały ogłoszone 28 października 2025 roku podczas koncertu "Tryptyk" w Czechowicach-Dziedzicach</strong> – wieczór ten stał się świętem nowej muzyki i symbolicznym zwieńczeniem pierwszej edycji konkursu.
           </p>
         </div>
       </section>
@@ -936,7 +859,7 @@
               Po wnikliwej analizie nadesłanych kompozycji i przeprowadzeniu obrad, Jury Konkursu Kompozytorskiego <strong>"Na Prawym Brzegu Wisły..."</strong> dokonało rozstrzygnięcia.
             </p>
             <p style="font-size: 1.1rem; line-height: 1.8; color: #1b5e20; margin-bottom: 1.5rem;">
-              Laureaci pierwszej edycji konkursu zostaną oficjalnie ogłoszeni:
+              Laureaci pierwszej edycji konkursu zostali oficjalnie ogłoszeni:
             </p>
             <div style="background: white; border-radius: 12px; padding: 2rem; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin: 1.5rem 0;">
               <div style="font-size: 1.4rem; font-weight: 700; color: #2e7d32; margin-bottom: 1rem;">
@@ -949,16 +872,24 @@
                 podczas koncertu <strong>TRYPTYK</strong>
               </div>
             </div>
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #1b5e20; margin-bottom: 1rem;">
+              <strong>Laureaci:</strong>
+            </p>
+            <ul style="list-style: none; padding-left: 0; color: #1b5e20;">
+              <li><strong>I Nagroda (5000 zł + nagrody specjalne):</strong> Pan FRANCISZEK JACKOWSKI z Akademii Muzycznej im. Krzysztofa Pendereckiego – ARTEFAKT</li>
+              <li><strong>II Nagroda (3500 zł + nagrody specjalne):</strong> Pan DAWID GRENDA z Akademii Muzycznej im. Karola Lipińskiego we Wrocławiu – LONTANO</li>
+              <li><strong>III Nagroda (1500 zł + nagrody specjalne):</strong> Pan MATTEO GURRIERI z Akademii Muzycznej im. Ignacego Jana Paderewskiego w Poznaniu – LUSTROTEM II</li>
+            </ul>
             <p style="font-size: 1rem; line-height: 1.8; color: #1b5e20; text-align: center; font-style: italic;">
-              Serdecznie zapraszamy wszystkich uczestników, słuchaczy i miłośników współczesnej muzyki akordeonowej na wyjątkowy wieczór, który stanie się celebracją nowej muzyki i odkryciem najbardziej obiecujących głosów młodego pokolenia kompozytorów.
+              Serdecznie zapraszamy wszystkich uczestników, słuchaczy i miłośników współczesnej muzyki akordeonowej na wyjątkowy wieczór, który stał się celebracją nowej muzyki i odkryciem najbardziej obiecujących głosów młodego pokolenia kompozytorów.
             </p>
           </div>
-         
+        
           <div class="regulation-item" style="background: #fff3cd; border-left: 4px solid #ffc107; margin: 2rem 0;">
             <strong style="color: #856404;">⚠️ Ważna Informacja</strong>
-            Do czasu oficjalnego ogłoszenia wyników wszystkie dane uczestników oraz szczegóły dotyczące nagrodzonych kompozycji pozostają poufne.
+            Do czasu oficjalnego ogłoszenia wyników wszystkie dane uczestników oraz szczegóły dotyczące nagrodzonych kompozycji pozostawały poufne.
           </div>
-         
+        
           <div class="video-container">
             <video width="640" controls>
               <source src="NAPRAWYMBRZEGUWISLY.PL.mp4" type="video/mp4">
@@ -983,57 +914,23 @@
           </ul>
         </div>
       </section>
-      <!-- Laureates Section -->
+      <!-- Laureates Section (uproszczona) -->
       <section id="laureaci" class="section">
         <div class="section-header">
           <h2>Laureaci</h2>
         </div>
         <div class="section-content">
-          <div class="laureates-info">
-            <p>🏆 Laureaci zostaną ogłoszeni 28 października 2025 roku podczas koncertu "Tryptyk"</p>
-          </div>
-          <ul class="laureates-list">
-            <li class="laureate-item first">
-              <span class="laureate-place">🥇 I Nagroda</span>
-              <div class="laureate-name">—</div>
-              <div class="laureate-work">—</div>
-              <div class="laureate-placeholder">Laureat zostanie ogłoszony po rozstrzygnięciu konkursu</div>
-            </li>
-            <li class="laureate-item second">
-              <span class="laureate-place">🥈 II Nagroda</span>
-              <div class="laureate-name">—</div>
-              <div class="laureate-work">—</div>
-              <div class="laureate-placeholder">Laureat zostanie ogłoszony po rozstrzygnięciu konkursu</div>
-            </li>
-            <li class="laureate-item third">
-              <span class="laureate-place">🥉 III Nagroda</span>
-              <div class="laureate-name">—</div>
-              <div class="laureate-work">—</div>
-              <div class="laureate-placeholder">Laureat zostanie ogłoszony po rozstrzygnięciu konkursu</div>
-            </li>
-            <li class="laureate-item distinction">
-              <span class="laureate-place">⭐ Wyróżnienia</span>
-              <div class="laureate-placeholder">Lista wyróżnionych zostanie ogłoszona po rozstrzygnięciu konkursu</div>
-            </li>
-          </ul>
-          <p style="text-align: center; margin-top: 2rem; color: #6c757d; font-style: italic;">
-            Całkowita pula nagród wynosi 10 000 PLN. Nagrodzone utwory zostaną wykonane podczas Jesiennego Festiwalu Muzycznego Alkagran w 2026 roku.
+          <p style="text-align: center; margin-bottom: 1.5rem;">
+            Laureaci zostali ogłoszeni 28 października 2025 roku podczas koncertu "Tryptyk" w Czechowicach-Dziedzicach.
           </p>
-         
-          <div class="special-awards-grid">
-            <div class="special-award-box">
-              <h3>🎵 Nagroda Specjalna</h3>
-              <p><strong>PWM Edition</strong></p>
-            </div>
-            <div class="special-award-box">
-              <h3>🎵 Nagroda Specjalna</h3>
-              <p><strong>Warszawska Jesień</strong></p>
-            </div>
-            <div class="special-award-box">
-              <h3>🎵 Nagroda Specjalna</h3>
-              <p><strong>Narodowe Forum Muzyki</strong></p>
-            </div>
-          </div>
+          <ul class="laureates-list">
+            <li class="laureate-item"><span class="laureate-name">FRANCISZEK JACKOWSKI</span> (Akademia Muzyczna im. Krzysztofa Pendereckiego) – <span class="laureate-work">ARTEFAKT</span></li>
+            <li class="laureate-item"><span class="laureate-name">DAWID GRENDA</span> (Akademia Muzyczna im. Karola Lipińskiego we Wrocławiu) – <span class="laureate-work">LONTANO</span></li>
+            <li class="laureate-item"><span class="laureate-name">MATTEO GURRIERI</span> (Akademia Muzyczna im. Ignacego Jana Paderewskiego w Poznaniu) – <span class="laureate-work">LUSTROTEM II</span></li>
+          </ul>
+          <p style="text-align: center; margin-top: 1rem; color: #6c757d; font-style: italic;">
+            Całkowita pula nagród wynosi 10 000 PLN. Nagrodzone utwory zostały wykonane podczas Jesiennego Festiwalu Muzycznego Alkagran w 2026 roku.
+          </p>
         </div>
       </section>
       <!-- Documents Section -->
@@ -1072,18 +969,18 @@
           </div>
           <div class="regulation-item">
             <strong>2. Cel</strong>
-            Celem konkursu jest promocja twórczości młodych kompozytorów oraz wzbogacenie współczesnego repertuaru akordeonowego.
+            Celem konkursu była promocja twórczości młodych kompozytorów oraz wzbogacenie współczesnego repertuaru akordeonowego.
           </div>
           <div class="regulation-item">
             <strong>3. Uczestnicy</strong>
-            Konkurs jest otwarty dla kompozytorów poniżej 35. roku życia (urodzonych po 1 października 1990), niezależnie od narodowości.
+            Konkurs był otwarty dla kompozytorów poniżej 35. roku życia (urodzonych po 1 października 1990), niezależnie od narodowości.
           </div>
           <div class="regulation-item">
             <strong>4. Zasady Zgłoszeń</strong>
-            Każdy uczestnik może zgłosić jedną oryginalną kompozycję.<br/>
+            Każdy uczestnik mógł zgłosić jedną oryginalną kompozycję.<br/>
             <strong>Kompozycja:</strong>
             <ul>
-              <li>nie może być wcześniej publikowana, wykonywana ani nagradzana</li>
+              <li>nie mogła być wcześniej publikowana, wykonywana ani nagradzana</li>
               <li>powinna trwać od 6 do 8 minut</li>
               <li>musi być napisana na akordeon solo, opcjonalnie z mediami elektronicznymi</li>
             </ul>
@@ -1092,11 +989,11 @@
             <strong>5. Termin i Procedura Zgłoszeń</strong>
             <strong>Termin:</strong> 1 października 2025 (decyduje data otrzymania).<br/>
             <strong>Ogłoszenie wyników:</strong> 28 października 2025, podczas koncertu "Tryptyk" w Czechowicach-Dziedzicach<br/><br/>
-           
-            <strong>Zgłoszenia należy przesyłać elektronicznie na adres:</strong><br/>
+          
+            <strong>Zgłoszenia należało przesyłać elektronicznie na adres:</strong><br/>
             <strong>zgloszenia@naprawymbrzeguwisly.pl</strong><br/><br/>
-           
-            <strong>Każde zgłoszenie musi zawierać:</strong>
+          
+            <strong>Każde zgłoszenie musiało zawierać:</strong>
             <ul>
               <li>Partyturę w formacie PDF oznaczoną pseudonimem</li>
               <li>Dla kompozycji z elektroniką: partytura w PDF + część elektroniczna (pliki audio lub plik projektu)</li>
@@ -1104,8 +1001,8 @@
               <li>Plik tekstowy (formularz dostępny na stronie) z danymi autora: imię, data urodzenia, adres e-mail, numer telefonu, krótka biografia – również oznaczony pseudonimem</li>
               <li>Oświadczenie: "Oświadczam, że jestem autorem zgłaszanej kompozycji, która nie była wcześniej wykonywana, publikowana ani nagradzana. Akceptuję regulamin konkursu."</li>
             </ul>
-           
-            <strong>Warunkiem udziału w konkursie jest wpłata wpisowego w wysokości 200 PLN na konto:</strong>
+          
+            <strong>Warunkiem udziału w konkursie była wpłata wpisowego w wysokości 200 PLN na konto:</strong>
             <div class="bank-details">
               <strong>Miejski Dom Kultury</strong><br/>
               ING Bank Śląski S.A. Oddział w Czechowicach-Dziedzicach<br/>
@@ -1124,22 +1021,22 @@
               <li><strong>Piotr Zembroń</strong><br/><em>Sekretarz</em></li>
               <li><strong>Jagna Krzanowska</strong><br/><em>Dyrektor Konkursu</em></li>
             </ul>
-            Decyzje jury są ostateczne i nie podlegają odwołaniu.
+            Decyzje jury były ostateczne i nie podlegały odwołaniu.
           </div>
           <div class="regulation-item">
             <strong>7. Nagrody</strong>
             Całkowita pula nagród: 10 000 PLN.<br/>
-            Nagrodzone utwory zostaną wykonane w Czechowicach-Dziedzicach podczas Jesiennego Festiwalu Muzycznego Alkagran w 2026 roku.<br/><br/>
+            Nagrodzone utwory zostały wykonane w Czechowicach-Dziedzicach podczas koncertu "Tryptyk" 28 października 2025 roku.<br/><br/>
             <strong>Nagrody specjalne:</strong><br/>
             • <strong>PWM Edition</strong><br/>
             • <strong>Warszawska Jesień</strong><br/>
             • <strong>Narodowe Forum Muzyki</strong><br/><br/>
-            Jury zastrzega sobie prawo do innego podziału nagród lub ich nieprzyznania.
+            Jury zastrzegło sobie prawo do innego podziału nagród lub ich nieprzyznania.
           </div>
           <div class="regulation-item">
             <strong>8. Prawa Autorskie</strong>
             Uczestnicy zachowują pełne prawa autorskie do zgłaszanych utworów.<br/>
-            Organizatorzy uzyskują prawo do:
+            Organizatorzy uzyskali prawo do:
             <ul>
               <li>wykonania, nagrania i dokumentacji nagrodzonych utworów</li>
               <li>bezpłatnego rozpowszechniania ich nagrań w celach promocyjnych i archiwalnych</li>
@@ -1147,18 +1044,18 @@
           </div>
           <div class="regulation-item">
             <strong>9. Postanowienia Końcowe</strong>
-            Zgłoszenie kompozycji oznacza pełną akceptację niniejszego regulaminu.<br/>
-            Organizatorzy zastrzegają sobie prawo do modyfikacji regulaminu (bez wpływu na równe traktowanie uczestników) lub odwołania konkursu z ważnych powodów.<br/>
-            W sprawach nieobjętych regulaminem decyzje podejmują organizatorzy.
+            Zgłoszenie kompozycji oznaczało pełną akceptację niniejszego regulaminu.<br/>
+            Organizatorzy zastrzegli sobie prawo do modyfikacji regulaminu (bez wpływu na równe traktowanie uczestników) lub odwołania konkursu z ważnych powodów.<br/>
+            W sprawach nieobjętych regulaminem decyzje podejmowali organizatorzy.
           </div>
           <div class="regulation-item">
             <strong>10. Ochrona Danych Osobowych (RODO)</strong>
             Zgodnie z art. 13 ust. 1 i 2 RODO informujemy, że:
             <ul>
-              <li>Administratorem danych jest Fundacja im. Andrzeja Krzanowskiego z siedzibą w Czechowicach-Dziedzicach</li>
-              <li>Dane będą przetwarzane w celu przeprowadzenia konkursu, kontaktu z uczestnikami, ogłoszenia wyników i promocji wydarzenia</li>
-              <li>Podanie danych jest dobrowolne, ale niezbędne do udziału w konkursie</li>
-              <li>Uczestnicy mają prawo dostępu do danych, ich sprostowania, usunięcia, ograniczenia przetwarzania, przenoszenia danych, wycofania zgody oraz wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych</li>
+              <li>Administratorem danych była Fundacja im. Andrzeja Krzanowskiego z siedzibą w Czechowicach-Dziedzicach</li>
+              <li>Dane były przetwarzane w celu przeprowadzenia konkursu, kontaktu z uczestnikami, ogłoszenia wyników i promocji wydarzenia</li>
+              <li>Podanie danych było dobrowolne, ale niezbędne do udziału w konkursie</li>
+              <li>Uczestnicy mieli prawo dostępu do danych, ich sprostowania, usunięcia, ograniczenia przetwarzania, przenoszenia danych, wycofania zgody oraz wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych</li>
               <li>Szczegółowe informacje dotyczące przetwarzania danych można uzyskać, kontaktując się z administratorem pod adresem: <strong>biuro@naprawymbrzeguwisly.pl</strong></li>
             </ul>
           </div>
@@ -1228,7 +1125,7 @@
               </div>
               <div class="organizer-name">Fundacja im. Andrzeja Krzanowskiego</div>
             </div>
-           
+          
             <div class="organizer-item">
               <div class="organizer-logo">
                 <img src="logo-mam.png" alt="Mała Akademia Muzyki" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -1236,7 +1133,7 @@
               </div>
               <div class="organizer-name">Mała Akademia Muzyki<br/>Czechowice-Dziedzice</div>
             </div>
-           
+          
             <div class="organizer-item">
               <div class="organizer-logo">
                 <img src="logo-mdk.png" alt="Miejski Dom Kultury" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -1247,43 +1144,104 @@
           </div>
         </div>
         <!-- Partners -->
-      <div class="footer-section">
-  <h3>Partnerzy</h3>
-  <div class="sponsors-grid">
-    <div class="sponsor-item major-partner">
-      <div class="sponsor-logo">
-        <img src="partner1.png" alt="PWM Edition" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-        <div style="display: none;">PWM</div>
+        <div class="footer-section">
+          <h3>Partnerzy</h3>
+          <div class="sponsors-grid">
+            <div class="sponsor-item major-partner">
+              <div class="sponsor-logo">
+                <img src="partner1.png" alt="PWM Edition" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="display: none;">PWM</div>
+              </div>
+              <div class="sponsor-name">PWM Edition</div>
+            </div>
+            <div class="sponsor-item major-partner">
+              <div class="sponsor-logo">
+                <img src="wj_logo.png" alt="Warszawska Jesień" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="display: none;">WJ</div>
+              </div>
+              <div class="sponsor-name">Warszawska Jesień</div>
+            </div>
+            <div class="sponsor-item major-partner">
+              <div class="sponsor-logo">
+                <img src="NFM_logo.png" alt="Narodowe Forum Muzyki" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="display: none;">NFM</div>
+              </div>
+              <div class="sponsor-name">Narodowe Forum Muzyki</div>
+            </div>
+            <div class="sponsor-item miasto-partner">
+              <div class="sponsor-logo">
+                <img src="logo_miasta.png" alt="Miasto Czechowice-Dziedzice" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="display: none;">MC</div>
+              </div>
+              <div class="sponsor-name">Miasto Czechowice-Dziedzice</div>
+            </div>
+            <div class="sponsor-item major-partner">
+              <div class="sponsor-logo">
+                <img src="armonia dell arte.png" alt="Armonia dell'Arte" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="display: none;">ADA</div>
+              </div>
+              <div class="sponsor-name">Armonia dell'Arte</div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="sponsor-name">PWM Edition</div>
-    </div>
-    <div class="sponsor-item major-partner">
-      <div class="sponsor-logo">
-        <img src="wj_logo.png" alt="Warszawska Jesień" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-        <div style="display: none;">WJ</div>
+      <!-- Media Patronat -->
+      <div class="footer-patronat">
+        <h3>Patronat Medialny</h3>
+        <div class="patronat-grid">
+          <div class="patronat-item">
+            <div class="patronat-logo">
+              <img src="patron1.png" alt="Patron Medialny 1" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div style="display: none;">PM1</div>
+            </div>
+            <div class="patronat-name">Patron Medialny 1</div>
+          </div>
+          <div class="patronat-item">
+            <div class="patronat-logo">
+              <img src="patron2.png" alt="Patron Medialny 2" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div style="display: none;">PM2</div>
+            </div>
+            <div class="patronat-name">Patron Medialny 2</div>
+          </div>
+        </div>
       </div>
-      <div class="sponsor-name">Warszawska Jesień</div>
-    </div>
-    <div class="sponsor-item major-partner">
-      <div class="sponsor-logo">
-        <img src="NFM_logo.png" alt="Narodowe Forum Muzyki" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-        <div style="display: none;">NFM</div>
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="footer-info">
+          <div>
+            <h4>Informacje</h4>
+            <p>© 2025 Fundacja im. Andrzeja Krzanowskiego</p>
+            <p>Wszelkie prawa zastrzeżone</p>
+          </div>
+          <div>
+            <h4>Kontakt</h4>
+            <p>Email: biuro@naprawymbrzeguwisly.pl</p>
+            <p>Tel: +48 123 456 789</p>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          Designed with ❤️ by [Twoje Imię/Organizacja]
+        </div>
       </div>
-      <div class="sponsor-name">Narodowe Forum Muzyki</div>
     </div>
-    <div class="sponsor-item miasto-partner">
-      <div class="sponsor-logo">
-        <img src="logo_miasta.png" alt="Miasto Czechowice-Dziedzice" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-        <div style="display: none;">MC</div>
-      </div>
-      <div class="sponsor-name">Miasto Czechowice-Dziedzice</div>
-    </div>
-    <div class="sponsor-item major-partner">
-      <div class="sponsor-logo">
-        <img src="armonia dell arte.png" alt="Armonia dell'Arte" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-        <div style="display: none;">ADA</div>
-      </div>
-      <div class="sponsor-name">Armonia dell'Arte</div>
-    </div>
-  </div>
-</div>
+  </footer>
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('open');
+    }
+    function closeSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      if (window.innerWidth <= 768) {
+        sidebar.classList.remove('open');
+      }
+    }
+    // Zamknij sidebar po zmianie orientacji (np. z poziomej na pionową)
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        document.getElementById('sidebar').classList.remove('open');
+      }
+    });
+  </script>
+</body>
+</html>
