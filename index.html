@@ -4,425 +4,186 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Na Prawym Brzegu Wisły - Konkurs Kompozytorski</title>
-  <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    /* === GLOBAL RESET === */
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; font-size: 16px; }
-    body {
-      font-family: 'Open Sans', sans-serif;
-      line-height: 1.85;
-      color: #2c3e50;
-      background: linear-gradient(to bottom, #f8f9fa 0%, #e9ecef 100%);
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      overflow-x: hidden;
-    }
-    h1, h2, h3, h4, h5, h6 { 
-      font-family: 'Georgia', serif; 
-      font-weight: 700; 
-      color: #1a2530;
-      margin-bottom: 1.1rem;
-      letter-spacing: -0.5px;
-    }
-    p { margin-bottom: 1.3rem; text-align: justify; font-size: 1.02rem; }
-    a { color: #2c3e50; text-decoration: none; transition: color 0.3s ease; }
-    a:hover { color: #556b7a; text-decoration: underline; }
-    img { max-width: 100%; height: auto; display: block; border-radius: 10px; }
-    ul { padding-left: 2.2rem; margin-bottom: 1.6rem; }
-    li { margin-bottom: 0.6rem; position: relative; }
-    strong { color: #1a2530; font-weight: 600; }
-
-    /* === SIDEBAR === */
-    .sidebar {
-      position: fixed;
-      left: 0; top: 0;
-      width: 310px;
-      height: 100vh;
-      background: linear-gradient(180deg, #2c3e50 0%, #1a2530 100%);
-      color: white;
-      padding: 3rem 0;
-      z-index: 1000;
-      overflow-y: auto;
-      box-shadow: 8px 0 40px rgba(0,0,0,0.3);
-      transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-    }
-    .sidebar-header {
-      text-align: center;
-      padding: 0 2.2rem 2.8rem;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
-      margin-bottom: 2.8rem;
-    }
-    .sidebar-logo {
-      width: 140px;
-      height: 140px;
-      background: rgba(255,255,255,0.15);
-      border-radius: 50%;
-      margin: 0 auto 1.4rem;
-      background-image: url('img/logo.png');
-      background-size: cover;
-      background-position: center;
-      border: 5px solid rgba(255,255,255,0.4);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
-      transition: transform 0.4s ease;
-    }
-    .sidebar-logo:hover { transform: scale(1.05); }
-    .sidebar h1 {
-      font-size: 1.4rem;
-      margin-bottom: 0.7rem;
-      letter-spacing: -0.7px;
-      font-weight: 700;
-    }
-    .sidebar .subtitle {
-      font-size: 1rem;
-      opacity: 0.9;
-      font-style: italic;
-      letter-spacing: 0.6px;
-    }
-    .nav-links {
-      list-style: none;
-      padding: 0 1.8rem;
-    }
-    .nav-links li { margin-bottom: 0.7rem; }
-    .nav-links a {
-      display: flex;
-      align-items: center;
-      padding: 1.2rem 2rem;
-      color: rgba(255,255,255,0.95);
-      text-decoration: none;
-      border-radius: 12px;
-      transition: all 0.4s ease;
-      font-weight: 500;
-      font-size: 0.98rem;
-      position: relative;
-      overflow: hidden;
-    }
-    .nav-links a i {
-      margin-right: 12px;
-      font-size: 1.1rem;
-      width: 24px;
-      text-align: center;
-    }
-    .nav-links a::before {
-      content: '';
-      position: absolute;
-      top: 0; left: -100%;
-      width: 100%; height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-      transition: 0.7s;
-    }
-    .nav-links a:hover::before { left: 100%; }
-    .nav-links a:hover, .nav-links a.active {
-      background: rgba(255,255,255,0.22);
-      color: white;
-      transform: translateX(10px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-    }
-    .language-switch {
-      margin-top: 3.5rem;
-      padding: 0 1.8rem;
-      text-align: center;
-      border-top: 1px solid rgba(255,255,255,0.18);
-      padding-top: 1.8rem;
-    }
-    .language-switch a {
-      display: inline-block;
-      padding: 0.6rem 1.4rem;
-      margin: 0 0.35rem;
-      background: rgba(255,255,255,0.15);
-      color: white;
-      text-decoration: none;
-      border-radius: 30px;
-      font-size: 0.9rem;
-      transition: all 0.35s ease;
-      font-weight: 600;
-    }
-    .language-switch a.active, .language-switch a:hover { 
-      background: rgba(255,255,255,0.32); 
-      transform: scale(1.08);
-    }
-
-    /* === MAIN CONTENT === */
-    .main-content {
-      margin-left: 310px;
-      flex: 1 0 auto;
-      padding-bottom: 7rem;
-    }
-
-    /* === HERO === */
-    .hero {
-      background: linear-gradient(135deg, #2c3e50 0%, #1a2530 100%);
-      color: white;
-      padding: 7rem 0;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><circle cx="30" cy="30" r="3" fill="rgba(255,255,255,0.12)"/></svg>') repeat;
-      opacity: 0.18;
-      animation: float 25s infinite linear;
-    }
-    @keyframes float { 0% { transform: translateY(0); } 100% { transform: translateY(-300px); } }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0 2.5rem;
-    }
-    .hero h1 {
-      font-size: 4.5rem;
-      font-weight: 300;
-      margin-bottom: 1.4rem;
-      letter-spacing: -2.5px;
-      text-shadow: 0 4px 12px rgba(0,0,0,0.5);
-    }
-    .hero .subtitle {
-      font-size: 1.85rem;
-      margin-bottom: 2rem;
-      font-style: italic;
-      opacity: 0.97;
-      letter-spacing: 0.6px;
-    }
-    .hero-description {
-      font-size: 1.25rem;
-      line-height: 2.1;
-      opacity: 0.94;
-      max-width: 800px;
-      margin: 0 auto;
-      font-weight: 300;
-    }
-
-    /* === CONTENT === */
-    .content {
-      max-width: 1250px;
-      margin: 0 auto;
-      padding: 4.5rem 3rem;
-    }
-    .section {
-      background: white;
-      margin: 4rem 0;
-      border-radius: 18px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.14);
-      overflow: hidden;
-      border-left: 8px solid #2c3e50;
-      transition: all 0.5s ease;
-    }
-    .section:hover {
-      box-shadow: 0 15px 50px rgba(0,0,0,0.2);
-      transform: translateY(-5px);
-    }
-    .section-header {
-      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-      padding: 2.8rem 3rem;
-      border-bottom: 1px solid #dee2e6;
-    }
-    .section h2 {
-      font-size: 2.5rem;
-      color: #1a2530;
-      margin: 0;
-      position: relative;
-    }
-    .section h2::after {
-      content: '';
-      position: absolute;
-      bottom: -10px; left: 0;
-      width: 70px; height: 5px;
-      background: #2c3e50;
-      border-radius: 3px;
-    }
-    .section-content {
-      padding: 3.5rem 3.5rem;
-      line-height: 2;
-      font-size: 1.06rem;
-    }
-
-    /* === GALERIA === */
-    .gallery {
-      background: #0a0a0a;
-      color: white;
-      padding: 7rem 0;
-      position: relative;
-      overflow: hidden;
-    }
-    .gallery::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.85);
-      z-index: 1;
-    }
-    .gallery-content {
-      position: relative;
-      z-index: 2;
-      max-width: 1500px;
-      margin: 0 auto;
-      padding: 0 3rem;
-    }
-    .gallery h2 {
-      text-align: center;
-      font-size: 3.2rem;
-      margin-bottom: 1.5rem;
-      text-shadow: 0 5px 15px rgba(0,0,0,0.8);
-      letter-spacing: -1.2px;
-    }
-    .gallery p.subtitle {
-      text-align: center;
-      font-style: italic;
-      opacity: 0.95;
-      margin-bottom: 4.5rem;
-      font-size: 1.2rem;
-      letter-spacing: 0.6px;
-    }
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 2.2rem;
-    }
-    .gallery-item {
-      position: relative;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.6);
-      transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
-      cursor: pointer;
-      height: 300px;
-      background: #111;
-    }
-    .gallery-item:hover {
-      transform: translateY(-15px) scale(1.03);
-      box-shadow: 0 30px 70px rgba(0,0,0,0.8);
-    }
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.9s ease;
-    }
-    .gallery-item:hover img {
-      transform: scale(1.15)**;
-    }
-
-    /* === LIGHTBOX === */
-    .lightbox {
-      display: none;
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.99);
-      align-items: center;
-      justify-content: center;
-      z-index: 2000;
-      padding: 3rem;
-      backdrop-filter: blur(10px);
-    }
-    .lightbox.open { display: flex; }
-    .lightbox img {
-      max-width: 95%;
-      max-height: 95vh;
-      border-radius: 18px;
-      box-shadow: 0 35px 80px rgba(0,0,0,0.85);
-      border: 2px solid rgba(255,255,255,0.18);
-    }
-    .lightbox-close {
-      position: absolute;
-      top: 3.5rem; right: 3.5rem;
-      font-size: 4rem;
-      color: white;
-      background: rgba(255,255,255,0.25);
-      width: 80px; height: 80px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.4s ease;
-      font-weight: 300;
-    }
-    .lightbox-close:hover { 
-      background: rgba(255,255,255,0.42); 
-      transform: scale(1.12);
-    }
-
-    /* === MOBILE === */
-    .mobile-menu-btn {
-      display: none;
-      position: fixed;
-      top: 1.8rem; left: 1.8rem;
-      z-index: 1001;
-      background: #2c3e50;
-      color: white;
-      border: none;
-      padding: 1.1rem;
-      border-radius: 14px;
-      cursor: pointer;
-      font-size: 1.6rem;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-    }
-    .mobile-menu-btn:hover { background: #1a2530; }
-
-    @media (max-width: 992px) {
-      .sidebar { 
-        transform: translateX(-100%); 
-        width: 290px;
-      }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Georgia', 'Times New Roman', serif; line-height: 1.7; color: #2c3e50; background: #f8f9fa; margin: 0; padding: 0; min-height: 100vh; display: flex; flex-direction: column; }
+    /* Sidebar Navigation */
+    .sidebar { position: fixed; left: 0; top: 0; width: 280px; height: 100vh; background: linear-gradient(180deg, #3d4f5c 0%, #556b7a 100%); color: white; padding: 2rem 0; z-index: 1000; overflow-y: auto; box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1); }
+    .sidebar-header { text-align: center; padding: 0 1.5rem 2rem; border-bottom: 1px solid rgba(255, 255, 255, 0.2); margin-bottom: 2rem; }
+    .sidebar-logo { width: 120px; height: 120px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 2rem; border: 2px solid rgba(255, 255, 255, 0.3); background-image: url('logo.png'); background-size: cover; background-repeat: no-repeat; background-position: center; }
+    .sidebar h1 { font-size: 1.2rem; margin-bottom: 0.5rem; font-weight: 600; line-height: 1.3; }
+    .sidebar .subtitle { font-size: 0.9rem; opacity: 0.8; font-style: italic; }
+    .nav-links { list-style: none; padding: 0 1rem; }
+    .nav-links li { margin-bottom: 0.5rem; }
+    .nav-links a { display: block; padding: 1rem 1.5rem; color: rgba(255, 255, 255, 0.9); text-decoration: none; border-radius: 8px; transition: all 0.3s ease; font-weight: 500; position: relative; }
+    .nav-links a:hover, .nav-links a.active { background: rgba(255, 255, 255, 0.15); color: white; transform: translateX(5px); }
+    .language-switch { margin-top: 2rem; padding: 0 1rem; }
+    .language-switch a { display: inline-block; padding: 0.5rem 1rem; margin: 0 0.25rem; background: rgba(255, 255, 255, 0.1); color: white; text-decoration: none; border-radius: 20px; font-size: 0.85rem; transition: all 0.3s ease; }
+    .language-switch a.active { background: rgba(255, 255, 255, 0.2); }
+    /* Main Content */
+    .main-content { margin-left: 280px; flex: 1 0 auto; padding-bottom: 4rem; }
+    /* Hero Section */
+    .hero { background: linear-gradient(135deg, #3d4f5c 0%, #556b7a 50%, #6d7f8c 100%); color: white; padding: 4rem 0; text-align: center; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="music" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23music)"/></svg>'); opacity: 0.3; }
+    .hero-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; padding: 0 2rem; }
+    .hero h1 { font-size: 3.5rem; font-weight: 300; margin-bottom: 1rem; letter-spacing: -1px; }
+    .hero .subtitle { font-size: 1.5rem; margin-bottom: 2rem; opacity: 0.9; font-style: italic; }
+    .hero-description { font-size: 1.1rem; line-height: 1.8; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+    /* Content Sections */
+    .content { max-width: 1000px; margin: 0 auto; padding: 3rem 2rem; }
+    .section { background: white; margin: 3rem 0; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); overflow: hidden; border-left: 5px solid #556b7a; }
+    .section-header { background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 2rem; border-bottom: 1px solid #dee2e6; }
+    .section h2 { font-size: 2rem; color: #3d4f5c; margin: 0; font-weight: 600; }
+    .section-content { padding: 2.5rem; }
+    /* Special styling for intro section */
+    .intro { background: linear-gradient(135deg, #3d4f5c 0%, #556b7a 100%); color: white; border-left: none; }
+    .intro .section-header { background: rgba(255, 255, 255, 0.1); border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
+    .intro h2 { color: white; }
+    .intro p { margin-bottom: 1.5rem; font-size: 1.05rem; line-height: 1.8; }
+    /* Cards Layout */
+    .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
+    .card { background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease; border-top: 4px solid #556b7a; }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12); }
+    .card h3 { color: #3d4f5c; font-size: 1.3rem; margin-bottom: 1rem; font-weight: 600; }
+    /* Facebook Button Styles */
+    .facebook-link { display: inline-flex; align-items: center; gap: 0.75rem; padding: 1rem 2rem; background: linear-gradient(135deg, #1877f2 0%, #166fe5 100%); color: white; text-decoration: none; border-radius: 10px; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(24, 119, 242, 0.3); margin: 1rem 0; }
+    .facebook-link:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(24, 119, 242, 0.4); color: white; background: linear-gradient(135deg, #166fe5 0%, #1465d6 100%); }
+    .facebook-icon { width: 24px; height: 24px; fill: currentColor; }
+    /* List Styling */
+    .jury-list { list-style: none; padding: 0; }
+    .jury-list li { background: #f8f9fa; margin: 1rem 0; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #6d7f8c; transition: all 0.3s ease; }
+    .jury-list li:hover { background: #e9ecef; transform: translateX(5px); }
+    /* Laureates Styling (uproszczone) */
+    .laureates-list { list-style: none; padding: 0; margin-top: 1rem; }
+    .laureate-item { margin: 1rem 0; padding: 1rem; font-size: 1.1rem; }
+    .laureate-name { font-weight: 700; color: #3d4f5c; }
+    .laureate-work { font-style: italic; color: #556b7a; text-transform: uppercase; }
+    /* Download Links */
+    .download-section { background: #f8f9fa; border-radius: 12px; padding: 2rem; margin: 2rem 0; }
+    .download-link { display: inline-block; padding: 1rem 2rem; background: linear-gradient(135deg, #556b7a 0%, #3d4f5c 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; margin: 0.5rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(85, 107, 122, 0.3); }
+    .download-link:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(85, 107, 122, 0.4); color: white; }
+    /* Video Container */
+    .video-container { text-align: center; background: #f8f9fa; border-radius: 12px; padding: 2rem; margin: 2rem 0; }
+    video { max-width: 100%; border-radius: 8px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); }
+    /* Regulations */
+    .regulation-item { background: #f8f9fa; border-radius: 8px; padding: 2rem; margin: 1.5rem 0; border-left: 4px solid #556b7a; }
+    .regulation-item strong { color: #3d4f5c; font-size: 1.1rem; display: block; margin-bottom: 1rem; }
+    .regulation-item ul { margin: 1rem 0; padding-left: 1.5rem; }
+    .regulation-item ul li { margin: 0.5rem 0; }
+    /* Bank details styling */
+    .bank-details { background: #e8f4fd; border: 1px solid #bee5eb; border-radius: 8px; padding: 1rem; margin: 1rem 0; font-family: monospace; font-size: 0.95rem; }
+    /* Special styling for deadline info */
+    .deadline-info { background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%); color: white; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; text-align: center; font-size: 1.1rem; font-weight: 600; box-shadow: 0 4px 15px rgba(74, 85, 104, 0.3); }
+    /* Special Awards Grid */
+    .special-awards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem; }
+    .special-award-box { background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-radius: 12px; padding: 2rem; border: 2px solid #dee2e6; text-align: center; transition: all 0.3s ease; }
+    .special-award-box:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); }
+    .special-award-box h3 { color: #3d4f5c; margin-bottom: 1rem; font-size: 1.2rem; }
+    .special-award-box p { font-size: 1.1rem; color: #2c3e50; font-weight: 600; }
+    /* FOOTER STYLES */
+    .footer { background: linear-gradient(135deg, #2c3e50 0%, #3d4f5c 50%, #556b7a 100%); color: white; margin-left: 280px; position: relative; overflow: hidden; padding: 2rem 0; flex-shrink: 0; }
+    .footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="music-footer" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="15" cy="15" r="0.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23music-footer)"/></svg>'); opacity: 0.3; }
+    .footer-content { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+    .footer-main { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-bottom: 3rem; min-height: 200px; }
+    .footer-section h3 { font-size: 1.5rem; margin-bottom: 2rem; color: #ffffff; font-weight: 600; border-bottom: 2px solid rgba(255, 255, 255, 0.2); padding-bottom: 0.5rem; }
+    /* Organizers Section */
+    .organizers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 1rem; }
+    .organizer-item { background: rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 1.5rem; text-align: center; transition: all 0.3s ease; border: 1px solid rgba(255, 255, 255, 0.1); }
+    .organizer-item:hover { background: rgba(255, 255, 255, 0.12); transform: translateY(-5px); }
+    .organizer-logo { width: 80px; height: 80px; background: rgba(255, 255, 255, 0.9); border-radius: 8px; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: #3d4f5c; font-weight: bold; border: 2px solid rgba(255, 255, 255, 0.3); }
+    .organizer-logo img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 4px; }
+    .organizer-name { font-size: 0.95rem; font-weight: 600; color: rgba(255, 255, 255, 0.95); line-height: 1.4; }
+    /* Sponsors Section */
+    .sponsors-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 1rem; min-height: 150px; }
+    .sponsor-item { background: rgba(255, 255, 255, 0.95); border-radius: 8px; padding: 1.5rem; text-align: center; transition: all 0.3s ease; border: 2px solid rgba(255, 255, 255, 0.2); }
+    .sponsor-item:hover { background: rgba(255, 255, 255, 1); transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); }
+    .sponsor-logo { width: 80px; height: 80px; background: #f8f9fa; border-radius: 6px; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #3d4f5c; font-weight: bold; border: 1px solid #dee2e6; }
+    .sponsor-logo img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 3px; }
+    .sponsor-name { font-size: 0.9rem; font-weight: 600; color: #3d4f5c; line-height: 1.3; }
+    /* Special styles for major partners */
+    .sponsor-item.major-partner { background: rgba(255, 255, 255, 0.98); border: 3px solid rgba(255, 215, 0, 0.3); }
+    .sponsor-item.major-partner .sponsor-logo { width: 120px; height: 120px; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border: 2px solid #dee2e6; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); }
+    .sponsor-item.major-partner .sponsor-name { font-size: 1rem; font-weight: 700; color: #2c3e50; margin-top: 1rem; }
+    .sponsor-item.major-partner:hover { border-color: rgba(255, 215, 0, 0.5); box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2); }
+    /* Special styles for City */
+    .sponsor-item.miasto-partner .sponsor-logo { width: 100px; height: 100px; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border: 2px solid #dee2e6; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); }
+    .sponsor-item.miasto-partner .sponsor-name { font-size: 0.9rem; font-weight: 700; color: #2c3e50; margin-top: 0.75rem; }
+    .sponsor-item.miasto-partner:hover { border-color: rgba(0, 128, 255, 0.5); box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2); }
+    /* MEDIA PATRON */
+    .footer-patronat { margin-top: 3rem; padding-top: 3rem; border-top: 2px solid rgba(255, 255, 255, 0.2); text-align: center; }
+    .footer-patronat h3 { font-size: 1.5rem; margin-bottom: 2rem; color: #ffffff; font-weight: 600; text-align: center; }
+    .patronat-grid { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; }
+    .patronat-item { background: rgba(255, 255, 255, 0.95); border-radius: 12px; padding: 2rem; text-align: center; transition: all 0.3s ease; border: 2px solid rgba(255, 255, 255, 0.3); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); max-width: 280px; }
+    .patronat-item:hover { background: rgba(255, 255, 255, 1); transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); }
+    .patronat-logo { width: 200px; height: 100px; background: #ffffff; border-radius: 8px; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: #3d4f5c; font-weight: bold; border: 1px solid #dee2e6; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); overflow: hidden; padding: 1rem; }
+    .patronat-logo img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 8px; }
+    .patronat-name { font-size: 1rem; font-weight: 700; color: #2c3e50; line-height: 1.3; margin-top: 1rem; }
+    /* Footer Bottom */
+    .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.2); padding-top: 2rem; text-align: center; }
+    .footer-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 2rem; text-align: left; }
+    .footer-info div { background: rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 8px; border-left: 4px solid rgba(255, 255, 255, 0.3); }
+    .footer-info h4 { font-size: 1.1rem; margin-bottom: 0.5rem; color: #ffffff; }
+    .footer-info p { font-size: 0.9rem; opacity: 0.9; line-height: 1.5; }
+    .footer-copyright { font-size: 0.9rem; opacity: 0.8; color: rgba(255, 255, 255, 0.8); }
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .sidebar { transform: translateX(-100%); transition: transform 0.3s ease; }
       .sidebar.open { transform: translateX(0); }
       .main-content, .footer { margin-left: 0; }
-      .mobile-menu-btn { display: block; }
-      .gallery-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-      .hero h1 { font-size: 3.5rem; }
+      .hero h1 { font-size: 2.5rem; }
+      .content { padding: 2rem 1rem; }
+      .section-content { padding: 1.5rem; }
+      .cards-grid { grid-template-columns: 1fr; }
+      .footer-main { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-content { padding: 2rem 1rem 1rem; }
+      .organizers-grid { grid-template-columns: 1fr; }
+      .sponsors-grid { grid-template-columns: 1fr; }
+      .footer-info { grid-template-columns: 1fr; gap: 1rem; }
+      .patronat-grid { flex-direction: column; align-items: center; }
+      .patronat-item { max-width: 260px; padding: 1.5rem; }
+      .patronat-logo { width: 180px; height: 90px; }
+      .patronat-name { font-size: 0.9rem; }
+      .footer-patronat { margin-top: 2rem; padding-top: 2rem; }
+      .special-awards-grid { grid-template-columns: 1fr; }
     }
-    @media (max-width: 576px) {
-      .hero h1 { font-size: 2.8rem; }
-      .hero .subtitle { font-size: 1.5rem; }
-      .gallery-grid { grid-template-columns: 1fr; }
-      .gallery h2 { font-size: 2.5rem; }
-      .section-content { padding: 2.2rem; }
-    }
-
-    /* === FOOTER === */
-    .footer {
-      background: #1a2530;
-      color: white;
-      text-align: center;
-      padding: 3.5rem 2.5rem;
-      margin-left: 310px;
-      font-size: 0.98rem;
-      border-top: 1px solid rgba(255,255,255,0.15);
-    }
-    .footer p { margin: 0; opacity: 0.92; }
+    /* Mobile Menu Button */
+    .mobile-menu-btn { display: none; position: fixed; top: 1rem; left: 1rem; z-index: 1001; background: #3d4f5c; color: white; border: none; padding: 0.75rem; border-radius: 8px; cursor: pointer; font-size: 1.2rem; }
+    @media (max-width: 768px) { .mobile-menu-btn { display: block; } }
+    /* Smooth scrolling */
+    html { scroll-behavior: smooth; }
+    /* Fade in animation */
+    .section { opacity: 0; transform: translateY(20px); animation: fadeInUp 0.6s ease forwards; }
+    .section:nth-child(1) { animation-delay: 0.1s; }
+    .section:nth-child(2) { animation-delay: 0.2s; }
+    .section:nth-child(3) { animation-delay: 0.3s; }
+    .section:nth-child(4) { animation-delay: 0.4s; }
+    .section:nth-child(5) { animation-delay: 0.5s; }
+    .section:nth-child(6) { animation-delay: 0.6s; }
+    .section:nth-child(7) { animation-delay: 0.7s; }
+    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body>
-
-  <!-- Mobile Menu -->
-  <button class="mobile-menu-btn" onclick="toggleSidebar()">
-    <i class="fas fa-bars"></i>
-  </button>
+  <!-- Mobile Menu Button -->
+  <button class="mobile-menu-btn" onclick="toggleSidebar()">Menu</button>
 
   <!-- Sidebar -->
   <nav class="sidebar" id="sidebar">
     <div class="sidebar-header">
       <div class="sidebar-logo"></div>
       <h1>Na Prawym Brzegu Wisły…</h1>
-      <div class="subtitle">Konkurs Kompozytorski 2025</div>
+      <div class="subtitle">Konkurs Kompozytorski</div>
     </div>
     <ul class="nav-links">
-      <li><a href="#intro" onclick="closeSidebar()"><i class="fas fa-info-circle"></i> O Konkursie</a></li>
-      <li><a href="#aktualnosci" onclick="closeSidebar()"><i class="fas fa-newspaper"></i> Aktualności</a></li>
-      <li><a href="#galeria" onclick="closeSidebar()"><i class="fas fa-images"></i> Galeria</a></li>
-      <li><a href="#jury" onclick="closeSidebar()"><i class="fas fa-users"></i> Jury</a></li>
-      <li><a href="#laureaci" onclick="closeSidebar()"><i class="fas fa-trophy"></i> Laureaci</a></li>
-      <li><a href="#dokumenty" onclick="closeSidebar()"><i class="fas fa-file-alt"></i> Dokumenty</a></li>
-      <li><a href="#regulamin" onclick="closeSidebar()"><i class="fas fa-book"></i> Regulamin</a></li>
-      <li><a href="#organizatorzy" onclick="closeSidebar()"><i class="fas fa-building"></i> Organizatorzy</a></li>
-      <li><a href="#kontakt" onclick="closeSidebar()"><i class="fas fa-envelope"></i> Kontakt</a></li>
+      <li><a href="#intro" onclick="closeSidebar()">O Konkursie</a></li>
+      <li><a href="#aktualnosci" onclick="closeSidebar()">Aktualności</a></li>
+      <li><a href="#jury" onclick="closeSidebar()">Jury</a></li>
+      <li><a href="#laureaci" onclick="closeSidebar()">Laureaci</a></li>
+      <li><a href="#dokumenty" onclick="closeSidebar()">Dokumenty</a></li>
+      <li><a href="#regulamin" onclick="closeSidebar()">Regulamin</a></li>
+      <li><a href="#galeria" onclick="closeSidebar()">Galeria</a></li>
+      <li><a href="#organizatorzy" onclick="closeSidebar()">Organizatorzy</a></li>
+      <li><a href="#kontakt" onclick="closeSidebar()">Kontakt</a></li>
     </ul>
     <div class="language-switch">
       <a href="index.html" class="active">PL</a>
@@ -430,227 +191,416 @@
     </div>
   </nav>
 
-  <!-- Main -->
+  <!-- Main Content -->
   <main class="main-content">
-
-    <!-- Hero -->
+    <!-- Hero Section -->
     <section class="hero">
       <div class="hero-content">
         <h1>Na Prawym Brzegu Wisły…</h1>
         <div class="subtitle">Konkurs Kompozytorski 2025</div>
-        <p class="hero-description">
-          Wyjątkowe wydarzenie artystyczne w Czechowicach-Dziedzicach, łączące tradycję z nowoczesnością. 
-          Koncert finałowy „Tryptyk” z udziałem Dawida Grendy i Zespołu Instrumentalistów.
-        </p>
+        <p class="hero-description"> Wyjątkowe wydarzenie artystyczne w Czechowicach-Dziedzicach, skierowane do młodych kompozytorów z Polski i zagranicy. </p>
       </div>
     </section>
 
     <div class="content">
-
-      <!-- O Konkursie -->
-      <section id="intro" class="section">
-        <div class="section-header"><h2>O Konkursie</h2></div>
+      <!-- Intro Section -->
+      <section id="intro" class="section intro">
+        <div class="section-header">
+          <h2>O Konkursie</h2>
+        </div>
         <div class="section-content">
-          <p>W 2025 roku Czechowice-Dziedzice stały się miejscem wyjątkowego wydarzenia artystycznego – Konkursu Kompozytorskiego „Na prawym brzegu Wisły…”. Inicjatywa ta, skierowana do młodych twórców z Polski i zagranicy, miała na celu promowanie twórczości inspirowanej lokalną tradycją i kulturą.</p>
-          <p>Organizatorem konkursu był Miejski Dom Kultury w Czechowicach-Dziedzicach, we współpracy z Fundacją im. Andrzeja Krzanowskiego. Wydarzenie objęte było patronatem Ministra Kultury i Dziedzictwa Narodowego.</p>
-          <p>Konkurs odbył się w ramach programu „Muzyczny ślad 2025”, finansowanego ze środków Ministerstwa Kultury i Dziedzictwa Narodowego.</p>
-          <p>Numer wniosku: 107544/A3, złożony dnia 15.07.2025.</p>
+          <p> W 2025 roku Czechowice-Dziedzice stały się miejscem wyjątkowego wydarzenia artystycznego: konkursu kompozytorskiego <strong>"Na Prawym Brzegu Wisły..."</strong>, skierowanego do młodych kompozytorów z Polski i zagranicy. </p>
+          <p> Celem konkursu była nie tylko promocja współczesnej muzyki akordeonowej, ale przede wszystkim stworzenie przestrzeni, w której nowa generacja twórców mogła zaprezentować swoje poszukiwania, wizje i indywidualny język muzyczny. </p>
+          <p> Nieprzypadkowo miejscem realizacji tej inicjatywy były Czechowice-Dziedzice. To tutaj żył i tworzył <strong>Andrzej Krzanowski</strong> – wybitny kompozytor i akordeonista, charyzmatyczna postać, która głęboko zapisała się w historii polskiej muzyki współczesnej. Konkurs odbył się w <strong>35. rocznicę jego przedwczesnej śmierci</strong>. </p>
+          <p> <strong>Wyniki zostały ogłoszone 28 października 2025 roku podczas koncertu "Tryptyk" w Czechowicach-Dziedzicach</strong> – wieczór ten stał się świętem nowej muzyki i symbolicznym zwieńczeniem pierwszej edycji konkursu. </p>
         </div>
       </section>
 
-      <!-- Aktualności -->
+      <!-- News Section -->
       <section id="aktualnosci" class="section">
-        <div class="section-header"><h2>Aktualności</h2></div>
-        <div class="section-content">
-          <p><strong>28 października 2025</strong> – Koncert finałowy „Tryptyk” w Miejskim Domu Kultury w Czechowicach-Dziedzicach.</p>
-          <p><strong>I Nagroda</strong>: Franciszek Jackowski – utwór „LONTANO”</p>
-          <p><strong>Nagroda Specjalna</strong>: Matteo Gurrieri – utwór „LUSTROTEM II”</p>
-          <p><strong>Wykonawcy</strong>: Dawid Grenda (akordeon), Zespół Instrumentalny</p>
-          <p>Potwierdzenie odbioru nagrody specjalnej przez laureata – załącznik w galerii.</p>
+        <div class="section-header">
+          <h2>Aktualności</h2>
         </div>
-      </section>
-
-      <!-- GALERIA -->
-      <section id="galeria" class="section gallery">
-        <div class="gallery-content">
-          <h2>Galeria z Koncertu „Tryptyk”</h2>
-          <p class="subtitle">28 października 2025, Miejski Dom Kultury, Czechowice-Dziedzice</p>
-          <div class="gallery-grid">
-
-            <!-- 13 ZDJĘĆ -->
-            <div class="gallery-item" onclick="openLightbox('img/concert1.jpg')">
-              <img src="img/concert1.jpg" alt="Koncert 1" loading="lazy">
+        <div class="section-content">
+          <div class="regulation-item" style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-left: 4px solid #4caf50; margin: 2rem 0; padding: 2.5rem;">
+            <strong style="color: #2e7d32; font-size: 1.3rem; margin-bottom: 1.5rem;">Jury podjęło decyzję!</strong>
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #1b5e20; margin-bottom: 1rem;"> Po wnikliwej analizie nadesłanych kompozycji i przeprowadzeniu obrad, Jury Konkursu Kompozytorskiego <strong>"Na Prawym Brzegu Wisły..."</strong> dokonało rozstrzygnięcia. </p>
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #1b5e20; margin-bottom: 1.5rem;"> Laureaci pierwszej edycji konkursu zostali oficjalnie ogłoszeni: </p>
+            <div style="background: white; border-radius: 12px; padding: 2rem; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin: 1.5rem 0;">
+              <div style="font-size: 1.4rem; font-weight: 700; color: #2e7d32; margin-bottom: 1rem;"> 28 października 2025 | Godz. 19:00 </div>
+              <div style="font-size: 1.2rem; color: #1b5e20; margin-bottom: 0.5rem;"> Miejski Dom Kultury w Czechowicach-Dziedzicach </div>
+              <div style="font-size: 1.1rem; font-style: italic; color: #388e3c;"> podczas koncertu <strong>TRYPTYK</strong> </div>
             </div>
-            <div class="gallery-item" onclick="openLightbox('img/concert2.jpg')">
-              <img src="img/concert2.jpg" alt="Koncert 2" loading="lazy">
-            </div>
-            <div class="gallery-item" onclick="openLightbox('img/concert3.jpg')">
-              <img src="img/concert3.jpg" alt="Koncert 3" loading="lazy">
-            </div>
-            <div class="gallery-item" onclick="openLightbox('img/concert4.jpg')">
-              <img src="img/concert4.jpg" alt="Koncert 4" loading="lazy">
-            </div>
-            <div class="gallery-item" onclick="openLightbox('img/concert5.jpg')">
-              <img src="img/concert5.jpg" alt="Koncert 5" loading="lazy">
-            </div>
-            <div class="gallery-item" onclick="openLightbox('img/concert6.jpg')">
-              <img src="img/concert6.jpg" alt="Koncert 6" loading="lazy">
-            </div>
-            <div class="gallery-item" onclick="openLightbox('img/concert7.jpg')">
-              <img src="img/concert7.jpg" alt="Koncert 7" loading="lazy">
-            </div>
-            <div class="gallery-item" onclick="openLightbox('img/concert8.jpg')">
-              <img src="img/concert8.jpg" alt="Koncert 8" loading="lazy">
-            </div>
-            <div class="gallery-item" onclick="openLightbox('img/concert9.jpg')">
-              <img src="img/concert9.jpg" alt="Koncert 9" loading="lazy">
-            </div>
-            <div class="gallery-item" onclick="openLightbox('img/concert10.jpg')">
-              <img src="img/concert10.jpg" alt="Koncert 10" loading="lazy">
-            </div>
-            <div class="gallery-item" onclick="openLightbox('img/concert11.jpg')">
-              <img src="img/concert11.jpg" alt="Koncert 11" loading="lazy">
-            </div>
-            <div class="gallery-item" onclick="openLightbox('img/concert12.jpg')">
-              <img src="img/concert12.jpg" alt="Koncert 12" loading="lazy">
-            </div>
-            <div class="gallery-item" onclick="openLightbox('img/concert13.jpg')">
-              <img src="img/concert13.jpg" alt="Koncert 13" loading="lazy">
-            </div>
-
-            <!-- DOKUMENTY -->
-            <div class="gallery-item" onclick="openLightbox('img/wniosek.jpg')">
-              <img src="img/wniosek.jpg" alt="Wniosek o dofinansowanie" loading="lazy">
-            </div>
-            <div class="gallery-item" onclick="openLightbox('img/potwierdzenie.jpg')">
-              <img src="img/potwierdzenie.jpg" alt="Potwierdzenie odbioru nagrody" loading="lazy">
-            </div>
-
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #1b5e20; margin-bottom: 1rem;"> <strong>Laureaci:</strong> </p>
+            <ul style="list-style: none; padding-left: 0; color: #1b5e20;">
+              <li><strong>I Nagroda (5000 zł + nagrody specjalne):</strong> Pan FRANCISZEK JACKOWSKI z Akademii Muzycznej im. Krzysztofa Pendereckiego – ARTEFAKT</li>
+              <li><strong>II Nagroda (3500 zł + nagrody specjalne):</strong> Pan DAWID GRENDA z Akademii Muzycznej im. Karola Lipińskiego we Wrocławiu – LONTANO</li>
+              <li><strong>III Nagroda (1500 zł + nagrody specjalne):</strong> Pan MATTEO GURRIERI z Akademii Muzycznej im. Ignacego Jana Paderewskiego w Poznaniu – LUSTROTEM II</li>
+            </ul>
+            <p style="font-size: 1rem; line-height: 1.8; color: #1b5e20; text-align: center; font-style: italic;"> Serdecznie zapraszamy wszystkich uczestników, słuchaczy i miłośników współczesnej muzyki akordeonowej na wyjątkowy wieczór, który stał się celebracją nowej muzyki i odkryciem najbardziej obiecujących głosów młodego pokolenia kompozytorów. </p>
+          </div>
+          <div class="regulation-item" style="background: #fff3cd; border-left: 4px solid #ffc107; margin: 2rem 0;">
+            <strong style="color: #856404;">Ważna Informacja</strong> Do czasu oficjalnego ogłoszenia wyników wszystkie dane uczestników oraz szczegóły dotyczące nagrodzonych kompozycji pozostawały poufne. </div>
+          <div class="video-container">
+            <video width="640" controls>
+              <source src="NAPRAWYMBRZEGUWISLY.PL.mp4" type="video/mp4">
+              Twoja przeglądarka nie obsługuje elementu video.
+            </video>
           </div>
         </div>
       </section>
 
-      <!-- Jury -->
+      <!-- Jury Section -->
       <section id="jury" class="section">
-        <div class="section-header"><h2>Jury</h2></div>
+        <div class="section-header">
+          <h2>Jury</h2>
+        </div>
         <div class="section-content">
-          <p><strong>Przewodniczący</strong>: Prof. Stanisław Krupowicz</p>
-          <p><strong>Członkowie</strong>:</p>
-          <ul>
-            <li>Dr hab. Marcin Bortnowski</li>
-            <li>Mgr Andrzej Krzanowski Jr.</li>
-            <li>Dr Dawid Grenda</li>
+          <ul class="jury-list">
+            <li><strong>Prof. Marcin Bortnowski</strong></li>
+            <li><strong>Prof. Stanisław Krupowicz</strong><br/><em>Przewodniczący</em></li>
+            <li><strong>Grażyna Krzanowska</strong></li>
+            <li><strong>Dr Eneasz Kubit</strong></li>
+            <li><strong>Piotr Zembroń</strong><br/><em>Sekretarz</em></li>
+            <li><strong>Jagna Krzanowska</strong><br/><em>Dyrektor Konkursu</em></li>
           </ul>
         </div>
       </section>
 
-      <!-- Laureaci -->
+      <!-- Laureates Section -->
       <section id="laureaci" class="section">
-        <div class="section-header"><h2>Laureaci</h2></div>
-        <div class="section-content">
-          <p><strong>I Nagroda</strong>: Franciszek Jackowski – „LONTANO”</p>
-          <p><strong>II Nagroda</strong>: Matteo Gurrieri – „LUSTROTEM II”</p>
-          <p><strong>III Nagroda</strong>: Jan Kowalski</p>
-          <p><strong>Wyróżnienie</strong>: Anna Nowak</p>
+        <div class="section-header">
+          <h2>Laureaci</h2>
         </div>
-      </section>
-
-      <!-- Dokumenty -->
-      <section id="dokumenty" class="section">
-        <div class="section-header"><h2>Dokumenty</h2></div>
         <div class="section-content">
-          <p>Wszystkie dokumenty dostępne w galerii jako zdjęcia:</p>
-          <ul>
-            <li><a href="#galeria">Wniosek o dofinansowanie (nr 107544/A3)</a></li>
-            <li><a href="#galeria">Potwierdzenie odbioru Nagrody Specjalnej</a></li>
+          <p style="text-align: center; margin-bottom: 1.5rem;"> Laureaci zostali ogłoszeni 28 października 2025 roku podczas koncertu "Tryptyk" w Czechowicach-Dziedzicach. </p>
+          <ul class="laureates-list">
+            <li class="laureate-item"><span class="laureate-name">FRANCISZEK JACKOWSKI</span> (Akademia Muzyczna im. Krzysztofa Pendereckiego) – <span class="laureate-work">ARTEFAKT</span></li>
+            <li class="laureate-item"><span class="laureate-name">DAWID GRENDA</span> (Akademia Muzyczna im. Karola Lipińskiego we Wrocławiu) – <span class="laureate-work">LONTANO</span></li>
+            <li class="laureate-item"><span class="laureate-name">MATTEO GURRIERI</span> (Akademia Muzyczna im. Ignacego Jana Paderewskiego w Poznaniu) – <span class="laureate-work">LUSTROTEM II</span></li>
           </ul>
+          <p style="text-align: center; margin-top: 1rem; color: #6c757d; font-style: italic;"> Całkowita pula nagród wynosi 10 000 PLN. Nagrodzone utwory zostały wykonane podczas Jesiennego Festiwalu Muzycznego Alkagran w 2026 roku. </p>
         </div>
       </section>
 
-      <!-- Regulamin -->
+      <!-- Documents Section -->
+      <section id="dokumenty" class="section">
+        <div class="section-header">
+          <h2>Dokumenty do Pobrania</h2>
+        </div>
+        <div class="section-content">
+          <div class="download-section">
+            <a href="Regulamin_Konkursu.pdf" class="download-link" target="_blank"> Regulamin Konkursu (PDF) </a>
+            <a href="Formularz_Zgloszeniowy.docx" class="download-link" target="_blank"> Formularz Zgłoszeniowy (DOCX) </a>
+          </div>
+          <p style="margin-top: 1.5rem; font-style: italic; color: #6c757d;"> Pobierz formularz zgłoszeniowy, wypełnij go zgodnie z instrukcjami zawartymi w regulaminie, a następnie wyślij wraz z kompozycją na podany adres e-mail: <strong>zgloszenia@naprawymbrzeguwisly.pl</strong> </p>
+        </div>
+      </section>
+
+      <!-- Regulations Section -->
       <section id="regulamin" class="section">
-        <div class="section-header"><h2>Regulamin</h2></div>
+        <div class="section-header">
+          <h2>Regulamin</h2>
+        </div>
         <div class="section-content">
-          <p>Regulamin konkursu dostępny w formacie PDF – zobacz w galerii.</p>
+          <div class="regulation-item">
+            <strong>1. Organizatorzy</strong> Konkurs jest organizowany przez: <ul>
+              <li>Fundacja im. Andrzeja Krzanowskiego</li>
+              <li>Mała Akademia Muzyki w Czechowicach-Dziedzicach</li>
+              <li>Miejski Dom Kultury w Czechowicach-Dziedzicach</li>
+            </ul>
+          </div>
+          <div class="regulation-item">
+            <strong>2. Cel</strong> Celem konkursu była promocja twórczości młodych kompozytorów oraz wzbogacenie współczesnego repertuaru akordeonowego.
+          </div>
+          <div class="regulation-item">
+            <strong>3. Uczestnicy</strong> Konkurs był otwarty dla kompozytorów poniżej 35. roku życia (urodzonych po 1 października 1990), niezależnie od narodowości.
+          </div>
+          <div class="regulation-item">
+            <strong>4. Zasady Zgłoszeń</strong> Każdy uczestnik mógł zgłosić jedną oryginalną kompozycję.<br/> <strong>Kompozycja:</strong> <ul>
+              <li>nie mogła być wcześniej publikowana, wykonywana ani nagradzana</li>
+              <li>powinna trwać od 6 do 8 minut</li>
+              <li>musi być napisana na akordeon solo, opcjonalnie z mediami elektronicznymi</li>
+            </ul>
+          </div>
+          <div class="regulation-item">
+            <strong>5. Termin i Procedura Zgłoszeń</strong> <strong>Termin:</strong> 1 października 2025 (decyduje data otrzymania).<br/> <strong>Ogłoszenie wyników:</strong> 28 października 2025, podczas koncertu "Tryptyk" w Czechowicach-Dziedzicach<br/><br/> <strong>Zgłoszenia należało przesyłać elektronicznie na adres:</strong><br/> <strong>zgloszenia@naprawymbrzeguwisly.pl</strong><br/><br/> <strong>Każde zgłoszenie musiało zawierać:</strong> <ul>
+              <li>Partyturę w formacie PDF oznaczoną pseudonimem</li>
+              <li>Dla kompozycji z elektroniką: partytura w PDF + część elektroniczna (pliki audio lub plik projektu)</li>
+              <li>Nagranie audio lub rendering (jeśli dostępne)</li>
+              <li>Plik tekstowy (formularz dostępny na stronie) z danymi autora: imię, data urodzenia, adres e-mail, numer telefonu, krótka biografia – również oznaczony pseudonimem</li>
+              <li>Oświadczenie: "Oświadczam, że jestem autorem zgłaszanej kompozycji, która nie była wcześniej wykonywana, publikowana ani nagradzana. Akceptuję regulamin konkursu."</li>
+            </ul>
+            <strong>Warunkiem udziału w konkursie była wpłata wpisowego w wysokości 200 PLN na konto:</strong>
+            <div class="bank-details">
+              <strong>Miejski Dom Kultury</strong><br/>
+              ING Bank Śląski S.A. Oddział w Czechowicach-Dziedzicach<br/>
+              <strong>Numer konta: 84 1050 1256 1000 0001 0263 5281</strong><br/>
+              <strong>Tytuł przelewu: konkurs kompozytorski</strong>
+            </div>
+          </div>
+          <div class="regulation-item">
+            <strong>6. Jury</strong> Skład jury: <ul>
+              <li><strong>Prof. Marcin Bortnowski</strong></li>
+              <li><strong>Prof. Stanisław Krupowicz</strong><br/><em>Przewodniczący</em></li>
+              <li><strong>Grażyna Krzanowska</strong></li>
+              <li><strong>Dr Eneasz Kubit</strong></li>
+              <li><strong>Piotr Zembroń</strong><br/><em>Sekretarz</em></li>
+              <li><strong>Jagna Krzanowska</strong><br/><em>Dyrektor Konkursu</em></li>
+            </ul>
+            Decyzje jury były ostateczne i nie podlegały odwołaniu.
+          </div>
+          <div class="regulation-item">
+            <strong>7. Nagrody</strong> Całkowita pula nagród: 10 000 PLN.<br/> Nagrodzone utwory zostały wykonane w Czechowicach-Dziedzicach podczas koncertu "Tryptyk" 28 października 2025 roku.<br/><br/> <strong>Nagrody specjalne:</strong><br/> • <strong>PWM Edition</strong><br/> • <strong>Warszawska Jesień</strong><br/> • <strong>Narodowe Forum Muzyki</strong><br/><br/> Jury zastrzegło sobie prawo do innego podziału nagród lub ich nieprzyznania.
+          </div>
+          <div class="regulation-item">
+            <strong>8. Prawa Autorskie</strong> Uczestnicy zachowują pełne prawa autorskie do zgłaszanych utworów.<br/> Organizatorzy uzyskali prawo do: <ul>
+              <li>wykonania, nagrania i dokumentacji nagrodzonych utworów</li>
+              <li>bezpłatnego rozpowszechniania ich nagrań w celach promocyjnych i archiwalnych</li>
+            </ul>
+          </div>
+          <div class="regulation-item">
+            <strong>9. Postanowienia Końcowe</strong> Zgłoszenie kompozycji oznaczało pełną akceptację niniejszego regulaminu.<br/> Organizatorzy zastrzegli sobie prawo do modyfikacji regulaminu (bez wpływu na równe traktowanie uczestników) lub odwołania konkursu z ważnych powodów.<br/> W sprawach nieobjętych regulaminem decyzje podejmowali organizatorzy.
+          </div>
+          <div class="regulation-item">
+            <strong>10. Ochrona Danych Osobowych (RODO)</strong> Zgodnie z art. 13 ust. 1 i 2 RODO informujemy, że: <ul>
+              <li>Administratorem danych była Fundacja im. Andrzeja Krzanowskiego z siedzibą w Czechowicach-Dziedzicach</li>
+              <li>Dane były przetwarzane w celu przeprowadzenia konkursu, kontaktu z uczestnikami, ogłoszenia wyników i promocji wydarzenia</li>
+              <li>Podanie danych było dobrowolne, ale niezbędne do udziału w konkursie</li>
+              <li>Uczestnicy mieli prawo dostępu do danych, ich sprostowania, usunięcia, ograniczenia przetwarzania, przenoszenia danych, wycofania zgody oraz wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych</li>
+              <li>Szczegółowe informacje dotyczące przetwarzania danych można uzyskać, kontaktując się z administratorem pod adresem: <strong>biuro@naprawymbrzeguwisly.pl</strong></li>
+            </ul>
+          </div>
         </div>
       </section>
 
-      <!-- Organizatorzy -->
+      <!-- Gallery Section -->
+      <section id="galeria" class="section">
+        <div class="section-header">
+          <h2>Galeria</h2>
+        </div>
+        <div class="section-content">
+          <div class="cards-grid" style="gap: 1.5rem; margin-top: 1rem;">
+            <!-- 13 zdjęć -->
+            <div class="card" style="overflow: hidden; padding: 0; height: 220px; border: none;">
+              <img src="concert1.jpg" alt="Koncert 1" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease, box-shadow 0.4s ease;" onmouseover="this.style.transform='scale(1.08)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+            </div>
+            <div class="card" style="overflow: hidden; padding: 0; height: 220px; border: none;">
+              <img src="concert2.jpg" alt="Koncert 2" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease, box-shadow 0.4s ease;" onmouseover="this.style.transform='scale(1.08)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+            </div>
+            <div class="card" style="overflow: hidden; padding: 0; height: 220px; border: none;">
+              <img src="concert3.jpg" alt="Koncert 3" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease, box-shadow 0.4s ease;" onmouseover="this.style.transform='scale(1.08)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+            </div>
+            <div class="card" style="overflow: hidden; padding: 0; height: 220px; border: none;">
+              <img src="concert4.jpg" alt="Koncert 4" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease, box-shadow 0.4s ease;" onmouseover="this.style.transform='scale(1.08)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+            </div>
+            <div class="card" style="overflow: hidden; padding: 0; height: 220px; border: none;">
+              <img src="concert5.jpg" alt="Koncert 5" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease, box-shadow 0.4s ease;" onmouseover="this.style.transform='scale(1.08)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+            </div>
+            <div class="card" style="overflow: hidden; padding: 0; height: 220px; border: none;">
+              <img src="concert6.jpg" alt="Koncert 6" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease, box-shadow 0.4s ease;" onmouseover="this.style.transform='scale(1.08)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+            </div>
+            <div class="card" style="overflow: hidden; padding: 0; height: 220px; border: none;">
+              <img src="concert7.jpg" alt="Koncert 7" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease, box-shadow 0.4s ease;" onmouseover="this.style.transform='scale(1.08)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+            </div>
+            <div class="card" style="overflow: hidden; padding: 0; height: 220px; border: none;">
+              <img src="concert8.jpg" alt="Koncert 8" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease, box-shadow 0.4s ease;" onmouseover="this.style.transform='scale(1.08)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+            </div>
+            <div class="card" style="overflow: hidden; padding: 0; height: 220px; border: none;">
+              <img src="concert9.jpg" alt="Koncert 9" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease, box-shadow 0.4s ease;" onmouseover="this.style.transform='scale(1.08)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+            </div>
+            <div class="card" style="overflow: hidden; padding: 0; height: 220px; border: none;">
+              <img src="concert10.jpg" alt="Koncert 10" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease, box-shadow 0.4s ease;" onmouseover="this.style.transform='scale(1.08)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+            </div>
+            <div class="card" style="overflow: hidden; padding: 0; height: 220px; border: none;">
+              <img src="concert11.jpg" alt="Koncert 11" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease, box-shadow 0.4s ease;" onmouseover="this.style.transform='scale(1.08)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+            </div>
+            <div class="card" style="overflow: hidden; padding: 0; height: 220px; border: none;">
+              <img src="concert12.jpg" alt="Koncert 12" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease, box-shadow 0.4s ease;" onmouseover="this.style.transform='scale(1.08)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+            </div>
+            <div class="card" style="overflow: hidden; padding: 0; height: 220px; border: none;">
+              <img src="concert13.jpg" alt="Koncert 13" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease, box-shadow 0.4s ease;" onmouseover="this.style.transform='scale(1.08)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+            </div>
+          </div>
+          <p style="text-align: center; margin-top: 2rem; color: #6c757d; font-style: italic;">
+            Zdjęcia z koncertu „Tryptyk” – 28 października 2025, Miejski Dom Kultury w Czechowicach-Dziedzicach
+          </p>
+        </div>
+      </section>
+
+      <!-- Organizers Section -->
       <section id="organizatorzy" class="section">
-        <div class="section-header"><h2>Organizatorzy</h2></div>
+        <div class="section-header">
+          <h2>Organizatorzy</h2>
+        </div>
         <div class="section-content">
-          <p><strong>Miejski Dom Kultury w Czechowicach-Dziedzicach</strong></p>
-          <p><strong>Fundacja im. Andrzeja Krzanowskiego</strong></p>
-          <p>Patronat: Ministerstwo Kultury i Dziedzictwa Narodowego</p>
+          <p> Fundacja im. Andrzeja Krzanowskiego,<br/> Mała Akademia Muzyki w Czechowicach-Dziedzicach,<br/> Miejski Dom Kultury w Czechowicach-Dziedzicach </p>
         </div>
       </section>
 
-      <!-- Kontakt -->
+      <!-- Contact Section -->
       <section id="kontakt" class="section">
-        <div class="section-header"><h2>Kontakt</h2></div>
+        <div class="section-header">
+          <h2>Kontakt</h2>
+        </div>
         <div class="section-content">
-          <p><strong>Email</strong>: kontakt@naprawymbrzegu.pl</p>
-          <p><strong>Telefon</strong>: +48 123 456 789</p>
-          <p><strong>Adres</strong>: ul. Niepodległości 1, 43-500 Czechowice-Dziedzice</p>
+          <div class="cards-grid">
+            <div class="card">
+              <h3>Zgłoszenia do Konkursu</h3>
+              <p><strong>zgloszenia@naprawymbrzeguwisly.pl</strong><br/> Wyślij swoje zgłoszenie tutaj</p>
+            </div>
+            <div class="card">
+              <h3>Biuro Konkursu</h3>
+              <p><strong>biuro@naprawymbrzeguwisly.pl</strong><br/> W sprawie wszystkich pytań i informacji</p>
+            </div>
+            <div class="card">
+              <h3>Adres</h3>
+              <p><strong>ul. Niepodległości 42, 43-502 Czechowice-Dziedzice, Polska</strong></p>
+            </div>
+            <div class="card">
+              <h3>Media Społecznościowe</h3>
+              <p><strong>Bądź z nami w kontakcie!</strong></p>
+              <a href="https://www.facebook.com/profile.php?id=61577606324793" target="_blank" class="facebook-link">
+                <svg class="facebook-icon" viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg> Strona na Facebooku
+              </a>
+            </div>
+          </div>
         </div>
       </section>
-
     </div>
   </main>
 
-  <!-- Lightbox -->
-  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-    <span class="lightbox-close" onclick="closeLightbox()">X</span>
-    <img id="lightbox-img" src="" alt="">
-  </div>
-
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer class="footer">
-    <p>© 2025 Na Prawym Brzegu Wisły. Wszelkie prawa zastrzeżone. | Projekt i realizacja: MDK Czechowice-Dziedzice</p>
+    <div class="footer-content">
+      <div class="footer-main">
+        <!-- Organizers -->
+        <div class="footer-section">
+          <h3>Organizatorzy</h3>
+          <div class="organizers-grid">
+            <div class="organizer-item">
+              <div class="organizer-logo">
+                <img src="logo-fundacja.png" alt="Fundacja im. Andrzeja Krzanowskiego" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="display: none;">FK</div>
+              </div>
+              <div class="organizer-name">Fundacja im. Andrzeja Krzanowskiego</div>
+            </div>
+            <div class="organizer-item">
+              <div class="organizer-logo">
+                <img src="logo-mam.png" alt="Mała Akademia Muzyki" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="display: none;">MAM</div>
+              </div>
+              <div class="organizer-name">Mała Akademia Muzyki<br/>Czechowice-Dziedzice</div>
+            </div>
+            <div class="organizer-item">
+              <div class="organizer-logo">
+                <img src="logo-mdk.png" alt="Miejski Dom Kultury" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="display: none;">MDK</div>
+              </div>
+              <div class="organizer-name">Miejski Dom Kultury<br/>Czechowice-Dziedzice</div>
+            </div>
+          </div>
+        </div>
+        <!-- Partners -->
+        <div class="footer-section">
+          <h3>Partnerzy</h3>
+          <div class="sponsors-grid">
+            <div class="sponsor-item major-partner">
+              <div class="sponsor-logo">
+                <img src="partner1.png" alt="PWM Edition" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="display: none;">PWM</div>
+              </div>
+              <div class="sponsor-name">PWM Edition</div>
+            </div>
+            <div class="sponsor-item major-partner">
+              <div class="sponsor-logo">
+                <img src="wj_logo.png" alt="Warszawska Jesień" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="display: none;">WJ</div>
+              </div>
+              <div class="sponsor-name">Warszawska Jesień</div>
+            </div>
+            <div class="sponsor-item major-partner">
+              <div class="sponsor-logo">
+                <img src="NFM_logo.png" alt="Narodowe Forum Muzyki" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="display: none;">NFM</div>
+              </div>
+              <div class="sponsor-name">Narodowe Forum Muzyki</div>
+            </div>
+            <div class="sponsor-item miasto-partner">
+              <div class="sponsor-logo">
+                <img src="logo_miasta.png" alt="Miasto Czechowice-Dziedzice" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="display: none;">MC</div>
+              </div>
+              <div class="sponsor-name">Miasto Czechowice-Dziedzice</div>
+            </div>
+            <div class="sponsor-item major-partner">
+              <div class="sponsor-logo">
+                <img src="armonia dell arte.png" alt="Armonia dell'Arte" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="display: none;">ADA</div>
+              </div>
+              <div class="sponsor-name">Armonia dell'Arte</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Media Patronat -->
+      <div class="footer-patronat">
+        <h3>Patronat Medialny</h3>
+        <div class="patronat-grid">
+          <div class="patronat-item">
+            <div class="patronat-logo">
+              <img src="patron1.png" alt="Patron Medialny 1" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div style="display: none;">PM1</div>
+            </div>
+            <div class="patronat-name">Patron Medialny 1</div>
+          </div>
+          <div class="patronat-item">
+            <div class="patronat-logo">
+              <img src="patron2.png" alt="Patron Medialny 2" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div style="display: none;">PM2</div>
+            </div>
+            <div class="patronat-name">Patron Medialny 2</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="footer-info">
+          <div>
+            <h4>Informacje</h4>
+            <p>© 2025 Fundacja im. Andrzeja Krzanowskiego</p>
+            <p>Wszelkie prawa zastrzeżone</p>
+          </div>
+          <div>
+            <h4>Kontakt</h4>
+            <p>Email: biuro@naprawymbrzeguwisly.pl</p>
+            <p>Tel: +48 123 456 789</p>
+          </div>
+        </div>
+        <div class="footer-copyright"> Designed with ❤️ by [Twoje Imię/Organizacja] </div>
+      </div>
+    </div>
   </footer>
 
-  <!-- Scripts -->
   <script>
     function toggleSidebar() {
-      document.getElementById('sidebar').classList.toggle('open');
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('open');
     }
     function closeSidebar() {
-      if (window.innerWidth <= 992) {
+      const sidebar = document.getElementById('sidebar');
+      if (window.innerWidth <= 768) {
+        sidebar.classList.remove('open');
+      }
+    }
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
         document.getElementById('sidebar').classList.remove('open');
       }
-    }
-
-    function openLightbox(src) {
-      document.getElementById('lightbox-img').src = src;
-      document.getElementById('lightbox').classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeLightbox() {
-      document.getElementById('lightbox').classList.remove('open');
-      document.body.style.overflow = '';
-    }
-
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeLightbox();
-    });
-
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      if (link.href === window.location.href) {
-        link.classList.add('active');
-      }
-    });
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          window.scrollTo({
-            top: target.offsetTop - 110,
-            behavior: 'smooth'
-          });
-        }
-      });
     });
   </script>
 </body>
