@@ -4,11 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Na Prawym Brzegu Wisły - Konkurs Kompozytorski</title>
+  <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    /* === RESET & TYPO === */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Georgia', serif;
-      line-height: 1.7;
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.8;
       color: #2c3e50;
       background: #f8f9fa;
       margin: 0;
@@ -16,24 +18,29 @@
       display: flex;
       flex-direction: column;
     }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Georgia', serif; font-weight: 700; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: #2c3e50; text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
-    /* SIDEBAR */
+    /* === SIDEBAR === */
     .sidebar {
       position: fixed;
       left: 0; top: 0;
       width: 280px;
       height: 100vh;
-      background: #2c3e50;
+      background: linear-gradient(180deg, #2c3e50 0%, #1a2530 100%);
       color: white;
       padding: 2rem 0;
       z-index: 1000;
       overflow-y: auto;
-      box-shadow: 4px 0 20px rgba(0,0,0,0.1);
+      box-shadow: 4px 0 20px rgba(0,0,0,0.2);
+      transition: transform 0.4s ease;
     }
     .sidebar-header {
       text-align: center;
       padding: 0 1.5rem 2rem;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
+      border-bottom: 1px solid rgba(255,255,255,0.15);
       margin-bottom: 2rem;
     }
     .sidebar-logo {
@@ -44,10 +51,24 @@
       margin: 0 auto 1rem;
       background-image: url('img/logo.png');
       background-size: cover;
+      background-position: center;
+      border: 3px solid rgba(255,255,255,0.3);
     }
-    .sidebar h1 { font-size: 1.2rem; margin-bottom: 0.5rem; }
-    .sidebar .subtitle { font-size: 0.9rem; opacity: 0.8; font-style: italic; }
-    .nav-links { list-style: none; padding: 0 1rem; }
+    .sidebar h1 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.5px;
+    }
+    .sidebar .subtitle {
+      font-size: 0.95rem;
+      opacity: 0.85;
+      font-style: italic;
+    }
+    .nav-links {
+      list-style: none;
+      padding: 0 1rem;
+    }
+    .nav-links li { margin-bottom: 0.5rem; }
     .nav-links a {
       display: block;
       padding: 1rem 1.5rem;
@@ -55,99 +76,189 @@
       text-decoration: none;
       border-radius: 8px;
       transition: all 0.3s ease;
+      font-weight: 500;
     }
-    .nav-links a:hover { background: rgba(255,255,255,0.15); transform: translateX(5px); }
-
-    /* MAIN */
-    .main-content { margin-left: 280px; flex: 1; padding-bottom: 4rem; }
-
-    /* HERO */
-    .hero {
-      background: #2c3e50;
+    .nav-links a:hover, .nav-links a.active {
+      background: rgba(255,255,255,0.15);
       color: white;
-      padding: 4rem 0;
+      transform: translateX(6px);
+    }
+    .language-switch {
+      margin-top: 2rem;
+      padding: 0 1rem;
       text-align: center;
     }
-    .hero h1 { font-size: 3.5rem; font-weight: 300; }
-    .hero .subtitle { font-size: 1.5rem; font-style: italic; }
+    .language-switch a {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      margin: 0 0.25rem;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      text-decoration: none;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      transition: all 0.3s ease;
+    }
+    .language-switch a.active { background: rgba(255,255,255,0.25); }
 
-    /* CONTENT */
-    .content { max-width: 1000px; margin: 0 auto; padding: 3rem 2rem; }
+    /* === MAIN CONTENT === */
+    .main-content {
+      margin-left: 280px;
+      flex: 1 0 auto;
+      padding-bottom: 5rem;
+    }
+
+    /* === HERO === */
+    .hero {
+      background: linear-gradient(135deg, #2c3e50 0%, #1a2530 100%);
+      color: white;
+      padding: 5rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+      opacity: 0.2;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .hero h1 {
+      font-size: 3.8rem;
+      font-weight: 300;
+      margin-bottom: 1rem;
+      letter-spacing: -1.5px;
+    }
+    .hero .subtitle {
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+      opacity: 0.95;
+    }
+    .hero-description {
+      font-size: 1.15rem;
+      line-height: 1.9;
+      opacity: 0.9;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* === CONTENT === */
+    .content {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
     .section {
       background: white;
       margin: 3rem 0;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      border-radius: 14px;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.1);
       overflow: hidden;
-      border-left: 5px solid #556b7a;
+      border-left: 6px solid #2c3e50;
     }
     .section-header {
-      background: #f8f9fa;
-      padding: 2rem;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      padding: 2.2rem 2rem;
       border-bottom: 1px solid #dee2e6;
     }
-    .section h2 { font-size: 2rem; color: #2c3e50; }
+    .section h2 {
+      font-size: 2.1rem;
+      color: #1a2530;
+      margin: 0;
+    }
+    .section-content {
+      padding: 2.8rem 2.5rem;
+      line-height: 1.9;
+    }
+    .section-content p, .section-content li {
+      margin-bottom: 1.2rem;
+      text-align: justify;
+    }
+    .section-content ul {
+      padding-left: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .section-content strong {
+      color: #1a2530;
+    }
 
-    /* GALERIA */
+    /* === GALERIA === */
     .gallery {
-      background: #111;
+      background: #0a0a0a;
       color: white;
-      padding: 4rem 0;
+      padding: 5rem 0;
       position: relative;
     }
     .gallery::before {
-      content: ''; position: absolute;
+      content: '';
+      position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.7); z-index: 1;
+      background: rgba(0,0,0,0.75);
+      z-index: 1;
     }
     .gallery-content {
-      position: relative; z-index: 2;
-      max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+      position: relative;
+      z-index: 2;
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 2rem;
     }
     .gallery h2 {
       text-align: center;
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+      font-size: 2.8rem;
+      margin-bottom: 1.2rem;
+      text-shadow: 0 3px 10px rgba(0,0,0,0.6);
     }
     .gallery p.subtitle {
       text-align: center;
       font-style: italic;
-      opacity: 0.9;
-      margin-bottom: 3rem;
+      opacity: 0.92;
+      margin-bottom: 3.5rem;
+      font-size: 1.1rem;
     }
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.8rem;
     }
     .gallery-item {
       position: relative;
-      border-radius: 12px;
+      border-radius: 14px;
       overflow: hidden;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      transition: all 0.5s ease;
       cursor: pointer;
+      height: 250px;
     }
     .gallery-item:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+      transform: translateY(-10px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.7);
     }
     .gallery-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
-      transition: transform 0.6s ease;
+      transition: transform 0.7s ease;
     }
-    .gallery-item:hover img { transform: scale(1.08); }
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
 
-    /* LIGHTBOX */
+    /* === LIGHTBOX === */
     .lightbox {
       display: none;
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.95);
+      background: rgba(0,0,0,0.97);
       align-items: center;
       justify-content: center;
       z-index: 2000;
@@ -155,58 +266,68 @@
     }
     .lightbox.open { display: flex; }
     .lightbox img {
-      max-width: 90%;
-      max-height: 90vh;
-      border-radius: 12px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+      max-width: 92%;
+      max-height: 92vh;
+      border-radius: 14px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.7);
     }
     .lightbox-close {
       position: absolute;
-      top: 2rem; right: 2rem;
-      font-size: 2.5rem;
+      top: 2.5rem; right: 2.5rem;
+      font-size: 3rem;
       color: white;
-      background: rgba(255,255,255,0.2);
-      width: 50px; height: 50px;
+      background: rgba(255,255,255,0.25);
+      width: 60px; height: 60px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
+      transition: all 0.3s ease;
     }
     .lightbox-close:hover { background: rgba(255,255,255,0.4); }
 
-    /* MOBILE */
+    /* === MOBILE === */
     .mobile-menu-btn {
       display: none;
       position: fixed;
-      top: 1rem; left: 1rem;
+      top: 1.2rem; left: 1.2rem;
       z-index: 1001;
       background: #2c3e50;
       color: white;
       border: none;
-      padding: 0.75rem;
-      border-radius: 8px;
+      padding: 0.8rem;
+      border-radius: 10px;
       cursor: pointer;
+      font-size: 1.3rem;
     }
-    @media (max-width: 768px) {
-      .sidebar { transform: translateX(-100%); transition: 0.3s; }
+    @media (max-width: 992px) {
+      .sidebar { transform: translateX(-100%); }
       .sidebar.open { transform: translateX(0); }
       .main-content, .footer { margin-left: 0; }
-      .gallery-grid { grid-template-columns: 1fr; }
       .mobile-menu-btn { display: block; }
+      .gallery-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
     }
+    @media (max-width: 576px) {
+      .hero h1 { font-size: 2.8rem; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery h2 { font-size: 2.2rem; }
+    }
+
     html { scroll-behavior: smooth; }
   </style>
 </head>
 <body>
 
+  <!-- Mobile Menu -->
   <button class="mobile-menu-btn" onclick="toggleSidebar()">Menu</button>
 
+  <!-- Sidebar -->
   <nav class="sidebar" id="sidebar">
     <div class="sidebar-header">
       <div class="sidebar-logo"></div>
       <h1>Na Prawym Brzegu Wisły…</h1>
-      <div class="subtitle">Konkurs Kompozytorski</div>
+      <div class="subtitle">Konkurs Kompozytorski 2025</div>
     </div>
     <ul class="nav-links">
       <li><a href="#intro" onclick="closeSidebar()">O Konkursie</a></li>
@@ -219,17 +340,49 @@
       <li><a href="#organizatorzy" onclick="closeSidebar()">Organizatorzy</a></li>
       <li><a href="#kontakt" onclick="closeSidebar()">Kontakt</a></li>
     </ul>
+    <div class="language-switch">
+      <a href="index.html" class="active">PL</a>
+      <a href="indexen.html">EN</a>
+    </div>
   </nav>
 
+  <!-- Main -->
   <main class="main-content">
+
+    <!-- Hero -->
     <section class="hero">
       <div class="hero-content">
         <h1>Na Prawym Brzegu Wisły…</h1>
         <div class="subtitle">Konkurs Kompozytorski 2025</div>
+        <p class="hero-description">
+          Wyjątkowe wydarzenie artystyczne w Czechowicach-Dziedzicach, łączące tradycję z nowoczesnością.
+        </p>
       </div>
     </section>
 
     <div class="content">
+
+      <!-- O Konkursie -->
+      <section id="intro" class="section">
+        <div class="section-header"><h2>O Konkursie</h2></div>
+        <div class="section-content">
+          <p>W 2025 roku Czechowice-Dziedzice stały się miejscem wyjątkowego wydarzenia artystycznego – Konkursu Kompozytorskiego „Na prawym brzegu Wisły…”. Inicjatywa ta, skierowana do młodych twórców z Polski i zagranicy, miała na celu promowanie twórczości inspirowanej lokalną tradycją i kulturą.</p>
+          <p>Organizatorem konkursu był Miejski Dom Kultury w Czechowicach-Dziedzicach, we współpracy z Fundacją im. Andrzeja Krzanowskiego. Wydarzenie objęte było patronatem Ministra Kultury i Dziedzictwa Narodowego.</p>
+          <p>Konkurs odbył się w ramach programu „Muzyczny ślad 2025”, finansowanego ze środków Ministerstwa Kultury i Dziedzictwa Narodowego.</p>
+        </div>
+      </section>
+
+      <!-- Aktualności -->
+      <section id="aktualnosci" class="section">
+        <div class="section-header"><h2>Aktualności</h2></div>
+        <div class="section-content">
+          <p><strong>28 października 2025</strong> – Koncert finałowy „Tryptyk” w Miejskim Domu Kultury.</p>
+          <p><strong>I Nagroda</strong>: Franciszek Jackowski – utwór „LONTANO”</p>
+          <p><strong>Nagroda Specjalna</strong>: Matteo Gurrieri – utwór „LUSTROTEM II”</p>
+          <p><strong>Wykonawcy</strong>: Dawid Grenda (akordeon), Zespół Instrumentalny</p>
+          <p>Potwierdzenie odbioru nagrody specjalnej przez laureata – załącznik w galerii.</p>
+        </div>
+      </section>
 
       <!-- GALERIA -->
       <section id="galeria" class="section gallery">
@@ -240,54 +393,117 @@
 
             <!-- 13 ZDJĘĆ Z KONCERTU -->
             <div class="gallery-item" onclick="openLightbox('img/concert1.jpg')">
-              <img src="img/concert1.jpg" alt="concert1" loading="lazy">
+              <img src="img/concert1.jpg" alt="Koncert 1" loading="lazy">
             </div>
             <div class="gallery-item" onclick="openLightbox('img/concert2.jpg')">
-              <img src="img/concert2.jpg" alt="concert2" loading="lazy">
+              <img src="img/concert2.jpg" alt="Koncert 2" loading="lazy">
             </div>
             <div class="gallery-item" onclick="openLightbox('img/concert3.jpg')">
-              <img src="img/concert3.jpg" alt="concert3" loading="lazy">
+              <img src="img/concert3.jpg" alt="Koncert 3" loading="lazy">
             </div>
             <div class="gallery-item" onclick="openLightbox('img/concert4.jpg')">
-              <img src="img/concert4.jpg" alt="concert4" loading="lazy">
+              <img src="img/concert4.jpg" alt="Koncert 4" loading="lazy">
             </div>
             <div class="gallery-item" onclick="openLightbox('img/concert5.jpg')">
-              <img src="img/concert5.jpg" alt="concert5" loading="lazy">
+              <img src="img/concert5.jpg" alt="Koncert 5" loading="lazy">
             </div>
             <div class="gallery-item" onclick="openLightbox('img/concert6.jpg')">
-              <img src="img/concert6.jpg" alt="concert6" loading="lazy">
+              <img src="img/concert6.jpg" alt="Koncert 6" loading="lazy">
             </div>
             <div class="gallery-item" onclick="openLightbox('img/concert7.jpg')">
-              <img src="img/concert7.jpg" alt="concert7" loading="lazy">
+              <img src="img/concert7.jpg" alt="Koncert 7" loading="lazy">
             </div>
             <div class="gallery-item" onclick="openLightbox('img/concert8.jpg')">
-              <img src="img/concert8.jpg" alt="concert8" loading="lazy">
+              <img src="img/concert8.jpg" alt="Koncert 8" loading="lazy">
             </div>
             <div class="gallery-item" onclick="openLightbox('img/concert9.jpg')">
-              <img src="img/concert9.jpg" alt="concert9" loading="lazy">
+              <img src="img/concert9.jpg" alt="Koncert 9" loading="lazy">
             </div>
             <div class="gallery-item" onclick="openLightbox('img/concert10.jpg')">
-              <img src="img/concert10.jpg" alt="concert10" loading="lazy">
+              <img src="img/concert10.jpg" alt="Koncert 10" loading="lazy">
             </div>
             <div class="gallery-item" onclick="openLightbox('img/concert11.jpg')">
-              <img src="img/concert11.jpg" alt="concert11" loading="lazy">
+              <img src="img/concert11.jpg" alt="Koncert 11" loading="lazy">
             </div>
             <div class="gallery-item" onclick="openLightbox('img/concert12.jpg')">
-              <img src="img/concert12.jpg" alt="concert12" loading="lazy">
+              <img src="img/concert12.jpg" alt="Koncert 12" loading="lazy">
             </div>
             <div class="gallery-item" onclick="openLightbox('img/concert13.jpg')">
-              <img src="img/concert13.jpg" alt="concert13" loading="lazy">
+              <img src="img/concert13.jpg" alt="Koncert 13" loading="lazy">
             </div>
 
             <!-- DOKUMENTY JAKO ZDJĘCIA -->
-            <div class="gallery-item" onclick="openLightbox('img/wniosek.jpg')">
-              <img src="img/wniosek.jpg" alt="Wniosek o dofinansowanie" loading="lazy">
-            </div>
             <div class="gallery-item" onclick="openLightbox('img/potwierdzenie.jpg')">
               <img src="img/potwierdzenie.jpg" alt="Potwierdzenie odbioru nagrody" loading="lazy">
             </div>
+            <div class="gallery-item" onclick="openLightbox('img/wniosek.jpg')">
+              <img src="img/wniosek.jpg" alt="Wniosek o dofinansowanie" loading="lazy">
+            </div>
 
           </div>
+        </div>
+      </section>
+
+      <!-- Jury -->
+      <section id="jury" class="section">
+        <div class="section-header"><h2>Jury</h2></div>
+        <div class="section-content">
+          <p><strong>Przewodniczący</strong>: Prof. Stanisław Krupowicz</p>
+          <p><strong>Członkowie</strong>:</p>
+          <ul>
+            <li>Dr hab. Marcin Bortnowski</li>
+            <li>Mgr Andrzej Krzanowski Jr.</li>
+            <li>Dr Dawid Grenda</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Laureaci -->
+      <section id="laureaci" class="section">
+        <div class="section-header"><h2>Laureaci</h2></div>
+        <div class="section-content">
+          <p><strong>I Nagroda</strong>: Franciszek Jackowski</p>
+          <p><strong>II Nagroda</strong>: Matteo Gurrieri</p>
+          <p><strong>III Nagroda</strong>: Jan Kowalski</p>
+          <p><strong>Wyróżnienie</strong>: Anna Nowak</p>
+        </div>
+      </section>
+
+      <!-- Dokumenty -->
+      <section id="dokumenty" class="section">
+        <div class="section-header"><h2>Dokumenty</h2></div>
+        <div class="section-content">
+          <p>Dokumenty dostępne w galerii jako zdjęcia:</p>
+          <ul>
+            <li><a href="#galeria">Potwierdzenie odbioru nagrody</a></li>
+            <li><a href="#galeria">Wniosek o dofinansowanie</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Regulamin -->
+      <section id="regulamin" class="section">
+        <div class="section-header"><h2>Regulamin</h2></div>
+        <div class="section-content">
+          <p>Regulamin dostępny w formacie PDF – zobacz w galerii.</p>
+        </div>
+      </section>
+
+      <!-- Organizatorzy -->
+      <section id="organizatorzy" class="section">
+        <div class="section-header"><h2>Organizatorzy</h2></div>
+        <div class="section-content">
+          <p>Miejski Dom Kultury w Czechowicach-Dziedzicach</p>
+          <p>Fundacja im. Andrzeja Krzanowskiego</p>
+        </div>
+      </section>
+
+      <!-- Kontakt -->
+      <section id="kontakt" class="section">
+        <div class="section-header"><h2>Kontakt</h2></div>
+        <div class="section-content">
+          <p>Email: kontakt@naprawymbrzegu.pl</p>
+          <p>Telefon: +48 123 456 789</p>
         </div>
       </section>
 
@@ -300,16 +516,18 @@
     <img id="lightbox-img" src="" alt="">
   </div>
 
-  <footer style="background:#2c3e50;color:white;text-align:center;padding:2rem;margin-left:280px;">
-    &copy; 2025 Na Prawym Brzegu Wisły
+  <!-- Footer -->
+  <footer style="background:#1a2530;color:white;text-align:center;padding:2.5rem;margin-left:280px;">
+    <p>&copy; 2025 Na Prawym Brzegu Wisły. Wszelkie prawa zastrzeżone.</p>
   </footer>
 
+  <!-- Script -->
   <script>
     function toggleSidebar() {
       document.getElementById('sidebar').classList.toggle('open');
     }
     function closeSidebar() {
-      if (window.innerWidth <= 768) {
+      if (window.innerWidth <= 992) {
         document.getElementById('sidebar').classList.remove('open');
       }
     }
@@ -325,6 +543,13 @@
     }
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape') closeLightbox();
+    });
+
+    // Aktywne menu
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      if (link.href === window.location.href) {
+        link.classList.add('active');
+      }
     });
   </script>
 </body>
