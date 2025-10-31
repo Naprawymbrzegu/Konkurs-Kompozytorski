@@ -5,11 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Na Prawym Brzegu Wisły - Konkurs Kompozytorski</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Georgia', 'Times New Roman', serif;
       line-height: 1.7;
@@ -29,40 +25,31 @@
       top: 0;
       width: 280px;
       height: 100vh;
-      background: linear-gradient(180deg, #3d4f5c 0%, #556b7a 100%);
+      background: #2c3e50;
       color: white;
       padding: 2rem 0;
       z-index: 1000;
       overflow-y: auto;
-      box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 4px 0 20px rgba(0,0,0,0.1);
     }
     .sidebar-header {
       text-align: center;
       padding: 0 1.5rem 2rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      border-bottom: 1px solid rgba(255,255,255,0.2);
       margin-bottom: 2rem;
     }
     .sidebar-logo {
       width: 120px;
       height: 120px;
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255,255,255,0.1);
       border-radius: 50%;
       margin: 0 auto 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-      border: 2px solid rgba(255, 255, 255, 0.3);
-      background-image: url('logo.png');
+      background-image: url('img/logo.png');
       background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
     }
     .sidebar h1 {
       font-size: 1.2rem;
       margin-bottom: 0.5rem;
-      font-weight: 600;
-      line-height: 1.3;
     }
     .sidebar .subtitle {
       font-size: 0.9rem;
@@ -73,42 +60,17 @@
       list-style: none;
       padding: 0 1rem;
     }
-    .nav-links li {
-      margin-bottom: 0.5rem;
-    }
     .nav-links a {
       display: block;
       padding: 1rem 1.5rem;
-      color: rgba(255, 255, 255, 0.9);
+      color: rgba(255,255,255,0.9);
       text-decoration: none;
       border-radius: 8px;
       transition: all 0.3s ease;
-      font-weight: 500;
-      position: relative;
     }
-    .nav-links a:hover,
-    .nav-links a.active {
-      background: rgba(255, 255, 255, 0.15);
-      color: white;
+    .nav-links a:hover {
+      background: rgba(255,255,255,0.15);
       transform: translateX(5px);
-    }
-    .language-switch {
-      margin-top: 2rem;
-      padding: 0 1rem;
-    }
-    .language-switch a {
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      margin: 0 0.25rem;
-      background: rgba(255, 255, 255, 0.1);
-      color: white;
-      text-decoration: none;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      transition: all 0.3s ease;
-    }
-    .language-switch a.active {
-      background: rgba(255, 255, 255, 0.2);
     }
 
     /* === MAIN CONTENT === */
@@ -120,48 +82,19 @@
 
     /* === HERO === */
     .hero {
-      background: linear-gradient(135deg, #3d4f5c 0%, #556b7a 50%, #6d7f8c 100%);
+      background: #2c3e50;
       color: white;
       padding: 4rem 0;
       text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="music" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23music)"/></svg>');
-      opacity: 0.3;
-    }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 0 2rem;
     }
     .hero h1 {
       font-size: 3.5rem;
       font-weight: 300;
-      margin-bottom: 1rem;
-      letter-spacing: -1px;
     }
     .hero .subtitle {
       font-size: 1.5rem;
-      margin-bottom: 2rem;
-      opacity: 0.9;
+      margin-bottom: 1rem;
       font-style: italic;
-    }
-    .hero-description {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      opacity: 0.9;
-      max-width: 600px;
-      margin: 0 auto;
     }
 
     /* === CONTENT === */
@@ -174,26 +107,24 @@
       background: white;
       margin: 3rem 0;
       border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
       overflow: hidden;
       border-left: 5px solid #556b7a;
     }
     .section-header {
-      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      background: #f8f9fa;
       padding: 2rem;
       border-bottom: 1px solid #dee2e6;
     }
     .section h2 {
       font-size: 2rem;
-      color: #3d4f5c;
-      margin: 0;
-      font-weight: 600;
+      color: #2c3e50;
     }
     .section-content {
       padding: 2.5rem;
     }
 
-    /* === GALERIA === */
+    /* === GALERIA – BEZ PODPISÓW === */
     .gallery {
       background: #111;
       color: white;
@@ -253,22 +184,6 @@
     .gallery-item:hover img {
       transform: scale(1.08);
     }
-    .gallery-caption {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(transparent, rgba(0,0,0,0.8));
-      color: white;
-      padding: 1.5rem 1rem 1rem;
-      font-size: 0.95rem;
-      text-align: center;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-    .gallery-item:hover .gallery-caption {
-      opacity: 1;
-    }
 
     /* === LIGHTBOX === */
     .lightbox {
@@ -304,71 +219,43 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: background 0.3s ease;
     }
     .lightbox-close:hover {
       background: rgba(255,255,255,0.4);
     }
 
-    /* === MOBILE MENU === */
+    /* === MOBILE === */
     .mobile-menu-btn {
       display: none;
       position: fixed;
       top: 1rem;
       left: 1rem;
       z-index: 1001;
-      background: #3d4f5c;
+      background: #2c3e50;
       color: white;
       border: none;
       padding: 0.75rem;
       border-radius: 8px;
       cursor: pointer;
-      font-size: 1.2rem;
     }
-
-    /* === RESPONSIVE === */
     @media (max-width: 768px) {
       .sidebar {
         transform: translateX(-100%);
         transition: transform 0.3s ease;
       }
-      .sidebar.open {
-        transform: translateX(0);
-      }
-      .main-content, .footer {
-        margin-left: 0;
-      }
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-      .content {
-        padding: 2rem 1rem;
-      }
-      .section-content {
-        padding: 1.5rem;
-      }
-      .gallery-grid {
-        grid-template-columns: 1fr;
-      }
-      .gallery h2 {
-        font-size: 2rem;
-      }
-      .mobile-menu-btn {
-        display: block;
-      }
+      .sidebar.open { transform: translateX(0); }
+      .main-content, .footer { margin-left: 0; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .mobile-menu-btn { display: block; }
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
   </style>
 </head>
 <body>
 
-  <!-- Mobile Menu Button -->
   <button class="mobile-menu-btn" onclick="toggleSidebar()">Menu</button>
 
-  <!-- Sidebar -->
   <nav class="sidebar" id="sidebar">
     <div class="sidebar-header">
       <div class="sidebar-logo"></div>
@@ -386,45 +273,19 @@
       <li><a href="#organizatorzy" onclick="closeSidebar()">Organizatorzy</a></li>
       <li><a href="#kontakt" onclick="closeSidebar()">Kontakt</a></li>
     </ul>
-    <div class="language-switch">
-      <a href="index.html" class="active">PL</a>
-      <a href="indexen.html">EN</a>
-    </div>
   </nav>
 
-  <!-- Main Content -->
   <main class="main-content">
-    <!-- Hero -->
     <section class="hero">
       <div class="hero-content">
         <h1>Na Prawym Brzegu Wisły…</h1>
         <div class="subtitle">Konkurs Kompozytorski 2025</div>
-        <p class="hero-description">
-          Wyjątkowe wydarzenie artystyczne w Czechowicach-Dziedzicach.
-        </p>
       </div>
     </section>
 
     <div class="content">
 
-      <!-- Intro -->
-      <section id="intro" class="section">
-        <div class="section-header"><h2>O Konkursie</h2></div>
-        <div class="section-content">
-          <p>W 2025 roku Czechowice-Dziedzice stały się miejscem wyjątkowego wydarzenia artystycznego...</p>
-          <!-- Twój tekst -->
-        </div>
-      </section>
-
-      <!-- Aktualności -->
-      <section id="aktualnosci" class="section">
-        <div class="section-header"><h2>Aktualności</h2></div>
-        <div class="section-content">
-          <!-- Twój blok z wynikami -->
-        </div>
-      </section>
-
-      <!-- GALERIA -->
+      <!-- GALERIA – TYLKO ZDJĘCIA, BEZ PODPISÓW -->
       <section id="galeria" class="section gallery">
         <div class="gallery-content">
           <h2>Galeria z Koncertu „Tryptyk”</h2>
@@ -433,64 +294,50 @@
 
             <!-- 13 ZDJĘĆ Z /img/ -->
             <div class="gallery-item" onclick="openLightbox('img/concert1.jpg')">
-              <img src="img/concert1.jpg" alt="Koncert 1" loading="lazy">
-              <div class="gallery-caption">Scena przed koncertem</div>
+              <img src="img/concert1.jpg" alt="concert1" loading="lazy">
             </div>
             <div class="gallery-item" onclick="openLightbox('img/concert2.jpg')">
-              <img src="img/concert2.jpg" alt="Dawid Grenda" loading="lazy">
-              <div class="gallery-caption"><strong>Dawid Grenda</strong><br>„LONTANO”</div>
+              <img src="img/concert2.jpg" alt="concert2" loading="lazy">
             </div>
             <div class="gallery-item" onclick="openLightbox('img/concert3.jpg')">
-              <img src="img/concert3.jpg" alt="Matteo Gurrieri" loading="lazy">
-              <div class="gallery-caption"><strong>Matteo Gurrieri</strong><br>„LUSTROTEM II”</div>
+              <img src="img/concert3.jpg" alt="concert3" loading="lazy">
             </div>
             <div class="gallery-item" onclick="openLightbox('img/concert4.jpg')">
-              <img src="img/concert4.jpg" alt="Jury" loading="lazy">
-              <div class="gallery-caption"><strong>Jury konkursu</strong><br>Prof. Stanisław Krupowicz</div>
+              <img src="img/concert4.jpg" alt="concert4" loading="lazy">
             </div>
             <div class="gallery-item" onclick="openLightbox('img/concert5.jpg')">
-              <img src="img/concert5.jpg" alt="Publiczność" loading="lazy">
-              <div class="gallery-caption">Pełna sala – entuzjastyczna publiczność</div>
+              <img src="img/concert5.jpg" alt="concert5" loading="lazy">
             </div>
             <div class="gallery-item" onclick="openLightbox('img/concert6.jpg')">
-              <img src="img/concert6.jpg" alt="Scena" loading="lazy">
-              <div class="gallery-caption">Wykonanie na żywo</div>
+              <img src="img/concert6.jpg" alt="concert6" loading="lazy">
             </div>
             <div class="gallery-item" onclick="openLightbox('img/concert7.jpg')">
-              <img src="img/concert7.jpg" alt="Akordeon" loading="lazy">
-              <div class="gallery-caption">Akordeon solo</div>
+              <img src="img/concert7.jpg" alt="concert7" loading="lazy">
             </div>
             <div class="gallery-item" onclick="openLightbox('img/concert8.jpg')">
-              <img src="img/concert8.jpg" alt="I Nagroda" loading="lazy">
-              <div class="gallery-caption"><strong>I Nagroda</strong><br>Franciszek Jackowski</div>
+              <img src="img/concert8.jpg" alt="concert8" loading="lazy">
             </div>
             <div class="gallery-item" onclick="openLightbox('img/concert9.jpg')">
-              <img src="img/concert9.jpg" alt="Laureaci" loading="lazy">
-              <div class="gallery-caption">Laureaci na scenie</div>
+              <img src="img/concert9.jpg" alt="concert9" loading="lazy">
             </div>
             <div class="gallery-item" onclick="openLightbox('img/concert10.jpg')">
-              <img src="img/concert10.jpg" alt="Organizatorzy" loading="lazy">
-              <div class="gallery-caption">Organizatorzy i goście</div>
+              <img src="img/concert10.jpg" alt="concert10" loading="lazy">
             </div>
             <div class="gallery-item" onclick="openLightbox('img/concert11.jpg')">
-              <img src="img/concert11.jpg" alt="Sala" loading="lazy">
-              <div class="gallery-caption">Atmosfera wieczoru</div>
+              <img src="img/concert11.jpg" alt="concert11" loading="lazy">
             </div>
             <div class="gallery-item" onclick="openLightbox('img/concert12.jpg')">
-              <img src="img/concert12.jpg" alt="Finał" loading="lazy">
-              <div class="gallery-caption">Finał koncertu – owacje</div>
+              <img src="img/concert12.jpg" alt="concert12" loading="lazy">
             </div>
             <div class="gallery-item" onclick="openLightbox('img/concert13.jpg')">
-              <img src="img/concert13.jpg" alt="Grupa" loading="lazy">
-              <div class="gallery-caption">Wspólne zdjęcie – wszyscy razem</div>
+              <img src="img/concert13.jpg" alt="concert13" loading="lazy">
             </div>
 
           </div>
         </div>
       </section>
 
-      <!-- Reszta sekcji: Jury, Laureaci, itd. -->
-      <!-- (wklej swoje istniejące sekcje) -->
+      <!-- Twoje inne sekcje (O konkursie, Aktualności, itd.) -->
 
     </div>
   </main>
@@ -501,12 +348,10 @@
     <img id="lightbox-img" src="" alt="">
   </div>
 
-  <!-- FOOTER -->
-  <footer class="footer" style="background: #2c3e50; color: white; text-align: center; padding: 2rem; margin-left: 280px;">
-    &copy; 2025 Na Prawym Brzegu Wisły. Wszelkie prawa zastrzeżone.
+  <footer class="footer" style="background:#2c3e50;color:white;text-align:center;padding:2rem;margin-left:280px;">
+    &copy; 2025 Na Prawym Brzegu Wisły
   </footer>
 
-  <!-- SCRIPT -->
   <script>
     function toggleSidebar() {
       document.getElementById('sidebar').classList.toggle('open');
@@ -516,27 +361,17 @@
         document.getElementById('sidebar').classList.remove('open');
       }
     }
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 768) {
-        document.getElementById('sidebar').classList.remove('open');
-      }
-    });
 
     function openLightbox(src) {
-      const lightbox =.
-
-      document.getElementById('lightbox');
-      const img = document.getElementById('lightbox-img');
-      img.src = src;
-      lightbox.classList.add('open');
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').classList.add('open');
       document.body.style.overflow = 'hidden';
     }
     function closeLightbox() {
-      const lightbox = document.getElementById('lightbox');
-      lightbox.classList.remove('open');
+      document.getElementById('lightbox').classList.remove('open');
       document.body.style.overflow = '';
     }
-    document.addEventListener('keydown', (e) => {
+    document.addEventListener('keydown', e => {
       if (e.key === 'Escape') closeLightbox();
     });
   </script>
