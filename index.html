@@ -4,10 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Na Prawym Brzegu Wisły - Konkurs Kompozytorski</title>
-  <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    /* === RESET & TYPO === */
+    /* === RESET & GLOBAL === */
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
     body {
       font-family: 'Open Sans', sans-serif;
       line-height: 1.8;
@@ -17,102 +18,134 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      overflow-x: hidden;
     }
-    h1, h2, h3, h4, h5, h6 { font-family: 'Georgia', serif; font-weight: 700; }
-    img { max-width: 100%; height: auto; display: block; }
+    h1, h2, h3, h4, h5, h6 { 
+      font-family: 'Georgia', serif; 
+      font-weight: 700; 
+      color: #1a2530;
+      margin-bottom: 1rem;
+    }
+    p { margin-bottom: 1.2rem; text-align: justify; }
     a { color: #2c3e50; text-decoration: none; }
     a:hover { text-decoration: underline; }
+    img { max-width: 100%; height: auto; display: block; border-radius: 8px; }
+    ul { padding-left: 2rem; margin-bottom: 1.5rem; }
+    li { margin-bottom: 0.5rem; }
 
     /* === SIDEBAR === */
     .sidebar {
       position: fixed;
       left: 0; top: 0;
-      width: 280px;
+      width: 300px;
       height: 100vh;
       background: linear-gradient(180deg, #2c3e50 0%, #1a2530 100%);
       color: white;
-      padding: 2rem 0;
+      padding: 2.5rem 0;
       z-index: 1000;
       overflow-y: auto;
-      box-shadow: 4px 0 20px rgba(0,0,0,0.2);
-      transition: transform 0.4s ease;
+      box-shadow: 6px 0 30px rgba(0,0,0,0.25);
+      transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
     .sidebar-header {
       text-align: center;
-      padding: 0 1.5rem 2rem;
-      border-bottom: 1px solid rgba(255,255,255,0.15);
-      margin-bottom: 2rem;
+      padding: 0 2rem 2.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.18);
+      margin-bottom: 2.5rem;
     }
     .sidebar-logo {
-      width: 120px;
-      height: 120px;
-      background: rgba(255,255,255,0.1);
+      width: 130px;
+      height: 130px;
+      background: rgba(255,255,255,0.12);
       border-radius: 50%;
-      margin: 0 auto 1rem;
+      margin: 0 auto 1.2rem;
       background-image: url('img/logo.png');
       background-size: cover;
       background-position: center;
-      border: 3px solid rgba(255,255,255,0.3);
+      border: 4px solid rgba(255,255,255,0.35);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     }
     .sidebar h1 {
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
-      letter-spacing: -0.5px;
+      font-size: 1.35rem;
+      margin-bottom: 0.6rem;
+      letter-spacing: -0.6px;
+      font-weight: 700;
     }
     .sidebar .subtitle {
-      font-size: 0.95rem;
-      opacity: 0.85;
+      font-size: 0.98rem;
+      opacity: 0.88;
       font-style: italic;
+      letter-spacing: 0.5px;
     }
     .nav-links {
       list-style: none;
-      padding: 0 1rem;
+      padding: 0 1.5rem;
     }
-    .nav-links li { margin-bottom: 0.5rem; }
+    .nav-links li { margin-bottom: 0.6rem; }
     .nav-links a {
       display: block;
-      padding: 1rem 1.5rem;
-      color: rgba(255,255,255,0.9);
+      padding: 1.1rem 1.8rem;
+      color: rgba(255,255,255,0.92);
       text-decoration: none;
-      border-radius: 8px;
-      transition: all 0.3s ease;
+      border-radius: 10px;
+      transition: all 0.35s ease;
       font-weight: 500;
+      font-size: 0.95rem;
+      position: relative;
+      overflow: hidden;
     }
+    .nav-links a::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+      transition: 0.6s;
+    }
+    .nav-links a:hover::before { left: 100%; }
     .nav-links a:hover, .nav-links a.active {
-      background: rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.18);
       color: white;
-      transform: translateX(6px);
+      transform: translateX(8px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     }
     .language-switch {
-      margin-top: 2rem;
-      padding: 0 1rem;
+      margin-top: 3rem;
+      padding: 0 1.5rem;
       text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      padding-top: 1.5rem;
     }
     .language-switch a {
       display: inline-block;
-      padding: 0.5rem 1rem;
-      margin: 0 0.25rem;
-      background: rgba(255,255,255,0.1);
+      padding: 0.55rem 1.2rem;
+      margin: 0 0.3rem;
+      background: rgba(255,255,255,0.12);
       color: white;
       text-decoration: none;
-      border-radius: 20px;
-      font-size: 0.85rem;
+      border-radius: 25px;
+      font-size: 0.88rem;
       transition: all 0.3s ease;
+      font-weight: 600;
     }
-    .language-switch a.active { background: rgba(255,255,255,0.25); }
+    .language-switch a.active, .language-switch a:hover { 
+      background: rgba(255,255,255,0.28); 
+      transform: scale(1.05);
+    }
 
     /* === MAIN CONTENT === */
     .main-content {
-      margin-left: 280px;
+      margin-left: 300px;
       flex: 1 0 auto;
-      padding-bottom: 5rem;
+      padding-bottom: 6rem;
+      background: #f8f9fa;
     }
 
-    /* === HERO === */
+    /* === HERO SECTION === */
     .hero {
       background: linear-gradient(135deg, #2c3e50 0%, #1a2530 100%);
       color: white;
-      padding: 5rem 0;
+      padding: 6rem 0;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -121,136 +154,158 @@
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
-      opacity: 0.2;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.08)"/></svg>') repeat;
+      opacity: 0.15;
+      animation: float 20s infinite linear;
     }
+    @keyframes float { 0% { transform: translateY(0); } 100% { transform: translateY(-200px); } }
     .hero-content {
       position: relative;
       z-index: 2;
-      max-width: 900px;
+      max-width: 950px;
       margin: 0 auto;
       padding: 0 2rem;
     }
     .hero h1 {
-      font-size: 3.8rem;
+      font-size: 4.2rem;
       font-weight: 300;
-      margin-bottom: 1rem;
-      letter-spacing: -1.5px;
+      margin-bottom: 1.2rem;
+      letter-spacing: -2px;
+      text-shadow: 0 3px 10px rgba(0,0,0,0.4);
     }
     .hero .subtitle {
-      font-size: 1.6rem;
-      margin-bottom: 1.5rem;
+      font-size: 1.75rem;
+      margin-bottom: 1.8rem;
       font-style: italic;
-      opacity: 0.95;
+      opacity: 0.96;
+      letter-spacing: 0.5px;
     }
     .hero-description {
-      font-size: 1.15rem;
-      line-height: 1.9;
-      opacity: 0.9;
-      max-width: 700px;
+      font-size: 1.2rem;
+      line-height: 2;
+      opacity: 0.92;
+      max-width: 750px;
       margin: 0 auto;
+      font-weight: 300;
     }
 
-    /* === CONTENT === */
+    /* === CONTENT WRAPPER === */
     .content {
-      max-width: 1100px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 3rem 2rem;
+      padding: 4rem 2.5rem;
     }
+
+    /* === SECTION STYLES === */
     .section {
       background: white;
-      margin: 3rem 0;
-      border-radius: 14px;
-      box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+      margin: 3.5rem 0;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
       overflow: hidden;
-      border-left: 6px solid #2c3e50;
+      border-left: 7px solid #2c3e50;
+      transition: all 0.4s ease;
+    }
+    .section:hover {
+      box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+      transform: translateY(-3px);
     }
     .section-header {
       background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-      padding: 2.2rem 2rem;
+      padding: 2.5rem 2.5rem;
       border-bottom: 1px solid #dee2e6;
     }
     .section h2 {
-      font-size: 2.1rem;
+      font-size: 2.3rem;
       color: #1a2530;
       margin: 0;
+      position: relative;
+    }
+    .section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -8px; left: 0;
+      width: 60px; height: 4px;
+      background: #2c3e50;
+      border-radius: 2px;
     }
     .section-content {
-      padding: 2.8rem 2.5rem;
-      line-height: 1.9;
+      padding: 3rem 3rem;
+      line-height: 1.95;
+      font-size: 1.05rem;
     }
-    .section-content p, .section-content li {
-      margin-bottom: 1.2rem;
-      text-align: justify;
-    }
-    .section-content ul {
-      padding-left: 2rem;
-      margin-bottom: 1.5rem;
+    .section-content p {
+      margin-bottom: 1.4rem;
     }
     .section-content strong {
       color: #1a2530;
+      font-weight: 600;
     }
 
     /* === GALERIA === */
     .gallery {
       background: #0a0a0a;
       color: white;
-      padding: 5rem 0;
+      padding: 6rem 0;
       position: relative;
+      overflow: hidden;
     }
     .gallery::before {
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.75);
+      background: rgba(0,0,0,0.82);
       z-index: 1;
     }
     .gallery-content {
       position: relative;
       z-index: 2;
-      max-width: 1300px;
+      max-width: 1400px;
       margin: 0 auto;
-      padding: 0 2rem;
+      padding: 0 2.5rem;
     }
     .gallery h2 {
       text-align: center;
-      font-size: 2.8rem;
-      margin-bottom: 1.2rem;
-      text-shadow: 0 3px 10px rgba(0,0,0,0.6);
+      font-size: 3rem;
+      margin-bottom: 1.3rem;
+      text-shadow: 0 4px 12px rgba(0,0,0,0.7);
+      letter-spacing: -1px;
     }
     .gallery p.subtitle {
       text-align: center;
       font-style: italic;
-      opacity: 0.92;
-      margin-bottom: 3.5rem;
-      font-size: 1.1rem;
+      opacity: 0.94;
+      margin-bottom: 4rem;
+      font-size: 1.15rem;
+      letter-spacing: 0.5px;
     }
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.8rem;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
     }
     .gallery-item {
       position: relative;
-      border-radius: 14px;
+      border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-      transition: all 0.5s ease;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.55);
+      transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
       cursor: pointer;
-      height: 250px;
+      height: 280px;
+      background: #111;
     }
     .gallery-item:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.75);
     }
     .gallery-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.7s ease;
+      transition: transform 0.8s ease;
     }
     .gallery-item:hover img {
-      transform: scale(1.1);
+      transform: scale(1.12);
     }
 
     /* === LIGHTBOX === */
@@ -258,71 +313,96 @@
       display: none;
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.97);
+      background: rgba(0,0,0,0.98);
       align-items: center;
       justify-content: center;
       z-index: 2000;
-      padding: 2rem;
+      padding: 2.5rem;
+      backdrop-filter: blur(8px);
     }
     .lightbox.open { display: flex; }
     .lightbox img {
-      max-width: 92%;
-      max-height: 92vh;
-      border-radius: 14px;
-      box-shadow: 0 25px 60px rgba(0,0,0,0.7);
+      max-width: 94%;
+      max-height: 94vh;
+      border-radius: 16px;
+      box-shadow: 0 30px 70px rgba(0,0,0,0.8);
+      border: 1px solid rgba(255,255,255,0.15);
     }
     .lightbox-close {
       position: absolute;
-      top: 2.5rem; right: 2.5rem;
-      font-size: 3rem;
+      top: 3rem; right: 3rem;
+      font-size: 3.5rem;
       color: white;
-      background: rgba(255,255,255,0.25);
-      width: 60px; height: 60px;
+      background: rgba(255,255,255,0.22);
+      width: 70px; height: 70px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
       transition: all 0.3s ease;
+      font-weight: 300;
     }
-    .lightbox-close:hover { background: rgba(255,255,255,0.4); }
+    .lightbox-close:hover { 
+      background: rgba(255,255,255,0.38); 
+      transform: scale(1.1);
+    }
 
-    /* === MOBILE === */
+    /* === MOBILE MENU === */
     .mobile-menu-btn {
       display: none;
       position: fixed;
-      top: 1.2rem; left: 1.2rem;
+      top: 1.5rem; left: 1.5rem;
       z-index: 1001;
       background: #2c3e50;
       color: white;
       border: none;
-      padding: 0.8rem;
-      border-radius: 10px;
+      padding: 1rem;
+      border-radius: 12px;
       cursor: pointer;
-      font-size: 1.3rem;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     }
+    .mobile-menu-btn:hover { background: #1a2530; }
+
+    /* === RESPONSIVE === */
     @media (max-width: 992px) {
-      .sidebar { transform: translateX(-100%); }
+      .sidebar { 
+        transform: translateX(-100%); 
+        width: 280px;
+      }
       .sidebar.open { transform: translateX(0); }
       .main-content, .footer { margin-left: 0; }
       .mobile-menu-btn { display: block; }
-      .gallery-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+      .gallery-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+      .hero h1 { font-size: 3.2rem; }
     }
     @media (max-width: 576px) {
-      .hero h1 { font-size: 2.8rem; }
+      .hero h1 { font-size: 2.6rem; }
+      .hero .subtitle { font-size: 1.4rem; }
       .gallery-grid { grid-template-columns: 1fr; }
-      .gallery h2 { font-size: 2.2rem; }
+      .gallery h2 { font-size: 2.4rem; }
+      .section-content { padding: 2rem; }
     }
 
-    html { scroll-behavior: smooth; }
+    /* === FOOTER === */
+    .footer {
+      background: #1a2530;
+      color: white;
+      text-align: center;
+      padding: 3rem 2rem;
+      margin-left: 300px;
+      font-size: 0.95rem;
+    }
+    .footer p { margin: 0; opacity: 0.9; }
   </style>
 </head>
 <body>
 
-  <!-- Mobile Menu -->
+  <!-- Mobile Menu Button -->
   <button class="mobile-menu-btn" onclick="toggleSidebar()">Menu</button>
 
-  <!-- Sidebar -->
+  <!-- Sidebar Navigation -->
   <nav class="sidebar" id="sidebar">
     <div class="sidebar-header">
       <div class="sidebar-logo"></div>
@@ -346,20 +426,22 @@
     </div>
   </nav>
 
-  <!-- Main -->
+  <!-- Main Content -->
   <main class="main-content">
 
-    <!-- Hero -->
+    <!-- Hero Section -->
     <section class="hero">
       <div class="hero-content">
         <h1>Na Prawym Brzegu Wisły…</h1>
         <div class="subtitle">Konkurs Kompozytorski 2025</div>
         <p class="hero-description">
-          Wyjątkowe wydarzenie artystyczne w Czechowicach-Dziedzicach, łączące tradycję z nowoczesnością.
+          Wyjątkowe wydarzenie artystyczne w Czechowicach-Dziedzicach, łączące tradycję z nowoczesnością. 
+          Koncert finałowy „Tryptyk” z udziałem Dawida Grendy i Zespołu Instrumentalistów.
         </p>
       </div>
     </section>
 
+    <!-- Content Wrapper -->
     <div class="content">
 
       <!-- O Konkursie -->
@@ -369,6 +451,7 @@
           <p>W 2025 roku Czechowice-Dziedzice stały się miejscem wyjątkowego wydarzenia artystycznego – Konkursu Kompozytorskiego „Na prawym brzegu Wisły…”. Inicjatywa ta, skierowana do młodych twórców z Polski i zagranicy, miała na celu promowanie twórczości inspirowanej lokalną tradycją i kulturą.</p>
           <p>Organizatorem konkursu był Miejski Dom Kultury w Czechowicach-Dziedzicach, we współpracy z Fundacją im. Andrzeja Krzanowskiego. Wydarzenie objęte było patronatem Ministra Kultury i Dziedzictwa Narodowego.</p>
           <p>Konkurs odbył się w ramach programu „Muzyczny ślad 2025”, finansowanego ze środków Ministerstwa Kultury i Dziedzictwa Narodowego.</p>
+          <p>Numer wniosku: 107544/A3, złożony dnia 15.07.2025.</p>
         </div>
       </section>
 
@@ -376,7 +459,7 @@
       <section id="aktualnosci" class="section">
         <div class="section-header"><h2>Aktualności</h2></div>
         <div class="section-content">
-          <p><strong>28 października 2025</strong> – Koncert finałowy „Tryptyk” w Miejskim Domu Kultury.</p>
+          <p><strong>28 października 2025</strong> – Koncert finałowy „Tryptyk” w Miejskim Domu Kultury w Czechowicach-Dziedzicach.</p>
           <p><strong>I Nagroda</strong>: Franciszek Jackowski – utwór „LONTANO”</p>
           <p><strong>Nagroda Specjalna</strong>: Matteo Gurrieri – utwór „LUSTROTEM II”</p>
           <p><strong>Wykonawcy</strong>: Dawid Grenda (akordeon), Zespół Instrumentalny</p>
@@ -384,7 +467,7 @@
         </div>
       </section>
 
-      <!-- GALERIA -->
+      <!-- GALERIA Z 13 ZDJĘCIAMI + 2 DOKUMENTAMI -->
       <section id="galeria" class="section gallery">
         <div class="gallery-content">
           <h2>Galeria z Koncertu „Tryptyk”</h2>
@@ -433,11 +516,11 @@
             </div>
 
             <!-- DOKUMENTY JAKO ZDJĘCIA -->
-            <div class="gallery-item" onclick="openLightbox('img/potwierdzenie.jpg')">
-              <img src="img/potwierdzenie.jpg" alt="Potwierdzenie odbioru nagrody" loading="lazy">
-            </div>
             <div class="gallery-item" onclick="openLightbox('img/wniosek.jpg')">
               <img src="img/wniosek.jpg" alt="Wniosek o dofinansowanie" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox('img/potwierdzenie.jpg')">
+              <img src="img/potwierdzenie.jpg" alt="Potwierdzenie odbioru nagrody" loading="lazy">
             </div>
 
           </div>
@@ -462,8 +545,8 @@
       <section id="laureaci" class="section">
         <div class="section-header"><h2>Laureaci</h2></div>
         <div class="section-content">
-          <p><strong>I Nagroda</strong>: Franciszek Jackowski</p>
-          <p><strong>II Nagroda</strong>: Matteo Gurrieri</p>
+          <p><strong>I Nagroda</strong>: Franciszek Jackowski – „LONTANO”</p>
+          <p><strong>II Nagroda</strong>: Matteo Gurrieri – „LUSTROTEM II”</p>
           <p><strong>III Nagroda</strong>: Jan Kowalski</p>
           <p><strong>Wyróżnienie</strong>: Anna Nowak</p>
         </div>
@@ -473,10 +556,10 @@
       <section id="dokumenty" class="section">
         <div class="section-header"><h2>Dokumenty</h2></div>
         <div class="section-content">
-          <p>Dokumenty dostępne w galerii jako zdjęcia:</p>
+          <p>Wszystkie dokumenty dostępne w galerii jako zdjęcia:</p>
           <ul>
-            <li><a href="#galeria">Potwierdzenie odbioru nagrody</a></li>
-            <li><a href="#galeria">Wniosek o dofinansowanie</a></li>
+            <li><a href="#galeria">Wniosek o dofinansowanie (nr 107544/A3)</a></li>
+            <li><a href="#galeria">Potwierdzenie odbioru Nagrody Specjalnej</a></li>
           </ul>
         </div>
       </section>
@@ -485,7 +568,7 @@
       <section id="regulamin" class="section">
         <div class="section-header"><h2>Regulamin</h2></div>
         <div class="section-content">
-          <p>Regulamin dostępny w formacie PDF – zobacz w galerii.</p>
+          <p>Regulamin konkursu dostępny w formacie PDF – zobacz w galerii.</p>
         </div>
       </section>
 
@@ -493,8 +576,9 @@
       <section id="organizatorzy" class="section">
         <div class="section-header"><h2>Organizatorzy</h2></div>
         <div class="section-content">
-          <p>Miejski Dom Kultury w Czechowicach-Dziedzicach</p>
-          <p>Fundacja im. Andrzeja Krzanowskiego</p>
+          <p><strong>Miejski Dom Kultury w Czechowicach-Dziedzicach</strong></p>
+          <p><strong>Fundacja im. Andrzeja Krzanowskiego</strong></p>
+          <p>Patronat: Ministerstwo Kultury i Dziedzictwa Narodowego</p>
         </div>
       </section>
 
@@ -502,27 +586,29 @@
       <section id="kontakt" class="section">
         <div class="section-header"><h2>Kontakt</h2></div>
         <div class="section-content">
-          <p>Email: kontakt@naprawymbrzegu.pl</p>
-          <p>Telefon: +48 123 456 789</p>
+          <p><strong>Email</strong>: kontakt@naprawymbrzegu.pl</p>
+          <p><strong>Telefon</strong>: +48 123 456 789</p>
+          <p><strong>Adres</strong>: ul. Niepodległości 1, 43-500 Czechowice-Dziedzice</p>
         </div>
       </section>
 
     </div>
   </main>
 
-  <!-- LIGHTBOX -->
+  <!-- Lightbox -->
   <div class="lightbox" id="lightbox" onclick="closeLightbox()">
     <span class="lightbox-close" onclick="closeLightbox()">X</span>
     <img id="lightbox-img" src="" alt="">
   </div>
 
   <!-- Footer -->
-  <footer style="background:#1a2530;color:white;text-align:center;padding:2.5rem;margin-left:280px;">
-    <p>&copy; 2025 Na Prawym Brzegu Wisły. Wszelkie prawa zastrzeżone.</p>
+  <footer class="footer">
+    <p>© 2025 Na Prawym Brzegu Wisły. Wszelkie prawa zastrzeżone. | Projekt i realizacja: MDK Czechowice-Dziedzice</p>
   </footer>
 
-  <!-- Script -->
+  <!-- Scripts -->
   <script>
+    // Mobile menu
     function toggleSidebar() {
       document.getElementById('sidebar').classList.toggle('open');
     }
@@ -532,6 +618,7 @@
       }
     }
 
+    // Lightbox
     function openLightbox(src) {
       document.getElementById('lightbox-img').src = src;
       document.getElementById('lightbox').classList.add('open');
@@ -541,15 +628,31 @@
       document.getElementById('lightbox').classList.remove('open');
       document.body.style.overflow = '';
     }
+
+    // Escape key
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape') closeLightbox();
     });
 
-    // Aktywne menu
+    // Active menu link
     document.querySelectorAll('.nav-links a').forEach(link => {
       if (link.href === window.location.href) {
         link.classList.add('active');
       }
+    });
+
+    // Smooth scroll offset for fixed sidebar
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 100,
+            behavior: 'smooth'
+          });
+        }
+      });
     });
   </script>
 </body>
